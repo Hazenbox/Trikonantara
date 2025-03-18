@@ -1,8 +1,8 @@
+
 import React, { useEffect } from "react";
 import PixelCard from "../PixelCard";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Globe, Cpu } from "lucide-react";
 
 // Register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
@@ -78,20 +78,6 @@ const ProductsSection: React.FC = () => {
           scrub: 1,
         },
       });
-      
-      // Other products staggered animation
-      gsap.from(".product-card", {
-        y: 60,
-        opacity: 0,
-        stagger: 0.3,
-        duration: 1,
-        scrollTrigger: {
-          trigger: ".products-grid",
-          start: "top 80%",
-          end: "top 30%",
-          scrub: 1,
-        },
-      });
 
       // Section entry/exit animations
       gsap.to(`#${sectionId}`, {
@@ -132,47 +118,15 @@ const ProductsSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto mb-16 featured-product">
+        <div className="max-w-6xl mx-auto featured-product">
           <PixelCard
             title="Bharat VR - Our Flagship Product"
             description="An immersive virtual reality platform designed to showcase India's cultural heritage and historical landmarks through interactive 3D environments."
-            imageSrc="/lovable-uploads/789b56f2-093e-4961-a436-b091c1f2a2ca.png"
+            imageSrc="/lovable-uploads/92d0a951-cc14-48c7-8df2-ac34ad8df4f9.png"
             footerText="Experience India like never before"
             className="bg-gradient-to-br from-pebble-offWhite to-pebble-lightBlue border-pebble-lightBeige shadow-lg"
             link="/products/bharat-vr"
           />
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto products-grid">
-          <div className="product-card">
-            <PixelCard
-              title="Reality Studio"
-              description="Professional tools for AR/VR content creation with simplified workflows."
-              footerText="For developers & creators"
-              className="h-full"
-              link="/products/reality-studio"
-            />
-          </div>
-          
-          <div className="product-card">
-            <PixelCard
-              title="MetaSpace"
-              description="Virtual meeting and collaboration spaces for remote teams."
-              footerText="Connect globally, interact locally"
-              className="h-full"
-              link="/products/metaspace"
-            />
-          </div>
-          
-          <div className="product-card">
-            <PixelCard
-              title="VisualizeAR"
-              description="Augmented reality solution for architecture and interior design visualization."
-              footerText="See designs in your space"
-              className="h-full"
-              link="/products/visualize-ar"
-            />
-          </div>
         </div>
       </div>
     </section>

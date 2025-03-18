@@ -62,7 +62,7 @@ const CTASection: React.FC = () => {
   return (
     <section 
       id={sectionId}
-      className="relative overflow-hidden py-32 flex flex-col bg-gradient-to-b from-[#e3edf0] to-[#d1dfe4] opacity-0"
+      className="relative overflow-hidden py-32 flex flex-col bg-gradient-to-b from-white via-[#e3edf0] to-[#d1dfe4] opacity-0"
     >
       <div className="container mx-auto px-4 relative mb-16">
         <div className="max-w-4xl mx-auto bg-[#101E4E] rounded-xl shadow-lg shadow-[#101E4E]/20 p-16 relative overflow-hidden cta-content">
@@ -80,7 +80,7 @@ const CTASection: React.FC = () => {
               <div className="flex flex-wrap gap-4">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center bg-pebble-taupe text-pebble-offWhite py-3 px-6 rounded-md transition-colors duration-300 hover:bg-pebble-taupe/90"
+                  className="inline-flex items-center bg-white text-[#101E4E] py-3 px-6 rounded-md transition-colors duration-300 hover:bg-gray-100"
                 >
                   Get started <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
