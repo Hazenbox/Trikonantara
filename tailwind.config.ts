@@ -69,7 +69,11 @@ export default {
           beige: "#BDB599",
           taupe: "#A69E88",
           cream: "#F5F2E9",
-          offWhite: "#F8F8F3"
+          offWhite: "#F8F8F3",
+          olive: "#65635A",
+          darkTaupe: "#5F5E56",
+          lightBeige: "#E5E2D9",
+          charcoal: "#403E43"
         },
         sidebar: {
           DEFAULT: 'hsl(var(--sidebar-background))',
