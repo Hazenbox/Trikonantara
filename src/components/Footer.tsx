@@ -46,6 +46,20 @@ const Footer: React.FC = () => {
               <h4 className="text-base font-semibold mb-6 text-pebble-darkBlue">
                 Social
               </h4>
+              <div className="flex space-x-4 mb-6">
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-pebble-taupe hover:text-pebble-darkBlue transition-colors duration-300">
+                  <Twitter size={20} />
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-pebble-taupe hover:text-pebble-darkBlue transition-colors duration-300">
+                  <Linkedin size={20} />
+                </a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-pebble-taupe hover:text-pebble-darkBlue transition-colors duration-300">
+                  <Youtube size={20} />
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-pebble-taupe hover:text-pebble-darkBlue transition-colors duration-300">
+                  <Instagram size={20} />
+                </a>
+              </div>
               <ul className="space-y-4">
                 <FooterLink to="https://twitter.com" external>X (Twitter)</FooterLink>
                 <FooterLink to="https://linkedin.com" external>LinkedIn</FooterLink>
