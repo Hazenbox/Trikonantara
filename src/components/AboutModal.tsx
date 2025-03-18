@@ -130,16 +130,12 @@ const AboutModal = () => {
   ];
 
   return (
-    <DialogContent ref={pageRef} className="max-w-6xl h-[80vh] overflow-auto bg-pebble-cream">
+    <DialogContent ref={pageRef} className="max-w-6xl h-[80vh] overflow-auto bg-white">
       <DialogClose className="absolute right-4 top-4 z-50">
         <X className="h-6 w-6" />
       </DialogClose>
       
       <main className="overflow-hidden p-6">
-        {/* Background Elements */}
-        <div className="absolute top-40 -left-24 w-96 h-96 bg-pebble-taupe rounded-full mix-blend-multiply filter blur-[128px] opacity-10 animate-float parallax-bg"></div>
-        <div className="absolute top-[60%] right-0 w-80 h-80 bg-pebble-darkTaupe rounded-full mix-blend-multiply filter blur-[128px] opacity-10 animate-float parallax-bg" style={{ animationDelay: "-3s" }}></div>
-        
         {/* Header Section */}
         <div className="container mx-auto px-4 mb-10">
           <div className="max-w-5xl mx-auto text-center">

@@ -126,20 +126,20 @@ const AboutSection: React.FC = () => {
             </p>
           </div>
           
-          {/* Associated with section - made images bigger */}
+          {/* Associated with section - updated with new image */}
           <div className="mt-10 partners-section">
             <h3 className="text-sm font-medium mb-6 text-[#8A898C] font-fustat">Associated with</h3>
             <div className="flex justify-center space-x-12 mb-8">
-              <img src="/lovable-uploads/bca2854c-7cba-4347-a3bd-bb195eb55a00.png" alt="ACIC-CBIT Partner Logo" className="h-28 partner-logo" />
+              <img src="/lovable-uploads/94984783-e21d-45f5-97d3-2e3f331aaec7.png" alt="NITI Aayog | AIM Partner Logo" className="h-28 partner-logo" />
               <img src="/lovable-uploads/bcbfb8b2-eaa3-42cd-9c4c-9cda6717ddb1.png" alt="NITI Aayog Partner Logo" className="h-28 partner-logo" />
             </div>
           </div>
           
-          <div className="mt-8 flex flex-wrap gap-4 justify-center relative z-10">
+          <div className="mt-8 flex flex-wrap gap-4 justify-center relative z-20">
             <Dialog>
               <DialogTrigger asChild>
                 <Button 
-                  className="bg-[#101E4E] hover:bg-[#101E4E]/90 text-white rounded-none relative z-10"
+                  className="bg-[#101E4E] hover:bg-[#101E4E]/90 text-white rounded-none relative z-20"
                 >
                   <span className="inline-flex items-center">
                     Explore Our Story
@@ -154,7 +154,7 @@ const AboutSection: React.FC = () => {
               <DialogTrigger asChild>
                 <Button 
                   variant="outline"
-                  className="border-[#101E4E] text-[#101E4E] hover:bg-[#101E4E] hover:text-white rounded-none relative z-10"
+                  className="border-[#101E4E] text-[#101E4E] hover:bg-[#101E4E] hover:text-white rounded-none relative z-20"
                 >
                   <span className="inline-flex items-center">
                     Our Team

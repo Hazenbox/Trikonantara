@@ -81,14 +81,14 @@ const HeroSection: React.FC = () => {
       id={sectionId}
       className="min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-[#101E4E] opacity-0 relative"
     >
-      {/* Background image with 30% opacity */}
+      {/* Background image with 55% opacity */}
       <div className="absolute inset-0 z-0">
         <img 
           src="/lovable-uploads/c11a5cab-3262-4176-a476-f7843598ce3a.png" 
           alt="VR Background" 
-          className="w-full h-full object-cover absolute inset-0 opacity-30"
+          className="w-full h-full object-cover absolute inset-0 opacity-55"
         />
-        <div className="absolute inset-0 bg-[#101E4E] opacity-95"></div>
+        <div className="absolute inset-0 bg-[#101E4E] opacity-80"></div>
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
           <div className="absolute top-1/4 -left-24 w-96 h-96 bg-pebble-charcoal rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-float"></div>
           <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-pebble-taupe rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-float" style={{ animationDelay: "-2s" }}></div>
