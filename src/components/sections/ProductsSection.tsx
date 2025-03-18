@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Trademark } from "lucide-react";
 
 // Register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
@@ -132,8 +133,8 @@ const ProductsSection: React.FC = () => {
               {/* Content Section */}
               <div className="md:w-1/2 p-8 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-2xl font-medium tracking-tighter transition-colors group-hover:text-pebble-blue mb-4">
-                    Bharat VR
+                  <h3 className="text-2xl font-medium tracking-tighter transition-colors group-hover:text-pebble-blue mb-4 flex items-center">
+                    Bharat VR <Trademark className="ml-1 h-4 w-4" />
                   </h3>
                   <p className="font-medium text-pebble-secondaryText mb-6">
                     An immersive virtual reality platform designed to showcase India's cultural heritage and historical landmarks through interactive 3D environments.
