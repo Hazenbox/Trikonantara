@@ -130,7 +130,7 @@ const AboutSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-center">
           {/* Left Column - Text Content */}
           <div className="about-left-col md:col-span-5">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black font-funnel split-text">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black font-funnel split-text tracking-wide">
               About Trikonantara™
             </h2>
             
@@ -143,10 +143,10 @@ const AboutSection: React.FC = () => {
               </p>
             </div>
             
-            <div className="mt-8 flex gap-4">
+            <div className="mt-8 flex flex-wrap gap-4">
               <Button 
                 asChild 
-                className="bg-[#1EAEDB] hover:bg-[#0FA0CE] text-white rounded-none"
+                className="bg-[#101E4E] hover:bg-[#101E4E]/90 text-white rounded-none"
               >
                 <Link
                   to="/about"
@@ -160,7 +160,7 @@ const AboutSection: React.FC = () => {
               <Button 
                 asChild 
                 variant="outline"
-                className="border-[#1EAEDB] text-[#1EAEDB] hover:bg-[#1EAEDB] hover:text-white rounded-none"
+                className="border-[#101E4E] text-[#101E4E] hover:bg-[#101E4E] hover:text-white rounded-none"
               >
                 <Link
                   to="/about#team"

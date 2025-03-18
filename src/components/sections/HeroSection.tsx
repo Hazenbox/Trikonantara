@@ -100,7 +100,7 @@ const HeroSection: React.FC = () => {
           <Dialog>
             <DialogTrigger asChild>
               <button
-                className="inline-flex items-center bg-transparent border-2 border-pebble-lightBeige text-pebble-lightBeige py-3 px-8 rounded-none transition-all duration-300 shadow-lg shadow-pebble-charcoal/20 transform hover:bg-pebble-lightBeige hover:text-pebble-olive"
+                className="inline-flex items-center bg-transparent border border-pebble-lightBeige text-pebble-lightBeige py-3 px-8 rounded-none transition-all duration-300 shadow-lg shadow-pebble-charcoal/20 transform hover:bg-pebble-lightBeige hover:text-pebble-olive"
               >
                 Get in Touch
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />

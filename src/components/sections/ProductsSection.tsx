@@ -110,7 +110,7 @@ const ProductsSection: React.FC = () => {
       
       <div className="container mx-auto px-4 relative z-10 products-container">
         <div className="text-center mb-16 products-heading">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-black products-title">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-black products-title tracking-wide">
             Our Flagship Product
           </h2>
           <p className="text-lg text-black max-w-2xl mx-auto products-intro">

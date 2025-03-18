@@ -114,22 +114,22 @@ const About = () => {
 
   const teamMembers = [
     {
-      name: "Vishal Gajavelli",
-      position: "Chief Executive Officer",
+      name: "Kiran Mudhili",
+      position: "Founder & Chief AR/VR Tech Head",
       image: "public/lovable-uploads/8b90a88a-fd23-40f1-8cd2-14913e3b46a6.png",
-      linkedin: "https://www.linkedin.com/in/vishalgajavelli/"
+      linkedin: "https://www.linkedin.com/in/mudhilikiran/"
     },
     {
-      name: "Balraj Kurmi",
-      position: "Chief Technology Officer",
+      name: "Sai Pradeep Goud",
+      position: "Founder & Chief Business Head",
       image: "public/lovable-uploads/0b33174d-09b4-45f2-ae15-93c39ea68601.png",
-      linkedin: "https://www.linkedin.com/in/balrajkurmi/"
+      linkedin: "https://www.linkedin.com/in/srimanthulla-saipradeepgoud/"
     },
     {
-      name: "Naveen Kumar",
-      position: "Chief Operations Officer",
+      name: "Nagaraju Pandi",
+      position: "Founder & Chief 3D Tech Head",
       image: "public/lovable-uploads/fe111264-f53d-43d1-9b62-e41ef44ca5cf.png",
-      linkedin: "https://www.linkedin.com/in/naveen-kumar-a81a681b6/"
+      linkedin: "https://www.linkedin.com/in/nagaraju-pandi/"
     }
   ];
 
@@ -146,7 +146,7 @@ const About = () => {
         {/* Header Section */}
         <div className="container mx-auto px-4 mb-20">
           <div className="max-w-5xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-pebble-darkBlue font-funnel header-title split-text">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-pebble-darkBlue font-funnel header-title split-text tracking-wide">
               About Trikonantara™
             </h1>
             <div className="h-1 w-20 bg-pebble-taupe mx-auto mb-12 section-divider"></div>
@@ -158,7 +158,7 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-16 items-start mb-20 max-w-5xl mx-auto">
             {/* Left Column - About Content */}
             <div className="about-content content-left md:col-span-5">
-              <h2 className="text-2xl md:text-3xl font-bold mb-8 text-pebble-darkBlue font-funnel reveal-element split-text">
+              <h2 className="text-2xl md:text-3xl font-bold mb-8 text-pebble-darkBlue font-funnel reveal-element split-text tracking-wide">
                 Our Story
               </h2>
               
@@ -179,7 +179,7 @@ const About = () => {
               <div className="mt-10">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center bg-pebble-darkTaupe hover:bg-pebble-charcoal text-pebble-cream py-3 px-8 rounded-none transition-all duration-300 shadow-lg shadow-pebble-charcoal/20 reveal-element"
+                  className="inline-flex items-center bg-[#101E4E] hover:bg-[#101E4E]/90 text-pebble-cream py-3 px-8 rounded-none transition-all duration-300 shadow-lg shadow-pebble-charcoal/20 reveal-element"
                 >
                   Get in Touch
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -203,13 +203,13 @@ const About = () => {
           
           {/* Mission & Vision Section */}
           <div className="max-w-5xl mx-auto mission-vision-section mb-20">
-            <h2 className="text-2xl md:text-3xl font-bold mb-12 text-pebble-darkBlue font-funnel text-center reveal-element split-text">
+            <h2 className="text-2xl md:text-3xl font-bold mb-12 text-pebble-darkBlue font-funnel text-center reveal-element split-text tracking-wide">
               Mission & Vision
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
               <div className="mission-vision-card bg-pebble-offWhite p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
-                <h3 className="text-xl font-bold mb-4 text-pebble-darkBlue font-funnel">
+                <h3 className="text-xl font-bold mb-4 text-pebble-darkBlue font-funnel tracking-wide">
                   Mission
                 </h3>
                 <p className="text-pebble-secondaryText font-fustat">
@@ -218,7 +218,7 @@ const About = () => {
               </div>
               
               <div className="mission-vision-card bg-pebble-offWhite p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
-                <h3 className="text-xl font-bold mb-4 text-pebble-darkBlue font-funnel">
+                <h3 className="text-xl font-bold mb-4 text-pebble-darkBlue font-funnel tracking-wide">
                   Vision
                 </h3>
                 <p className="text-pebble-secondaryText font-fustat">
@@ -230,7 +230,7 @@ const About = () => {
           
           {/* Team Section */}
           <div id="team" className="max-w-5xl mx-auto team-section">
-            <h2 className="text-2xl md:text-3xl font-bold mb-12 text-pebble-darkBlue font-funnel text-center reveal-element split-text">
+            <h2 className="text-2xl md:text-3xl font-bold mb-12 text-pebble-darkBlue font-funnel text-center reveal-element split-text tracking-wide">
               Our Team
             </h2>
             
@@ -254,7 +254,7 @@ const About = () => {
                       <Linkedin size={20} />
                     </a>
                   </div>
-                  <h3 className="text-xl font-bold text-pebble-darkBlue font-funnel mb-1">
+                  <h3 className="text-xl font-bold text-pebble-darkBlue font-funnel mb-1 tracking-wide">
                     {member.name}
                   </h3>
                   <p className="text-pebble-secondaryText font-fustat">
