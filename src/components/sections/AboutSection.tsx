@@ -134,10 +134,10 @@ const AboutSection: React.FC = () => {
             </div>
           </div>
           
-          <div className="mt-8 flex flex-wrap gap-4 justify-center">
+          <div className="mt-8 flex flex-wrap gap-4 justify-center relative z-10">
             <Button 
               asChild 
-              className="bg-[#101E4E] hover:bg-[#101E4E]/90 text-white rounded-none"
+              className="bg-[#101E4E] hover:bg-[#101E4E]/90 text-white rounded-none relative z-10"
             >
               <Link
                 to="/about"
@@ -151,7 +151,7 @@ const AboutSection: React.FC = () => {
             <Button 
               asChild 
               variant="outline"
-              className="border-[#101E4E] text-[#101E4E] hover:bg-[#101E4E] hover:text-white rounded-none"
+              className="border-[#101E4E] text-[#101E4E] hover:bg-[#101E4E] hover:text-white rounded-none relative z-10"
             >
               <Link
                 to="/about#team"
