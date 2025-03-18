@@ -19,14 +19,9 @@ const Footer: React.FC = () => {
 
           <div className="mb-10">
             <div className="flex flex-wrap justify-center gap-6 mb-8">
-              <FooterLink to="/about">About</FooterLink>
-              <FooterLink to="/services">Features</FooterLink>
-              <FooterLink to="/pricing">Pricing</FooterLink>
-              <FooterLink to="/contact">Contact</FooterLink>
-              <FooterLink to="/blog">Blog</FooterLink>
-              <FooterLink to="/documentation">Documentation</FooterLink>
-              <FooterLink to="/faq">FAQ</FooterLink>
-              <FooterLink to="/support">Support</FooterLink>
+              <AnimatedFooterLink to="/about">About</AnimatedFooterLink>
+              <AnimatedFooterLink to="/contact">Contact</AnimatedFooterLink>
+              <AnimatedFooterLink to="/blog">Blog</AnimatedFooterLink>
             </div>
           </div>
 
@@ -58,7 +53,7 @@ const Footer: React.FC = () => {
 
         <div className="flex flex-col md:flex-row justify-center items-center mt-16 pt-8 border-t border-pebble-taupe border-opacity-20">
           <div className="mb-6 md:mb-0 text-center">
-            <p className="text-sm text-pebble-secondaryText font-fustat">© 2025 Trikonantara. All rights reserved</p>
+            <p className="text-sm text-pebble-secondaryText font-fustat">© 2025 Trikonantara Innovation Technology Private Limited. All rights reserved</p>
           </div>
 
           <div className="flex space-x-6 text-sm text-pebble-secondaryText font-fustat md:ml-8">
@@ -101,6 +96,18 @@ const FooterLink: React.FC<FooterLinkProps> = ({ to, children, external }) => {
       className="text-pebble-secondaryText hover:text-pebble-darkBlue transition-colors duration-300 font-fustat"
     >
       {children}
+    </Link>
+  );
+};
+
+const AnimatedFooterLink: React.FC<FooterLinkProps> = ({ to, children }) => {
+  return (
+    <Link
+      to={to}
+      className="text-pebble-darkBlue relative font-fustat group"
+    >
+      {children}
+      <span className="absolute left-0 bottom-0 w-full h-0.5 bg-pebble-darkBlue scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
     </Link>
   );
 };

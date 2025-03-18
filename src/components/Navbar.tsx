@@ -32,9 +32,16 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between">
           <Link
             to="/"
-            className="text-2xl font-funnel font-bold relative overflow-hidden group text-[#0b2d5f]"
+            className="flex items-center"
           >
-            Trikonantara
+            <img 
+              src="https://raw.githubusercontent.com/Hazenbox/neon-portfolio-cloud/e5e5ddd56922eb766845e1eea4388ba69fd161d0/logo_Trikonantara.png" 
+              alt="Trikonantara Logo" 
+              className="h-8 mr-2" 
+            />
+            <span className="text-2xl font-funnel font-bold relative overflow-hidden group text-[#0b2d5f]">
+              Trikonantara
+            </span>
           </Link>
 
           {/* Desktop Navigation */}

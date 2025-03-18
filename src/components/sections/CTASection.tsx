@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Play, Instagram, Facebook, Linkedin, Twitter, Youtube, Mail } from "lucide-react";
@@ -128,25 +127,18 @@ const CTASection: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 mb-10">
-            <div>
-              <ul className="flex flex-wrap justify-center gap-6">
-                <FooterLink to="/about">About</FooterLink>
-                <FooterLink to="/services">Features</FooterLink>
-                <FooterLink to="/pricing">Pricing</FooterLink>
-                <FooterLink to="/contact">Contact</FooterLink>
-                <FooterLink to="/blog">Blog</FooterLink>
-                <FooterLink to="/documentation">Documentation</FooterLink>
-                <FooterLink to="/faq">FAQ</FooterLink>
-                <FooterLink to="/support">Support</FooterLink>
-              </ul>
-            </div>
+          <div className="mb-10">
+            <ul className="flex justify-center gap-8">
+              <AnimatedFooterLink to="/about">About</AnimatedFooterLink>
+              <AnimatedFooterLink to="/contact">Contact</AnimatedFooterLink>
+              <AnimatedFooterLink to="/blog">Blog</AnimatedFooterLink>
+            </ul>
           </div>
         </div>
 
         <div className="flex flex-col items-center justify-center mt-16 pt-8 border-t border-pebble-offWhite/20">
           <div className="mb-6 text-center">
-            <p className="text-sm text-pebble-offWhite/70 font-fustat">© 2025 Trikonantara. All rights reserved</p>
+            <p className="text-sm text-pebble-offWhite/70 font-fustat">© 2025 Trikonantara Innovation Technology Private Limited. All rights reserved</p>
           </div>
 
           <div className="flex space-x-6 text-sm text-pebble-offWhite/70 font-fustat">
@@ -169,6 +161,7 @@ interface FooterLinkProps {
   external?: boolean;
 }
 
+// Regular FooterLink component (keep it for existing references)
 const FooterLink: React.FC<FooterLinkProps> = ({ to, children, external }) => {
   if (external) {
     return (
@@ -192,6 +185,21 @@ const FooterLink: React.FC<FooterLinkProps> = ({ to, children, external }) => {
         className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300 font-fustat"
       >
         {children}
+      </Link>
+    </li>
+  );
+};
+
+// New animated link component
+const AnimatedFooterLink: React.FC<FooterLinkProps> = ({ to, children }) => {
+  return (
+    <li>
+      <Link
+        to={to}
+        className="text-pebble-offWhite/90 hover:text-pebble-offWhite relative font-fustat group"
+      >
+        {children}
+        <span className="absolute left-0 bottom-0 w-full h-0.5 bg-pebble-offWhite scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
       </Link>
     </li>
   );
