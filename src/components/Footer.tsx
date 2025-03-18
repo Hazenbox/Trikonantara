@@ -6,8 +6,8 @@ import { Instagram, Facebook, Linkedin, Twitter, Youtube, Mail } from "lucide-re
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gradient-to-b from-pebble-cream to-pebble-lightBeige py-16">
-      <div className="container mx-auto px-4 text-center">
-        <div className="flex flex-col items-center">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col items-center text-center">
           <div className="mb-10">
             <h3 className="text-3xl font-bold mb-6 text-pebble-darkBlue">
               Trikonantara
@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
           </div>
 
           <div className="mb-10">
-            <div className="flex justify-center space-x-6 mb-8">
+            <div className="flex flex-wrap justify-center gap-6 mb-8">
               <FooterLink to="/about">About</FooterLink>
               <FooterLink to="/services">Features</FooterLink>
               <FooterLink to="/pricing">Pricing</FooterLink>
@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
                 <Instagram size={20} />
               </a>
             </div>
-            <div className="flex justify-center space-x-6">
+            <div className="flex flex-wrap justify-center gap-6">
               <FooterLink to="https://twitter.com" external>X (Twitter)</FooterLink>
               <FooterLink to="https://linkedin.com" external>LinkedIn</FooterLink>
               <FooterLink to="https://youtube.com" external>YouTube</FooterLink>
@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="flex flex-col md:flex-row justify-center items-center mt-16 pt-8 border-t border-pebble-taupe border-opacity-20">
-          <div className="mb-6 md:mb-0">
+          <div className="mb-6 md:mb-0 text-center">
             <p className="text-sm text-pebble-secondaryText font-fustat">© 2025 Trikonantara. All rights reserved</p>
           </div>
 
