@@ -101,19 +101,19 @@ const ProductsSection: React.FC = () => {
   return (
     <section 
       id={sectionId}
-      className="min-h-screen py-20 relative bg-gradient-to-b from-pebble-lightBeige to-pebble-cream flex items-center opacity-0"
+      className="min-h-screen py-20 relative bg-white flex items-center opacity-0"
     >
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-pebble-blue rounded-full mix-blend-multiply filter blur-[128px] opacity-10"></div>
-        <div className="absolute bottom-1/3 left-1/4 w-80 h-80 bg-pebble-accent rounded-full mix-blend-multiply filter blur-[128px] opacity-10"></div>
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-pebble-blue rounded-full mix-blend-multiply filter blur-[128px] opacity-5"></div>
+        <div className="absolute bottom-1/3 left-1/4 w-80 h-80 bg-pebble-accent rounded-full mix-blend-multiply filter blur-[128px] opacity-5"></div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10 products-container">
         <div className="text-center mb-16 products-heading">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-pebble-darkTaupe products-title">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-black products-title">
             Our Flagship Product
           </h2>
-          <p className="text-lg text-pebble-secondaryText max-w-2xl mx-auto products-intro">
+          <p className="text-lg text-black max-w-2xl mx-auto products-intro">
             Discover our innovative technology solutions designed to transform industries through immersive experiences.
           </p>
         </div>

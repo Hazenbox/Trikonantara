@@ -10,17 +10,17 @@ const Services = () => {
   useRevealAnimation(".reveal-element");
 
   return (
-    <div className="bg-pebble-cream min-h-screen">
+    <div className="bg-white min-h-screen">
       <CustomCursor />
       <Navbar />
       
       <main className="pt-24 pb-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-8 reveal-element text-pebble-darkBlue">
+            <h1 className="text-4xl md:text-5xl font-bold mb-8 reveal-element text-black">
               Our Services
             </h1>
-            <p className="text-xl text-pebble-secondaryText reveal-element">
+            <p className="text-xl text-black reveal-element">
               Making Cutting-Edge Technology Accessible to All. We bring Augmented Reality (AR) and Virtual Reality (VR) to life, offering immersive experiences that redefine digital interaction.
             </p>
           </div>
