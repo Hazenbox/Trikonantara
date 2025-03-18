@@ -1,51 +1,60 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import { useGSAP } from "../../hooks/useGSAP";
+import gsap from "gsap";
 
 const HeroSection: React.FC = () => {
-  // Hero section reference for GSAP animations
-  const heroRef = useGSAP((gsap, scrollTrigger) => {
-    // Hero text animations
-    gsap.from(".hero-title span", {
-      opacity: 0,
-      y: 100,
-      stagger: 0.1,
-      duration: 1,
-      ease: "power3.out",
+  const sectionId = "hero-section";
+
+  useEffect(() => {
+    // Wait for the DOM to be ready
+    const ctx = gsap.context(() => {
+      // Hero text animations
+      gsap.from(".hero-title span", {
+        opacity: 0,
+        y: 100,
+        stagger: 0.1,
+        duration: 1,
+        ease: "power3.out",
+      });
+
+      gsap.from(".hero-subtitle", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        delay: 0.5,
+        ease: "power3.out",
+      });
+
+      gsap.from(".hero-button", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        delay: 0.8,
+        ease: "power3.out",
+      });
+
+      // Marquee animation
+      gsap.to(".marquee-wrapper", {
+        xPercent: -50,
+        ease: "none",
+        duration: 30,
+        repeat: -1,
+      });
+      
+      // Section entry/exit animations
+      gsap.to(`#${sectionId}`, {
+        opacity: 1,
+        duration: 1.2,
+        delay: 0.2,
+      });
     });
 
-    gsap.from(".hero-subtitle", {
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      delay: 0.5,
-      ease: "power3.out",
-    });
-
-    gsap.from(".hero-button", {
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      delay: 0.8,
-      ease: "power3.out",
-    });
-
-    // Marquee animation
-    gsap.to(".marquee-wrapper", {
-      xPercent: -50,
-      ease: "none",
-      duration: 30,
-      repeat: -1,
-    });
-    
-    // Section entry/exit animations
-    gsap.to(".hero-section", {
-      opacity: 1,
-      duration: 1.2,
-      delay: 0.2,
-    });
+    return () => {
+      // Clean up
+      ctx.revert();
+    };
   }, []);
 
   // Split text animation helper
@@ -68,8 +77,8 @@ const HeroSection: React.FC = () => {
 
   return (
     <section
-      ref={heroRef}
-      className="hero-section min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-b from-pebble-olive to-pebble-darkTaupe opacity-0"
+      id={sectionId}
+      className="min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-b from-pebble-olive to-pebble-darkTaupe opacity-0"
     >
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-pebble-olive opacity-95"></div>

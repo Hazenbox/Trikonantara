@@ -1,39 +1,56 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Play } from "lucide-react";
-import { useGSAP } from "../../hooks/useGSAP";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 const CTASection: React.FC = () => {
-  const ctaRef = useGSAP((gsap, scrollTrigger) => {
-    // Section entry/exit animations
-    gsap.to(".cta-section", {
-      opacity: 1,
-      duration: 1.2,
-      scrollTrigger: {
-        trigger: ".cta-section",
-        start: "top bottom",
-        end: "bottom top",
-        toggleActions: "play none none reverse",
-      },
+  const sectionId = "cta-section";
+  
+  useEffect(() => {
+    // Wait for the DOM to be ready
+    const ctx = gsap.context(() => {
+      // Section entry/exit animations with a delayed start to ensure the element exists
+      gsap.to(`#${sectionId}`, {
+        opacity: 1,
+        duration: 1.2,
+        scrollTrigger: {
+          trigger: `#${sectionId}`,
+          start: "top bottom",
+          end: "bottom top",
+          toggleActions: "play none none reverse",
+        },
+      });
+      
+      // Content animations
+      gsap.from(".cta-content", {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".cta-content",
+          start: "top 80%",
+          end: "top 60%",
+          scrub: 1,
+        },
+      });
     });
     
-    // Content animations
-    gsap.from(".cta-content", {
-      y: 50,
-      opacity: 0,
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".cta-content",
-        start: "top 80%",
-        end: "top 60%",
-        scrub: 1,
-      },
-    });
+    return () => {
+      // Clean up
+      ctx.revert();
+    };
   }, []);
 
   return (
-    <section ref={ctaRef} className="cta-section min-h-screen relative overflow-hidden py-32 flex items-center bg-gradient-to-b from-pebble-lightBeige to-pebble-taupe opacity-0">
+    <section 
+      id={sectionId}
+      className="min-h-screen relative overflow-hidden py-32 flex items-center bg-gradient-to-b from-pebble-lightBeige to-pebble-taupe opacity-0"
+    >
       <div className="container mx-auto px-4 relative">
         <div className="max-w-4xl mx-auto bg-pebble-beige rounded-xl shadow-lg shadow-pebble-taupe/20 p-16 relative overflow-hidden cta-content">
           <div className="flex flex-col md:flex-row justify-between items-center">

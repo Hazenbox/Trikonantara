@@ -1,71 +1,108 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import ServiceCard from "../ServiceCard";
-import { useGSAP, useSplitTextAnimation } from "../../hooks/useGSAP";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Register ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
 
 const ServicesSection: React.FC = () => {
-  // Apply split text animation
-  useSplitTextAnimation(".services-title");
+  const sectionId = "services-section";
 
-  // GSAP animations
-  const servicesRef = useGSAP((gsap, scrollTrigger) => {
-    // Section title fade in
-    gsap.from(".services-heading", {
-      y: 30,
-      opacity: 0,
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".services-container",
-        start: "top 85%",
-        end: "top 40%",
-        scrub: 1,
-      },
-    });
-    
-    // Left column fade in
-    gsap.from(".services-intro", {
-      y: 50,
-      opacity: 0,
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".services-container",
-        start: "top 85%",
-        end: "top 40%",
-        scrub: 1,
-      },
-    });
-    
-    // Cards staggered animation with better fade effect
-    gsap.from(".service-card-wrapper", {
-      y: 60,
-      opacity: 0,
-      stagger: 0.3,
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".services-cards",
-        start: "top 80%",
-        end: "top 30%",
-        scrub: 1,
-      },
+  useEffect(() => {
+    // Wait for the DOM to be ready
+    const ctx = gsap.context(() => {
+      // Split text animation for the title
+      const headings = document.querySelectorAll(".services-title");
+      headings.forEach((el) => {
+        const text = el.textContent || "";
+        const words = text.split(' ');
+        el.innerHTML = '';
+        
+        words.forEach((word) => {
+          const wordSpan = document.createElement('span');
+          wordSpan.className = 'inline-block opacity-0 transform translate-y-[20px]';
+          wordSpan.textContent = word + ' ';
+          el.appendChild(wordSpan);
+        });
+        
+        gsap.to(el.querySelectorAll('span'), {
+          y: 0,
+          opacity: 1,
+          stagger: 0.05,
+          duration: 0.5,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+          },
+        });
+      });
+
+      // Section title fade in
+      gsap.from(".services-heading", {
+        y: 30,
+        opacity: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".services-container",
+          start: "top 85%",
+          end: "top 40%",
+          scrub: 1,
+        },
+      });
+      
+      // Left column fade in
+      gsap.from(".services-intro", {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".services-container",
+          start: "top 85%",
+          end: "top 40%",
+          scrub: 1,
+        },
+      });
+      
+      // Cards staggered animation with better fade effect
+      gsap.from(".service-card-wrapper", {
+        y: 60,
+        opacity: 0,
+        stagger: 0.3,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".services-cards",
+          start: "top 80%",
+          end: "top 30%",
+          scrub: 1,
+        },
+      });
+
+      // Section entry/exit animations
+      gsap.to(`#${sectionId}`, {
+        opacity: 1,
+        duration: 1.2,
+        scrollTrigger: {
+          trigger: `#${sectionId}`,
+          start: "top bottom",
+          end: "bottom top",
+          toggleActions: "play none none reverse",
+        },
+      });
     });
 
-    // Section entry/exit animations
-    gsap.to(".services-section", {
-      opacity: 1,
-      duration: 1.2,
-      scrollTrigger: {
-        trigger: ".services-section",
-        start: "top bottom",
-        end: "bottom top",
-        toggleActions: "play none none reverse",
-      },
-    });
+    return () => {
+      // Clean up
+      ctx.revert();
+    };
   }, []);
 
   return (
     <section 
-      ref={servicesRef}
-      className="services-section min-h-screen py-20 relative bg-gradient-to-b from-pebble-cream to-pebble-lightBeige flex items-center opacity-0"
+      id={sectionId}
+      className="min-h-screen py-20 relative bg-gradient-to-b from-pebble-cream to-pebble-lightBeige flex items-center opacity-0"
     >
       <div className="absolute inset-0 z-0">
         <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-pebble-taupe rounded-full mix-blend-multiply filter blur-[128px] opacity-10"></div>

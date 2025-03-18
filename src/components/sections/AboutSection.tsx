@@ -1,74 +1,124 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useGSAP, useImageParallax, useSplitTextAnimation } from "../../hooks/useGSAP";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Register ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
 
 const AboutSection: React.FC = () => {
-  // Apply split text animation for headings
-  useSplitTextAnimation(".split-text");
-  
-  // Apply parallax effect to the image
-  useImageParallax(".about-image");
+  const sectionId = "about-section";
 
-  const aboutRef = useGSAP((gsap, scrollTrigger) => {
-    // Left column fade in
-    gsap.from(".about-left-col", {
-      x: -50,
-      opacity: 0,
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".about-container",
-        start: "top 80%",
-        end: "top 30%",
-        scrub: 1,
-      },
-    });
-    
-    // Right column fade in
-    gsap.from(".about-right-col", {
-      x: 50,
-      opacity: 0,
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".about-container",
-        start: "top 80%",
-        end: "top 30%",
-        scrub: 1,
-      },
-    });
-    
-    // Text fade in animations
-    gsap.from(".about-text", {
-      y: 30,
-      opacity: 0,
-      stagger: 0.2,
-      duration: 0.8,
-      scrollTrigger: {
-        trigger: ".about-text-wrapper",
-        start: "top 80%",
-        end: "top 60%",
-        scrub: 1,
-      },
+  useEffect(() => {
+    // Wait for the DOM to be ready
+    const ctx = gsap.context(() => {
+      // Split text animation
+      const headings = document.querySelectorAll(".split-text");
+      headings.forEach((el) => {
+        const text = el.textContent || "";
+        const words = text.split(' ');
+        el.innerHTML = '';
+        
+        words.forEach((word) => {
+          const wordSpan = document.createElement('span');
+          wordSpan.className = 'inline-block opacity-0 transform translate-y-[20px]';
+          wordSpan.textContent = word + ' ';
+          el.appendChild(wordSpan);
+        });
+        
+        gsap.to(el.querySelectorAll('span'), {
+          y: 0,
+          opacity: 1,
+          stagger: 0.05,
+          duration: 0.5,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+          },
+        });
+      });
+
+      // Apply parallax effect to the image
+      gsap.fromTo(
+        ".about-image",
+        { y: 30 },
+        {
+          y: -30,
+          scrollTrigger: {
+            trigger: ".about-image",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1,
+          },
+        }
+      );
+
+      // Left column fade in
+      gsap.from(".about-left-col", {
+        x: -50,
+        opacity: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".about-container",
+          start: "top 80%",
+          end: "top 30%",
+          scrub: 1,
+        },
+      });
+      
+      // Right column fade in
+      gsap.from(".about-right-col", {
+        x: 50,
+        opacity: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".about-container",
+          start: "top 80%",
+          end: "top 30%",
+          scrub: 1,
+        },
+      });
+      
+      // Text fade in animations
+      gsap.from(".about-text", {
+        y: 30,
+        opacity: 0,
+        stagger: 0.2,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: ".about-text-wrapper",
+          start: "top 80%",
+          end: "top 60%",
+          scrub: 1,
+        },
+      });
+
+      // Section entry/exit animations
+      gsap.to(`#${sectionId}`, {
+        opacity: 1,
+        duration: 1.2,
+        scrollTrigger: {
+          trigger: `#${sectionId}`,
+          start: "top bottom",
+          end: "bottom top",
+          toggleActions: "play none none reverse",
+        },
+      });
     });
 
-    // Section entry/exit animations
-    gsap.to(".about-section", {
-      opacity: 1,
-      duration: 1.2,
-      scrollTrigger: {
-        trigger: ".about-section",
-        start: "top bottom",
-        end: "bottom top",
-        toggleActions: "play none none reverse",
-      },
-    });
+    return () => {
+      // Clean up
+      ctx.revert();
+    };
   }, []);
 
   return (
     <section 
-      ref={aboutRef}
-      className="about-section min-h-screen py-20 relative bg-pebble-cream flex items-center opacity-0"
+      id={sectionId}
+      className="min-h-screen py-20 relative bg-pebble-cream flex items-center opacity-0"
     >
       <div className="absolute top-1/4 -left-24 w-96 h-96 bg-pebble-taupe rounded-full mix-blend-multiply filter blur-[128px] opacity-10 animate-float"></div>
       <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-pebble-darkTaupe rounded-full mix-blend-multiply filter blur-[128px] opacity-10 animate-float" style={{ animationDelay: "-2s" }}></div>

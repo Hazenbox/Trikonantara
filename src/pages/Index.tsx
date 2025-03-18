@@ -2,7 +2,6 @@
 import React, { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRevealAnimation, useParallaxEffect } from "../hooks/useGSAP";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CustomCursor from "../components/CustomCursor";
@@ -15,18 +14,28 @@ import CTASection from "../components/sections/CTASection";
 gsap.registerPlugin(ScrollTrigger);
 
 const Index: React.FC = () => {
-  // Animation hooks
-  useRevealAnimation(".reveal-element");
-  useParallaxEffect(".parallax-bg", 0.3);
+  useEffect(() => {
+    // Refresh ScrollTrigger on component mount to ensure all elements are detected
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 100);
+
+    return () => {
+      // Clean up all ScrollTrigger instances on component unmount
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill(false));
+    };
+  }, []);
 
   return (
     <div className="bg-white min-h-screen">
       <CustomCursor />
       <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <ServicesSection />
-      <CTASection />
+      <main>
+        <HeroSection />
+        <AboutSection />
+        <ServicesSection />
+        <CTASection />
+      </main>
       <Footer />
     </div>
   );
