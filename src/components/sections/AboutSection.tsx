@@ -2,10 +2,16 @@
 import React, { useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useGSAP } from "../../hooks/useGSAP";
+import { useGSAP, useImageParallax, useSplitTextAnimation } from "../../hooks/useGSAP";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 const AboutSection: React.FC = () => {
+  // Apply split text animation for headings
+  useSplitTextAnimation(".split-text");
+  
+  // Apply parallax effect to the image
+  useImageParallax(".about-image");
+
   const aboutRef = useGSAP((gsap, scrollTrigger) => {
     // Left column fade in
     gsap.from(".about-left-col", {
@@ -33,16 +39,16 @@ const AboutSection: React.FC = () => {
       },
     });
     
-    // Card animations
-    gsap.from(".about-card", {
-      y: 50,
+    // Text fade in animations
+    gsap.from(".about-text", {
+      y: 30,
       opacity: 0,
       stagger: 0.2,
       duration: 0.8,
       scrollTrigger: {
-        trigger: ".about-cards",
+        trigger: ".about-text-wrapper",
         start: "top 80%",
-        end: "top 50%",
+        end: "top 60%",
         scrub: 1,
       },
     });
@@ -57,21 +63,21 @@ const AboutSection: React.FC = () => {
       <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-pebble-darkTaupe rounded-full mix-blend-multiply filter blur-[128px] opacity-10 animate-float" style={{ animationDelay: "-2s" }}></div>
       
       <div className="container mx-auto px-4 about-container">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center">
-          <div className="about-left-col">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-pebble-darkBlue font-funnel">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-center">
+          {/* Left Column - Text Content */}
+          <div className="about-left-col md:col-span-5">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-pebble-darkBlue font-funnel split-text">
               About Trikonantara
             </h2>
-            <div className="h-0.5 w-20 bg-pebble-taupe mb-8"></div>
             
-            <ScrollArea className="h-[280px] md:h-auto">
-              <p className="text-lg text-pebble-secondaryText font-fustat mb-6">
-                At Trikonantara Innovation Technology Pvt. Ltd., we are driven by a singular passion: to redefine how people experience and interact with the world through the transformative power of Augmented Reality (AR) and Virtual Reality (VR).
+            <div className="about-text-wrapper">
+              <p className="text-lg text-pebble-secondaryText font-fustat mb-6 about-text">
+                We redefine how people experience the world through pioneering AR and VR technology.
               </p>
-              <p className="text-lg text-pebble-secondaryText font-fustat">
-                As pioneers in immersive technology, we craft innovative solutions that elevate industries like gaming, education, healthcare, and entertainment. Our team of visionary engineers, creators, and developers work tirelessly to bridge the gap between imagination and reality, delivering cutting-edge experiences that not only push boundaries but transform industries.
+              <p className="text-lg text-pebble-secondaryText font-fustat about-text">
+                Our visionary team bridges imagination and reality, delivering transformative experiences across gaming, education, healthcare, and entertainment.
               </p>
-            </ScrollArea>
+            </div>
             
             <div className="mt-8">
               <Link
@@ -84,25 +90,34 @@ const AboutSection: React.FC = () => {
             </div>
           </div>
           
-          <div className="about-right-col mt-10 md:mt-0">
-            <div className="grid grid-cols-1 gap-6 about-cards">
-              <div className="about-card bg-pebble-offWhite p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+          {/* Right Column - Image and Cards */}
+          <div className="about-right-col md:col-span-7">
+            <div className="rounded-xl overflow-hidden shadow-lg mb-8">
+              <div className="overflow-hidden">
+                <img 
+                  src="public/lovable-uploads/2f679cde-6ad1-4d93-8c27-d7e90ae3b829.png" 
+                  alt="AR/VR Experience" 
+                  className="w-full h-auto about-image object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-pebble-offWhite p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
                 <h3 className="text-xl font-bold mb-4 text-pebble-darkBlue font-funnel">
                   Mission
                 </h3>
-                <div className="h-0.5 w-16 bg-pebble-taupe mb-6"></div>
                 <p className="text-pebble-secondaryText font-fustat">
-                  Our mission is to leverage the power of AR/VR technologies to create immersive, innovative solutions that empower businesses and individuals. By transforming how we perceive and engage with the world, we strive to drive progress across diverse industries—gaming, education, healthcare, and beyond.
+                  To leverage AR/VR technologies to create immersive solutions that empower businesses and transform industries.
                 </p>
               </div>
               
-              <div className="about-card bg-pebble-offWhite p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div className="bg-pebble-offWhite p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
                 <h3 className="text-xl font-bold mb-4 text-pebble-darkBlue font-funnel">
                   Vision
                 </h3>
-                <div className="h-0.5 w-16 bg-pebble-taupe mb-6"></div>
                 <p className="text-pebble-secondaryText font-fustat">
-                  "To become a global leader in AR/VR innovation, shaping a future where immersive technologies enrich lives, redefine industries, and inspire new possibilities. We envision a world where boundaries between the digital and physical realms dissolve, enabling endless creativity, seamless connectivity, and transformative experiences for all."
+                  To lead AR/VR innovation, shaping a future where immersive technologies dissolve boundaries between digital and physical realms.
                 </p>
               </div>
             </div>

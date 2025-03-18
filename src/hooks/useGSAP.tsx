@@ -53,6 +53,41 @@ export const useRevealAnimation = (elements: string, start: string = "top 80%") 
   }, [elements, start]);
 };
 
+export const useSplitTextAnimation = (selector: string) => {
+  useEffect(() => {
+    const elements = gsap.utils.toArray(selector);
+    
+    elements.forEach((el: any) => {
+      const text = el.textContent;
+      const words = text.split(' ');
+      el.innerHTML = '';
+      
+      words.forEach((word: string) => {
+        const wordSpan = document.createElement('span');
+        wordSpan.className = 'inline-block opacity-0 transform translate-y-[20px]';
+        wordSpan.textContent = word + ' ';
+        el.appendChild(wordSpan);
+      });
+      
+      gsap.to(el.querySelectorAll('span'), {
+        y: 0,
+        opacity: 1,
+        stagger: 0.05,
+        duration: 0.5,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 85%",
+        },
+      });
+    });
+    
+    return () => {
+      ScrollTrigger.getAll().forEach(t => t.kill());
+    };
+  }, [selector]);
+};
+
 export const useParallaxEffect = (element: string, strength: number = 0.5) => {
   useEffect(() => {
     const parallaxElements = gsap.utils.toArray(element);
@@ -74,6 +109,59 @@ export const useParallaxEffect = (element: string, strength: number = 0.5) => {
       ScrollTrigger.getAll().forEach(t => t.kill());
     };
   }, [element, strength]);
+};
+
+export const useImageParallax = (element: string) => {
+  useEffect(() => {
+    const images = gsap.utils.toArray(element);
+    
+    images.forEach((img: any) => {
+      gsap.fromTo(
+        img,
+        { y: 30 },
+        {
+          y: -30,
+          scrollTrigger: {
+            trigger: img,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1,
+          },
+        }
+      );
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach(t => t.kill());
+    };
+  }, [element]);
+};
+
+export const useSmoothScroll = (wrapper: string, content: string) => {
+  useEffect(() => {
+    const scrollWrapper = document.querySelector(wrapper);
+    const scrollContent = document.querySelector(content);
+    
+    if (scrollWrapper && scrollContent) {
+      const height = scrollContent.getBoundingClientRect().height - window.innerHeight;
+      
+      gsap.to(scrollContent, {
+        y: -height,
+        ease: "none",
+        scrollTrigger: {
+          trigger: scrollWrapper,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 1,
+          invalidateOnRefresh: true,
+        },
+      });
+    }
+    
+    return () => {
+      ScrollTrigger.getAll().forEach(t => t.kill());
+    };
+  }, [wrapper, content]);
 };
 
 export const useHorizontalScroll = (trigger: string, elements: string) => {

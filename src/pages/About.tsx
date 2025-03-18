@@ -2,9 +2,8 @@
 import React, { useRef } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { useGSAP, useRevealAnimation, useParallaxEffect } from "../hooks/useGSAP";
+import { useGSAP, useRevealAnimation, useParallaxEffect, useImageParallax, useSplitTextAnimation } from "../hooks/useGSAP";
 import CustomCursor from "../components/CustomCursor";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -15,6 +14,12 @@ const About = () => {
   // Parallax effect for background elements
   useParallaxEffect(".parallax-bg", 0.2);
   
+  // Apply split text animation for headings
+  useSplitTextAnimation(".split-text");
+  
+  // Apply parallax effect to images
+  useImageParallax(".parallax-image");
+  
   // Advanced GSAP animations
   const pageRef = useGSAP((gsap, scrollTrigger) => {
     // Header text animation
@@ -23,6 +28,31 @@ const About = () => {
       opacity: 0,
       duration: 1,
       ease: "power3.out",
+    });
+    
+    // Content columns animation
+    gsap.from(".content-left", {
+      x: -50,
+      opacity: 0,
+      duration: 0.8,
+      scrollTrigger: {
+        trigger: ".content-section",
+        start: "top 70%",
+        end: "top 40%",
+        scrub: 1,
+      },
+    });
+    
+    gsap.from(".content-right", {
+      x: 50,
+      opacity: 0,
+      duration: 0.8,
+      scrollTrigger: {
+        trigger: ".content-section",
+        start: "top 70%",
+        end: "top 40%",
+        scrub: 1,
+      },
     });
     
     // Card staggered animations
@@ -80,33 +110,33 @@ const About = () => {
         {/* Header Section */}
         <div className="container mx-auto px-4 mb-20">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-pebble-darkBlue font-funnel header-title">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-pebble-darkBlue font-funnel header-title split-text">
               About Trikonantara
             </h1>
-            <div className="h-0.5 w-40 bg-pebble-taupe mx-auto mb-12 section-divider"></div>
+            <div className="h-1 w-20 bg-pebble-taupe mx-auto mb-12 section-divider"></div>
           </div>
         </div>
         
         {/* Main Content Section */}
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start mb-20">
+        <div className="container mx-auto px-4 content-section">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-16 items-start mb-20">
             {/* Left Column - About Content */}
-            <div className="about-content">
-              <h2 className="text-2xl md:text-3xl font-bold mb-8 text-pebble-darkBlue font-funnel reveal-element">
+            <div className="about-content content-left md:col-span-5">
+              <h2 className="text-2xl md:text-3xl font-bold mb-8 text-pebble-darkBlue font-funnel reveal-element split-text">
                 Our Story
               </h2>
               
               <div className="space-y-6">
-                <p className="text-lg text-pebble-secondaryText font-fustat about-paragraph reveal-element">
-                  At Trikonantara Innovation Technology Pvt. Ltd., we are driven by a singular passion: to redefine how people experience and interact with the world through the transformative power of Augmented Reality (AR) and Virtual Reality (VR).
+                <p className="text-lg text-pebble-secondaryText font-fustat about-paragraph">
+                  At Trikonantara, we're driven by a passion to redefine digital interaction through AR and VR technology.
                 </p>
                 
-                <p className="text-lg text-pebble-secondaryText font-fustat about-paragraph reveal-element">
-                  As pioneers in immersive technology, we craft innovative solutions that elevate industries like gaming, education, healthcare, and entertainment.
+                <p className="text-lg text-pebble-secondaryText font-fustat about-paragraph">
+                  As pioneers in immersive experiences, we elevate industries from gaming to healthcare with cutting-edge innovation.
                 </p>
                 
-                <p className="text-lg text-pebble-secondaryText font-fustat about-paragraph reveal-element">
-                  Our team of visionary engineers, creators, and developers work tirelessly to bridge the gap between imagination and reality, delivering cutting-edge experiences that not only push boundaries but transform industries. gaming, education, entertainment, and more.
+                <p className="text-lg text-pebble-secondaryText font-fustat about-paragraph">
+                  Our visionary team bridges imagination and reality, creating transformative experiences that push boundaries and reshape industries.
                 </p>
               </div>
               
@@ -121,19 +151,23 @@ const About = () => {
               </div>
             </div>
             
-            {/* Right Column - Image or Placeholder */}
-            <div className="bg-pebble-offWhite rounded-xl overflow-hidden shadow-md h-full reveal-element">
-              <img 
-                src="public/lovable-uploads/789b56f2-093e-4961-a436-b091c1f2a2ca.png" 
-                alt="About Trikonantara" 
-                className="w-full h-auto object-cover"
-              />
+            {/* Right Column - Image */}
+            <div className="content-right md:col-span-7">
+              <div className="bg-pebble-offWhite rounded-xl overflow-hidden shadow-md">
+                <div className="overflow-hidden">
+                  <img 
+                    src="public/lovable-uploads/789b56f2-093e-4961-a436-b091c1f2a2ca.png" 
+                    alt="About Trikonantara" 
+                    className="w-full h-auto object-cover parallax-image transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+              </div>
             </div>
           </div>
           
           {/* Mission & Vision Section */}
           <div className="max-w-5xl mx-auto mission-vision-section">
-            <h2 className="text-2xl md:text-3xl font-bold mb-12 text-pebble-darkBlue font-funnel text-center reveal-element">
+            <h2 className="text-2xl md:text-3xl font-bold mb-12 text-pebble-darkBlue font-funnel text-center reveal-element split-text">
               Mission & Vision
             </h2>
             
@@ -142,24 +176,18 @@ const About = () => {
                 <h3 className="text-xl font-bold mb-4 text-pebble-darkBlue font-funnel">
                   Mission
                 </h3>
-                <div className="h-0.5 w-16 bg-pebble-taupe mb-6"></div>
-                <ScrollArea className="h-[300px] pr-4">
-                  <p className="text-pebble-secondaryText font-fustat">
-                    Our mission is to leverage the power of AR/VR technologies to create immersive, innovative solutions that empower businesses and individuals. By transforming how we perceive and engage with the world, we strive to drive progress across diverse industries—gaming, education, healthcare, and beyond. Our goal is to make the impossible possible by bridging the gap between imagination and technology, fostering creativity, and unlocking new possibilities for all.
-                  </p>
-                </ScrollArea>
+                <p className="text-pebble-secondaryText font-fustat">
+                  To leverage AR/VR technologies to create immersive solutions that empower businesses and individuals, driving innovation across gaming, education, healthcare, and beyond.
+                </p>
               </div>
               
               <div className="mission-vision-card bg-pebble-offWhite p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
                 <h3 className="text-xl font-bold mb-4 text-pebble-darkBlue font-funnel">
                   Vision
                 </h3>
-                <div className="h-0.5 w-16 bg-pebble-taupe mb-6"></div>
-                <ScrollArea className="h-[300px] pr-4">
-                  <p className="text-pebble-secondaryText font-fustat">
-                    "To become a global leader in AR/VR innovation, shaping a future where immersive technologies enrich lives, redefine industries, and inspire new possibilities. We envision a world where boundaries between the digital and physical realms dissolve, enabling endless creativity, seamless connectivity, and transformative experiences for all."
-                  </p>
-                </ScrollArea>
+                <p className="text-pebble-secondaryText font-fustat">
+                  To lead global AR/VR innovation, shaping a future where immersive technologies dissolve boundaries between digital and physical realms, enabling endless creativity and transformative experiences.
+                </p>
               </div>
             </div>
           </div>
