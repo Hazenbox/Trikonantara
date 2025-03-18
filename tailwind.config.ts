@@ -59,6 +59,14 @@ export default {
           purple: "#9d00ff"
         },
         dark: "#121212",
+        lightblue: {
+          100: "#D3E4FD",
+          200: "#A7C8FB",
+          300: "#7BACF9",
+          400: "#4F90F7",
+          500: "#1EAEDB",
+          600: "#33C3F0",
+        },
         sidebar: {
           DEFAULT: 'hsl(var(--sidebar-background))',
           foreground: 'hsl(var(--sidebar-foreground))',
@@ -125,7 +133,8 @@ export default {
         'float': 'float 6s ease-in-out infinite'
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif']
+        sans: ['Inter', 'sans-serif'],
+        funnel: ['Funnel Display', 'sans-serif']
       }
     }
   },
