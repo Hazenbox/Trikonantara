@@ -101,7 +101,7 @@ const ProductsSection: React.FC = () => {
   return (
     <section 
       id={sectionId}
-      className="min-h-screen py-20 relative bg-white flex items-center opacity-0"
+      className="min-h-screen py-20 relative bg-gradient-to-b from-white to-[#D3E4FD] flex items-center opacity-0"
     >
       <div className="absolute inset-0 z-0">
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-pebble-blue rounded-full mix-blend-multiply filter blur-[128px] opacity-5"></div>
@@ -122,7 +122,7 @@ const ProductsSection: React.FC = () => {
           <PixelCard
             title="Bharat VR - Our Flagship Product"
             description="An immersive virtual reality platform designed to showcase India's cultural heritage and historical landmarks through interactive 3D environments."
-            imageSrc="/lovable-uploads/92d0a951-cc14-48c7-8df2-ac34ad8df4f9.png"
+            imageSrc="/lovable-uploads/48b1e3ce-5061-4ff9-baaf-4ec0ba8a63ec.png"
             footerText="Experience India like never before"
             className="bg-gradient-to-br from-pebble-offWhite to-pebble-lightBlue border-pebble-lightBeige shadow-lg"
             link="/products/bharat-vr"

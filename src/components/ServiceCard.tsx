@@ -69,7 +69,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, path, typ
   return (
     <div 
       ref={cardRef}
-      className="bg-pebble-cream bg-opacity-90 backdrop-blur-sm border border-pebble-lightBeige rounded-xl p-6 hover:border-pebble-taupe transition-colors duration-300 transform-gpu shadow-md hover:shadow-lg"
+      className="bg-white border border-pebble-lightBeige rounded-xl p-6 hover:border-pebble-taupe transition-colors duration-300 transform-gpu shadow-md hover:shadow-lg"
     >
       <div className="mb-4 rounded-full w-12 h-12 flex items-center justify-center bg-pebble-lightBeige">
         {renderIcon()}

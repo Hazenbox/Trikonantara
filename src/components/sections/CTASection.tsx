@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Instagram, Facebook, Linkedin, Twitter, Youtube, Mail } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Button } from "../ui/button";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -78,12 +79,15 @@ const CTASection: React.FC = () => {
                 risk and automatically execute buy and sell orders.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center bg-white text-[#101E4E] py-3 px-6 rounded-md transition-colors duration-300 hover:bg-gray-100"
+                <Button 
+                  asChild 
+                  variant="default" 
+                  className="bg-white text-[#101E4E] hover:bg-gray-100"
                 >
-                  Get started <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
+                  <Link to="/contact" className="inline-flex items-center">
+                    Get started <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
               </div>
             </div>
           </div>
@@ -96,7 +100,7 @@ const CTASection: React.FC = () => {
         </div>
       </div>
       
-      {/* Footer Content - Center-aligned with darker text and reduced spacing */}
+      {/* Footer Content */}
       <div className="container mx-auto px-4 footer-content mt-12 text-center">
         <div className="flex flex-col items-center justify-center">
           <div className="mb-6 text-center">

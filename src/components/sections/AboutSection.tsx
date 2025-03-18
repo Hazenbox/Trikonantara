@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Button } from "../ui/button";
 
 // Register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
@@ -118,7 +119,7 @@ const AboutSection: React.FC = () => {
   return (
     <section 
       id={sectionId}
-      className="min-h-screen py-20 relative bg-white flex items-center opacity-0"
+      className="min-h-screen py-20 relative bg-gradient-to-b from-white to-[#D3E4FD] flex items-center opacity-0"
     >
       <div className="absolute top-1/4 -left-24 w-96 h-96 bg-pebble-taupe rounded-full mix-blend-multiply filter blur-[128px] opacity-5 animate-float"></div>
       <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-pebble-darkTaupe rounded-full mix-blend-multiply filter blur-[128px] opacity-5 animate-float" style={{ animationDelay: "-2s" }}></div>
@@ -141,13 +142,18 @@ const AboutSection: React.FC = () => {
             </div>
             
             <div className="mt-8">
-              <Link
-                to="/about"
-                className="inline-flex items-center bg-pebble-darkTaupe hover:bg-pebble-charcoal text-pebble-cream py-3 px-8 rounded-full transition-colors duration-300 shadow-lg shadow-pebble-charcoal/20"
+              <Button 
+                asChild 
+                className="bg-[#1EAEDB] hover:bg-[#0FA0CE] text-white"
               >
-                Explore Our Story
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+                <Link
+                  to="/about"
+                  className="inline-flex items-center"
+                >
+                  Explore Our Story
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
             </div>
           </div>
           

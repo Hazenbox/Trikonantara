@@ -102,7 +102,7 @@ const ServicesSection: React.FC = () => {
   return (
     <section 
       id={sectionId}
-      className="min-h-screen py-20 relative bg-white flex items-center opacity-0"
+      className="min-h-screen py-20 relative bg-gradient-to-b from-white to-[#D3E4FD] flex items-center opacity-0"
     >
       <div className="absolute inset-0 z-0">
         <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-pebble-taupe rounded-full mix-blend-multiply filter blur-[128px] opacity-5"></div>
