@@ -98,3 +98,41 @@ export const useHorizontalScroll = (trigger: string, elements: string) => {
     };
   }, [trigger, elements]);
 };
+
+export const useStaggeredTextReveal = (selector: string, delay: number = 0) => {
+  useEffect(() => {
+    const elements = gsap.utils.toArray(selector);
+    
+    elements.forEach((el: any) => {
+      // Split text into words
+      const text = el.textContent;
+      el.textContent = '';
+      
+      const words = text.split(' ');
+      words.forEach((word: string) => {
+        const wordSpan = document.createElement('span');
+        wordSpan.className = 'inline-block opacity-0';
+        wordSpan.textContent = word + ' ';
+        el.appendChild(wordSpan);
+      });
+      
+      // Animate each word
+      gsap.to(el.querySelectorAll('span'), {
+        opacity: 1,
+        y: 0,
+        stagger: 0.05,
+        delay,
+        duration: 0.5,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 90%",
+        },
+      });
+    });
+    
+    return () => {
+      ScrollTrigger.getAll().forEach(t => t.kill());
+    };
+  }, [selector, delay]);
+};
