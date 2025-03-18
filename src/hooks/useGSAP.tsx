@@ -78,16 +78,20 @@ export const useParallaxEffect = (element: string, strength: number = 0.5) => {
 
 export const useHorizontalScroll = (trigger: string, elements: string) => {
   useEffect(() => {
-    gsap.to(elements, {
-      xPercent: -100 * (document.querySelectorAll(elements).length - 1),
-      ease: "none",
-      scrollTrigger: {
-        trigger: trigger,
-        pin: true,
-        scrub: 1,
-        end: () => "+=" + document.querySelector(trigger)?.offsetWidth,
-      },
-    });
+    const triggerElement = document.querySelector(trigger);
+    
+    if (triggerElement) {
+      gsap.to(elements, {
+        xPercent: -100 * (document.querySelectorAll(elements).length - 1),
+        ease: "none",
+        scrollTrigger: {
+          trigger: trigger,
+          pin: true,
+          scrub: 1,
+          end: () => "+=" + triggerElement.getBoundingClientRect().width,
+        },
+      });
+    }
 
     return () => {
       ScrollTrigger.getAll().forEach(t => t.kill());
