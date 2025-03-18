@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled 
-          ? "bg-white/90 backdrop-blur-md py-3 shadow-md mx-auto mt-2 md:w-[95%] md:left-[2.5%] md:rounded-full" 
+          ? "bg-white/90 backdrop-blur-md py-3 shadow-md" 
           : "py-6"
       }`}
     >
@@ -94,7 +94,7 @@ const NavLink: React.FC<NavLinkProps> = ({ to, children, scrolled }) => {
   return (
     <Link
       to={to}
-      className={`relative ${scrolled ? 'text-pebble-darkBlue hover:text-pebble-blue' : 'text-pebble-offWhite hover:text-white'} transition-colors duration-300 group font-fustat`}
+      className={`relative ${scrolled ? 'text-pebble-darkBlue hover:text-pebble-blue' : 'text-white hover:text-white/80'} transition-colors duration-300 group font-fustat`}
     >
       {children}
       <span className={`absolute bottom-0 left-0 w-full h-0.5 ${scrolled ? 'bg-pebble-blue' : 'bg-white'} transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100`}></span>

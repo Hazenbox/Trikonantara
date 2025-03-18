@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import gsap from "gsap";
+import AuroraBackground from "../AuroraBackground";
 
 const HeroSection: React.FC = () => {
   const sectionId = "hero-section";
@@ -76,51 +77,45 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <section
-      id={sectionId}
-      className="min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-b from-pebble-olive to-pebble-darkTaupe opacity-0"
-    >
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-pebble-olive opacity-95"></div>
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-          <div className="absolute top-1/4 -left-24 w-96 h-96 bg-pebble-charcoal rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-float"></div>
-          <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-pebble-taupe rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-float" style={{ animationDelay: "-2s" }}></div>
+    <AuroraBackground>
+      <section
+        id={sectionId}
+        className="min-h-screen flex items-center justify-center overflow-hidden pt-20 opacity-0"
+      >
+        <div className="container mx-auto px-4 relative z-10 text-center py-20">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 hero-title text-white">
+            <SplitText text="Adventure inspiring" />
+          </h1>
+          <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto mb-10 hero-subtitle">
+            At Trikonantara, we bridge the gap between imagination and technology,
+            creating immersive experiences that transform industries.
+          </p>
+          <div className="hero-button">
+            <Link
+              to="/contact"
+              className="inline-flex items-center bg-white hover:bg-white/90 text-pebble-darkBlue py-3 px-8 rounded-full transition-colors duration-300 shadow-lg shadow-pebble-charcoal/20"
+            >
+              Start Your Journey
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </div>
         </div>
-      </div>
-      
-      <div className="container mx-auto px-4 relative z-10 text-center py-20">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 hero-title text-pebble-lightBeige">
-          <SplitText text="Adventure inspiring" />
-        </h1>
-        <p className="text-xl md:text-2xl text-pebble-lightBeige/80 max-w-3xl mx-auto mb-10 hero-subtitle">
-          At Trikonantara, we bridge the gap between imagination and technology,
-          creating immersive experiences that transform industries.
-        </p>
-        <div className="hero-button">
-          <Link
-            to="/contact"
-            className="inline-flex items-center bg-pebble-lightBeige hover:bg-pebble-offWhite text-pebble-olive py-3 px-8 rounded-full transition-colors duration-300 shadow-lg shadow-pebble-charcoal/20"
-          >
-            Start Your Journey
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Link>
-        </div>
-      </div>
 
-      <div className="absolute bottom-10 left-0 w-full">
-        <div className="container mx-auto">
-          <div className="marquee-container">
-            <div className="marquee-wrapper flex">
-              {Array(10).fill("AR/VR • Immersive Experiences • Innovation • Technology • ").map((text, i) => (
-                <div key={i} className="marquee-element text-4xl font-bold text-pebble-lightBeige opacity-10">
-                  {text}
-                </div>
-              ))}
+        <div className="absolute bottom-10 left-0 w-full">
+          <div className="container mx-auto">
+            <div className="marquee-container">
+              <div className="marquee-wrapper flex">
+                {Array(10).fill("AR/VR • Immersive Experiences • Innovation • Technology • ").map((text, i) => (
+                  <div key={i} className="marquee-element text-4xl font-bold text-white opacity-10">
+                    {text}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </AuroraBackground>
   );
 };
 
