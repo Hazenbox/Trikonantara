@@ -129,42 +129,31 @@ const Index: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 reveal-element text-[#0b2d5f]">
-              <span className="text-lightblue-500">About</span> Us
+              About Us
             </h2>
             <p className="text-lg text-[#403E43] reveal-element">
               At Trikonantara Innovation Technology Pvt. Ltd., we are driven by a singular passion: to redefine how people experience and interact with the world through the transformative power of Augmented Reality (AR) and Virtual Reality (VR). As pioneers in immersive technology, we craft innovative solutions that elevate industries like gaming, education, healthcare, and entertainment. Our team of visionary engineers, creators, and developers work tirelessly to bridge the gap between imagination and reality, delivering cutting-edge experiences that not only push boundaries but transform industries.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
-            <div className="reveal-element">
-              <h3 className="text-2xl font-bold mb-4 relative inline-block text-[#0b2d5f]">
-                <span className="text-lightblue-500">Mission</span>
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-lightblue-500"></span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div className="reveal-element bg-lightblue-100 p-8 rounded-xl">
+              <h3 className="text-2xl font-bold mb-4 text-[#0b2d5f]">
+                Mission
               </h3>
               <p className="text-[#403E43]">
                 Our mission is to leverage the power of AR/VR technologies to create immersive, innovative solutions that empower businesses and individuals. By transforming how we perceive and engage with the world, we strive to drive progress across diverse industries—gaming, education, healthcare, and beyond. Our goal is to make the impossible possible by bridging the gap between imagination and technology, fostering creativity, and unlocking new possibilities for all.
               </p>
             </div>
             
-            <div className="reveal-element">
-              <h3 className="text-2xl font-bold mb-4 relative inline-block text-[#0b2d5f]">
-                <span className="text-lightblue-500">Vision</span>
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-lightblue-500"></span>
+            <div className="reveal-element bg-lightblue-100 p-8 rounded-xl">
+              <h3 className="text-2xl font-bold mb-4 text-[#0b2d5f]">
+                Vision
               </h3>
               <p className="text-[#403E43]">
                 "To become a global leader in AR/VR innovation, shaping a future where immersive technologies enrich lives, redefine industries, and inspire new possibilities. We envision a world where boundaries between the digital and physical realms dissolve, enabling endless creativity, seamless connectivity, and transformative experiences for all."
               </p>
             </div>
-          </div>
-
-          <div className="max-w-4xl mx-auto text-center reveal-element">
-            <h3 className="text-2xl font-bold mb-6 text-[#0b2d5f]">
-              Unleashing Innovation in Every Experience
-            </h3>
-            <p className="text-[#403E43]">
-              We are pioneering the future of AR/VR, crafting solutions that break new ground in every interaction. Our commitment to excellence ensures that every experience is not only memorable but impactful.
-            </p>
           </div>
         </div>
       </section>
@@ -179,14 +168,14 @@ const Index: React.FC = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 reveal-element text-[#0b2d5f]">
-              Our <span className="text-lightblue-500">Services</span>
+              Our Services
             </h2>
             <p className="text-lg text-[#403E43] reveal-element">
               Making Cutting-Edge Technology Accessible to All. At the forefront of innovation, we bring Augmented Reality (AR) and Virtual Reality (VR) to life, offering immersive experiences that redefine how you perceive the world.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div className="reveal-element">
               <ServiceCard
                 title="Product AR/VR"
@@ -210,30 +199,6 @@ const Index: React.FC = () => {
                 path="/services/tourism"
               />
             </div>
-            
-            <div className="reveal-element">
-              <ServiceCard
-                title="Medical AR/VR"
-                description="Our Medical AR/VR solutions provide healthcare professionals with training, simulation, and visualization tools in interactive environments."
-                path="/services/medical"
-              />
-            </div>
-            
-            <div className="reveal-element">
-              <ServiceCard
-                title="Web & App Dev AR/VR"
-                description="We design responsive websites and mobile apps that deliver user-friendly, seamless digital experiences across all devices."
-                path="/services/web-app"
-              />
-            </div>
-            
-            <div className="reveal-element">
-              <ServiceCard
-                title="End to End Services AR/VR"
-                description="We design responsive websites and mobile apps that deliver user-friendly, seamless digital experiences across all devices."
-                path="/services/end-to-end"
-              />
-            </div>
           </div>
         </div>
       </section>
@@ -244,7 +209,7 @@ const Index: React.FC = () => {
         <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto text-center reveal-element">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-[#0b2d5f]">
-              Ready to Transform Your <span className="text-lightblue-500">Reality</span>?
+              Ready to Transform Your Reality?
             </h2>
             <p className="text-xl text-[#403E43] mb-10">
               Let's collaborate to bring your vision to life through cutting-edge AR/VR technology
