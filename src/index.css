@@ -271,6 +271,15 @@
   transform: translateY(50px);
 }
 
+@keyframes shine {
+  from {
+    background-position: -100% 0;
+  }
+  to {
+    background-position: 200% 0;
+  }
+}
+
 #root {
   max-width: 100%;
   margin: 0 auto;
