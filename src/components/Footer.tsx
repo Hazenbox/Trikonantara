@@ -7,12 +7,6 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-gradient-to-b from-pebble-cream to-pebble-lightBeige py-16">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto mb-12 text-center">
-          <p className="text-lg text-pebble-darkBlue font-medium">
-            The range of functionalities offered on the platforms includes the ability to connect
-          </p>
-        </div>
-
         <div className="flex flex-col lg:flex-row">
           <div className="mb-10 lg:mb-0 lg:w-1/4">
             <h3 className="text-3xl font-bold mb-6 text-pebble-darkBlue">
