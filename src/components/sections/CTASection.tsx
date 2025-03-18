@@ -111,7 +111,7 @@ const CTASection: React.FC = () => {
         </div>
       </div>
       
-      {/* Footer Content */}
+      {/* Footer Content - removed About/Contact/Blog links */}
       <div className="container mx-auto px-4 footer-content mt-12 text-center">
         <div className="flex flex-col items-center justify-center">
           <div className="mb-6 text-center">
@@ -119,53 +119,33 @@ const CTASection: React.FC = () => {
               <img 
                 src="/lovable-uploads/56b9bfab-5919-424f-b808-0a73bd735e7f.png" 
                 alt="Trikonantara Logo" 
-                className="h-10 mb-1" 
+                className="h-14 mb-1" 
               />
             </div>
             <h3 className="text-2xl font-funnel font-bold mb-4 text-pebble-charcoal">
               TRIKONANTARA™
             </h3>
-            <div className="flex justify-center space-x-3 mb-4">
-              <a href="https://x.com/trikonantara" target="_blank" rel="noopener noreferrer" className="text-pebble-charcoal hover:text-pebble-darkBlue transition-colors duration-300">
-                <Twitter size={18} />
+            <div className="flex justify-center space-x-4 mb-4">
+              <a href="https://x.com/trikonantara" target="_blank" rel="noopener noreferrer" className="text-pebble-charcoal hover:text-[#1DA1F2] transition-colors duration-300">
+                <Twitter size={20} className="transition-transform duration-300 hover:scale-110" />
               </a>
-              <a href="https://www.linkedin.com/company/trikonantara-innovation-technology-private-limited/" target="_blank" rel="noopener noreferrer" className="text-pebble-charcoal hover:text-pebble-darkBlue transition-colors duration-300">
-                <Linkedin size={18} />
+              <a href="https://www.linkedin.com/company/trikonantara-innovation-technology-private-limited/" target="_blank" rel="noopener noreferrer" className="text-pebble-charcoal hover:text-[#0A66C2] transition-colors duration-300">
+                <Linkedin size={20} className="transition-transform duration-300 hover:scale-110" />
               </a>
-              <a href="https://www.youtube.com/@Trikonantara" target="_blank" rel="noopener noreferrer" className="text-pebble-charcoal hover:text-pebble-darkBlue transition-colors duration-300">
-                <Youtube size={18} />
+              <a href="https://www.youtube.com/@Trikonantara" target="_blank" rel="noopener noreferrer" className="text-pebble-charcoal hover:text-[#FF0000] transition-colors duration-300">
+                <Youtube size={20} className="transition-transform duration-300 hover:scale-110" />
               </a>
-              <a href="https://www.instagram.com/trikonantara/" target="_blank" rel="noopener noreferrer" className="text-pebble-charcoal hover:text-pebble-darkBlue transition-colors duration-300">
-                <Instagram size={18} />
+              <a href="https://www.instagram.com/trikonantara/" target="_blank" rel="noopener noreferrer" className="text-pebble-charcoal hover:text-[#E1306C] transition-colors duration-300">
+                <Instagram size={20} className="transition-transform duration-300 hover:scale-110" />
               </a>
-              <a href="https://www.facebook.com/profile.php?id=61573968217226" target="_blank" rel="noopener noreferrer" className="text-pebble-charcoal hover:text-pebble-darkBlue transition-colors duration-300">
-                <Facebook size={18} />
+              <a href="https://www.facebook.com/profile.php?id=61573968217226" target="_blank" rel="noopener noreferrer" className="text-pebble-charcoal hover:text-[#1877F2] transition-colors duration-300">
+                <Facebook size={20} className="transition-transform duration-300 hover:scale-110" />
               </a>
             </div>
           </div>
-
-          <div className="mb-6">
-            <ul className="flex justify-center gap-6">
-              <AnimatedFooterLink to="/about">About</AnimatedFooterLink>
-              <AnimatedFooterLink to="#">
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <span className="cursor-pointer">Contact</span>
-                  </DialogTrigger>
-                  <DialogContent className="sm:max-w-md">
-                    <DialogHeader>
-                      <DialogTitle className="text-2xl font-bold">Contact Us</DialogTitle>
-                    </DialogHeader>
-                    <ContactForm />
-                  </DialogContent>
-                </Dialog>
-              </AnimatedFooterLink>
-              <AnimatedFooterLink to="/blog">Blog</AnimatedFooterLink>
-            </ul>
-          </div>
         </div>
 
-        <div className="flex flex-col items-center justify-center mt-8 pt-6 border-t border-pebble-charcoal/20">
+        <div className="flex flex-col items-center justify-center mt-8 pt-6 border-t border-pebble-charcoal/10 max-w-2xl mx-auto">
           <div className="mb-4 text-center">
             <p className="text-xs text-pebble-charcoal font-fustat">© 2025 Trikonantara Innovation Technology Private Limited. All rights reserved</p>
           </div>
@@ -228,3 +208,4 @@ const AnimatedFooterLink: React.FC<FooterLinkProps> = ({ to, children }) => {
 };
 
 export default CTASection;
+

@@ -125,12 +125,12 @@ const AboutSection: React.FC = () => {
             </p>
           </div>
           
-          {/* Associated with section - updated with new images */}
+          {/* Associated with section - made images bigger */}
           <div className="mt-10 partners-section">
             <h3 className="text-lg font-medium mb-6 text-[#8A898C] font-fustat">Associated with</h3>
-            <div className="flex justify-center space-x-10 mb-8">
-              <img src="/lovable-uploads/bca2854c-7cba-4347-a3bd-bb195eb55a00.png" alt="ACIC-CBIT Partner Logo" className="h-16 partner-logo" />
-              <img src="/lovable-uploads/bcbfb8b2-eaa3-42cd-9c4c-9cda6717ddb1.png" alt="NITI Aayog Partner Logo" className="h-16 partner-logo" />
+            <div className="flex justify-center space-x-12 mb-8">
+              <img src="/lovable-uploads/bca2854c-7cba-4347-a3bd-bb195eb55a00.png" alt="ACIC-CBIT Partner Logo" className="h-20 partner-logo" />
+              <img src="/lovable-uploads/bcbfb8b2-eaa3-42cd-9c4c-9cda6717ddb1.png" alt="NITI Aayog Partner Logo" className="h-20 partner-logo" />
             </div>
           </div>
           

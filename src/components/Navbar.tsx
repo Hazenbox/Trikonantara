@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
             className="flex items-center"
           >
             <img 
-              src={scrolled ? "/lovable-uploads/b057929c-a58f-4779-a297-5c88abadbfb0.png" : "/lovable-uploads/6ae22019-d3b9-4d9e-a3c4-d8037ded2144.png"} 
+              src={scrolled ? "/lovable-uploads/39ddaab2-b4f6-4e38-a45d-d51b9e769ed8.png" : "/lovable-uploads/6ae22019-d3b9-4d9e-a3c4-d8037ded2144.png"} 
               alt="Trikonantara Logo" 
               className="h-8 mr-2" 
             />
