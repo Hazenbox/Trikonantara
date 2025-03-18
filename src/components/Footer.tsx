@@ -5,7 +5,7 @@ import { Instagram, Facebook, Linkedin, Twitter, Youtube, Mail } from "lucide-re
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gradient-to-b from-pebble-cream to-pebble-lightBeige py-16">
+    <footer className="bg-gradient-to-b from-white to-[#D3E4FD] py-16">
       <div className="container mx-auto px-4 text-center">
         <div className="flex flex-col items-center">
           <div className="mb-10">

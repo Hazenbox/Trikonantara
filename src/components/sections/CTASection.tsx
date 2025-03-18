@@ -63,7 +63,7 @@ const CTASection: React.FC = () => {
   return (
     <section 
       id={sectionId}
-      className="relative overflow-hidden py-32 flex flex-col bg-gradient-to-b from-white via-[#e3edf0] to-[#d1dfe4] opacity-0"
+      className="relative overflow-hidden py-32 flex flex-col bg-gradient-to-b from-white to-[#D3E4FD] opacity-0"
     >
       <div className="container mx-auto px-4 relative mb-16">
         <div className="max-w-4xl mx-auto bg-[#101E4E] rounded-xl shadow-lg shadow-[#101E4E]/20 p-16 relative overflow-hidden cta-content">
@@ -212,3 +212,4 @@ const AnimatedFooterLink: React.FC<FooterLinkProps> = ({ to, children }) => {
 };
 
 export default CTASection;
+
