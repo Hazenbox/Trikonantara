@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import PixelCard from "../PixelCard";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Eye3d, Globe, Cpu } from "lucide-react";
+import { Globe, Cpu } from "lucide-react";
 
 // Register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
@@ -125,7 +125,7 @@ const ProductsSection: React.FC = () => {
       <div className="container mx-auto px-4 relative z-10 products-container">
         <div className="text-center mb-16 products-heading">
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-pebble-darkTaupe products-title">
-            Our Products
+            Our Flagship Product
           </h2>
           <p className="text-lg text-pebble-secondaryText max-w-2xl mx-auto products-intro">
             Discover our innovative technology solutions designed to transform industries through immersive experiences.
