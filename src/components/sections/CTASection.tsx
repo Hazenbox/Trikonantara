@@ -115,19 +115,19 @@ const CTASection: React.FC = () => {
               Trikonantara
             </h3>
             <div className="flex justify-center space-x-3 mb-4">
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-pebble-charcoal hover:text-pebble-darkBlue transition-colors duration-300">
+              <a href="https://x.com/trikonantara" target="_blank" rel="noopener noreferrer" className="text-pebble-charcoal hover:text-pebble-darkBlue transition-colors duration-300">
                 <Twitter size={18} />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-pebble-charcoal hover:text-pebble-darkBlue transition-colors duration-300">
+              <a href="https://www.linkedin.com/company/trikonantara-innovation-technology-private-limited/" target="_blank" rel="noopener noreferrer" className="text-pebble-charcoal hover:text-pebble-darkBlue transition-colors duration-300">
                 <Linkedin size={18} />
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-pebble-charcoal hover:text-pebble-darkBlue transition-colors duration-300">
+              <a href="https://www.youtube.com/@Trikonantara" target="_blank" rel="noopener noreferrer" className="text-pebble-charcoal hover:text-pebble-darkBlue transition-colors duration-300">
                 <Youtube size={18} />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-pebble-charcoal hover:text-pebble-darkBlue transition-colors duration-300">
+              <a href="https://www.instagram.com/trikonantara/" target="_blank" rel="noopener noreferrer" className="text-pebble-charcoal hover:text-pebble-darkBlue transition-colors duration-300">
                 <Instagram size={18} />
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-pebble-charcoal hover:text-pebble-darkBlue transition-colors duration-300">
+              <a href="https://www.facebook.com/profile.php?id=61573968217226" target="_blank" rel="noopener noreferrer" className="text-pebble-charcoal hover:text-pebble-darkBlue transition-colors duration-300">
                 <Facebook size={18} />
               </a>
             </div>
@@ -154,6 +154,12 @@ const CTASection: React.FC = () => {
             <Link to="/terms" className="hover:text-pebble-darkBlue transition-colors duration-300">
               Terms of Use
             </Link>
+          </div>
+          
+          <div className="mt-4 text-xs text-pebble-charcoal font-fustat">
+            <p>Phone: +91 9493803629</p>
+            <p>Email: contactus@trikonantara.com</p>
+            <p>Address: 18-4-174, Near Munurkapu, Sangam, Aliabad, Hyderabad, Charminar, Telangana, India, 500053</p>
           </div>
         </div>
       </div>
@@ -212,4 +218,3 @@ const AnimatedFooterLink: React.FC<FooterLinkProps> = ({ to, children }) => {
 };
 
 export default CTASection;
-

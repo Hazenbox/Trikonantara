@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -135,10 +136,10 @@ const AboutSection: React.FC = () => {
             
             <div className="about-text-wrapper">
               <p className="text-lg text-black font-fustat mb-6 about-text">
-                We redefine how people experience the world through pioneering AR and VR technology.
+                Trikonantara bridges imagination and technology, crafting immersive experiences that transform industries. We specialize in cutting-edge 3D, AR, and VR solutions, redefining how people explore and interact with the world.
               </p>
               <p className="text-lg text-black font-fustat about-text">
-                Our visionary team bridges imagination and reality, delivering transformative experiences across gaming, education, healthcare, and entertainment.
+                Our journey began with a vision to bridge imagination and technology, creating immersive experiences that transform industries. With innovation at our core, we continue to push the boundaries of AR, VR, and 3D technology to redefine digital interaction.
               </p>
             </div>
             

@@ -91,11 +91,10 @@ const HeroSection: React.FC = () => {
       
       <div className="container mx-auto px-4 relative z-10 text-center py-20">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 hero-title text-pebble-lightBeige">
-          <SplitText text="Adventure inspiring" />
+          <SplitText text="Immersive Innovation" />
         </h1>
         <p className="text-xl md:text-2xl text-pebble-lightBeige/80 max-w-3xl mx-auto mb-10 hero-subtitle">
-          At Trikonantara, we bridge the gap between imagination and technology,
-          creating immersive experiences that transform industries.
+          At Trikonantara, we merge imagination with cutting-edge technology, crafting immersive experiences that redefine industries and inspire new frontiers of exploration.
         </p>
         <div className="hero-button">
           <Dialog>

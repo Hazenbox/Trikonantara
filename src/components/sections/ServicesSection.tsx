@@ -141,7 +141,7 @@ const ServicesSection: React.FC = () => {
           <div className="service-card-wrapper">
             <ServiceCard
               title="3D for E-commerce"
-              description="Photorealistic 3D product models enhancing online shopping with interactive views and AR previews."
+              description="High-quality 3D content development and video production, creating immersive and engaging digital experiences."
               path="/services/ecommerce"
               type="ecommerce"
             />

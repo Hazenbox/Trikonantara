@@ -128,15 +128,15 @@ const About = () => {
               
               <div className="space-y-6">
                 <p className="text-lg text-pebble-secondaryText font-fustat about-paragraph">
-                  At Trikonantara, we're driven by a passion to redefine digital interaction through AR and VR technology.
+                  Our journey began with a vision to bridge imagination and technology, creating immersive experiences that transform industries.
                 </p>
                 
                 <p className="text-lg text-pebble-secondaryText font-fustat about-paragraph">
-                  As pioneers in immersive experiences, we elevate industries from gaming to healthcare with cutting-edge innovation.
+                  With innovation at our core, we continue to push the boundaries of AR, VR, and 3D technology to redefine digital interaction.
                 </p>
                 
                 <p className="text-lg text-pebble-secondaryText font-fustat about-paragraph">
-                  Our visionary team bridges imagination and reality, creating transformative experiences that push boundaries and reshape industries.
+                  Trikonantara bridges imagination and technology, crafting immersive experiences that transform industries. We specialize in cutting-edge 3D, AR, and VR solutions, redefining how people explore and interact with the world.
                 </p>
               </div>
               
