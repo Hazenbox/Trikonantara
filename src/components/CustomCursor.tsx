@@ -7,9 +7,6 @@ const CustomCursor: React.FC = () => {
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
-    // Add class to body to hide default cursor
-    document.body.classList.add('custom-cursor-active');
-    
     // Set up cursor movement
     const onMouseMove = (e: MouseEvent) => {
       if (cursorRef.current) {
@@ -33,7 +30,6 @@ const CustomCursor: React.FC = () => {
     
     // Cleanup
     return () => {
-      document.body.classList.remove('custom-cursor-active');
       document.removeEventListener("mousemove", onMouseMove);
       document.removeEventListener("mousedown", onMouseDown);
       document.removeEventListener("mouseup", onMouseUp);
