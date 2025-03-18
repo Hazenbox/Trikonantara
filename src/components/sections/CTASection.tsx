@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Play, Instagram, Facebook, Linkedin, Twitter, Youtube } from "lucide-react";
@@ -107,6 +108,30 @@ const CTASection: React.FC = () => {
           <h3 className="text-3xl font-funnel font-bold mb-6 text-pebble-offWhite">
             Trikonantara
           </h3>
+          
+          {/* Navigation Links */}
+          <div className="flex justify-center space-x-8 mb-10">
+            <Link to="/about" className="text-pebble-offWhite/80 hover:text-pebble-offWhite transition-colors duration-300 font-fustat">
+              About
+            </Link>
+            <Link to="/contact" className="text-pebble-offWhite/80 hover:text-pebble-offWhite transition-colors duration-300 font-fustat">
+              Contact
+            </Link>
+            <Link to="/blog" className="text-pebble-offWhite/80 hover:text-pebble-offWhite transition-colors duration-300 font-fustat">
+              Blog
+            </Link>
+            <Link to="/documentation" className="text-pebble-offWhite/80 hover:text-pebble-offWhite transition-colors duration-300 font-fustat">
+              Documentation
+            </Link>
+            <Link to="/faq" className="text-pebble-offWhite/80 hover:text-pebble-offWhite transition-colors duration-300 font-fustat">
+              FAQ
+            </Link>
+            <Link to="/support" className="text-pebble-offWhite/80 hover:text-pebble-offWhite transition-colors duration-300 font-fustat">
+              Support
+            </Link>
+          </div>
+          
+          {/* Social Media Links */}
           <div className="flex justify-center space-x-6 mb-6">
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300">
               <Twitter size={20} />
@@ -126,32 +151,6 @@ const CTASection: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto text-center">
-          <div>
-            <h4 className="text-base font-semibold mb-6 text-pebble-offWhite">
-              Company
-            </h4>
-            <ul className="space-y-4">
-              <FooterLink to="/about">About</FooterLink>
-              <FooterLink to="/services">Features</FooterLink>
-              <FooterLink to="/pricing">Pricing</FooterLink>
-              <FooterLink to="/contact">Contact</FooterLink>
-              <FooterLink to="/blog">Blog</FooterLink>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-base font-semibold mb-6 text-pebble-offWhite">
-              Resources
-            </h4>
-            <ul className="space-y-4">
-              <FooterLink to="/documentation">Documentation</FooterLink>
-              <FooterLink to="/faq">FAQ</FooterLink>
-              <FooterLink to="/support">Support</FooterLink>
-            </ul>
-          </div>
-        </div>
-
         <div className="text-center mt-16 pt-8 border-t border-pebble-offWhite/20">
           <p className="text-sm text-pebble-offWhite/70 font-fustat">© 2025 Trikonantara. All rights reserved</p>
           
@@ -166,40 +165,6 @@ const CTASection: React.FC = () => {
         </div>
       </div>
     </section>
-  );
-};
-
-interface FooterLinkProps {
-  to: string;
-  children: React.ReactNode;
-  external?: boolean;
-}
-
-const FooterLink: React.FC<FooterLinkProps> = ({ to, children, external }) => {
-  if (external) {
-    return (
-      <li>
-        <a
-          href={to}
-          className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300 font-fustat"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {children}
-        </a>
-      </li>
-    );
-  }
-  
-  return (
-    <li>
-      <Link
-        to={to}
-        className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300 font-fustat"
-      >
-        {children}
-      </Link>
-    </li>
   );
 };
 

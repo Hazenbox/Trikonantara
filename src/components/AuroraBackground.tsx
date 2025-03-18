@@ -12,7 +12,6 @@ const AuroraBackground: React.FC<{ children: React.ReactNode }> = ({ children })
     if (!ctx) return;
 
     let animationFrameId: number;
-    let hue = 0;
 
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
@@ -24,19 +23,20 @@ const AuroraBackground: React.FC<{ children: React.ReactNode }> = ({ children })
 
     // Aurora parameters
     const blobs = [];
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 7; i++) {
       blobs.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        radius: Math.random() * 200 + 100,
-        vx: Math.random() * 0.5 - 0.25,
-        vy: Math.random() * 0.5 - 0.25,
-        hue: Math.random() * 40 + 220, // Blue to purple hues
+        radius: Math.random() * 300 + 100,
+        vx: Math.random() * 0.3 - 0.15,
+        vy: Math.random() * 0.3 - 0.15,
+        hue: Math.random() * 60 + 200, // Blue to purple hues
       });
     }
 
     const renderFrame = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = 'rgba(5, 5, 20, 0.03)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
       
       // Update and draw each blob
       for (let blob of blobs) {
@@ -54,7 +54,7 @@ const AuroraBackground: React.FC<{ children: React.ReactNode }> = ({ children })
           blob.x, blob.y, blob.radius
         );
         
-        gradient.addColorStop(0, `hsla(${blob.hue}, 100%, 60%, 0.2)`);
+        gradient.addColorStop(0, `hsla(${blob.hue}, 100%, 60%, 0.3)`);
         gradient.addColorStop(1, `hsla(${blob.hue}, 100%, 50%, 0)`);
         
         ctx.fillStyle = gradient;
@@ -63,11 +63,6 @@ const AuroraBackground: React.FC<{ children: React.ReactNode }> = ({ children })
         ctx.fill();
       }
       
-      // Add a subtle overlay for the entire canvas
-      ctx.fillStyle = 'rgba(5, 5, 20, 0.01)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      
-      hue = (hue + 0.1) % 360;
       animationFrameId = requestAnimationFrame(renderFrame);
     };
 
@@ -83,7 +78,7 @@ const AuroraBackground: React.FC<{ children: React.ReactNode }> = ({ children })
     <div className="relative min-h-screen overflow-hidden">
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full -z-10"
+        className="absolute inset-0 w-full h-full -z-10 bg-[#080808]"
       />
       <div className="relative z-10">
         {children}
