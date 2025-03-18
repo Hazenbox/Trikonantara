@@ -62,7 +62,7 @@ const CTASection: React.FC = () => {
   return (
     <section 
       id={sectionId}
-      className="relative overflow-hidden py-32 flex flex-col bg-gradient-to-b from-pebble-lightBeige to-pebble-taupe opacity-0"
+      className="relative overflow-hidden py-32 flex flex-col bg-gradient-to-b from-pebble-darkTaupe to-pebble-charcoal opacity-0"
     >
       <div className="container mx-auto px-4 relative mb-20">
         <div className="max-w-4xl mx-auto bg-pebble-beige rounded-xl shadow-lg shadow-pebble-taupe/20 p-16 relative overflow-hidden cta-content">

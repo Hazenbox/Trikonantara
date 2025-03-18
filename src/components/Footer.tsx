@@ -5,21 +5,21 @@ import { Instagram, Facebook, Linkedin, Twitter, Youtube, Mail } from "lucide-re
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gradient-to-b from-pebble-cream to-pebble-lightBeige py-16">
+    <footer className="bg-gradient-to-b from-pebble-darkTaupe to-pebble-charcoal py-16">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row">
           <div className="mb-10 lg:mb-0 lg:w-1/4">
-            <h3 className="text-3xl font-bold mb-6 text-pebble-darkBlue">
+            <h3 className="text-3xl font-bold mb-6 text-pebble-offWhite">
               Trikonantara
             </h3>
-            <p className="text-pebble-secondaryText mb-4 font-fustat">
+            <p className="text-pebble-offWhite/80 mb-4 font-fustat">
               There is no risk-free trading
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:w-3/4">
             <div>
-              <h4 className="text-base font-semibold mb-6 text-pebble-darkBlue">
+              <h4 className="text-base font-semibold mb-6 text-pebble-offWhite">
                 Company
               </h4>
               <ul className="space-y-4">
@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
             </div>
 
             <div>
-              <h4 className="text-base font-semibold mb-6 text-pebble-darkBlue">
+              <h4 className="text-base font-semibold mb-6 text-pebble-offWhite">
                 Resources
               </h4>
               <ul className="space-y-4">
@@ -43,20 +43,20 @@ const Footer: React.FC = () => {
             </div>
 
             <div>
-              <h4 className="text-base font-semibold mb-6 text-pebble-darkBlue">
+              <h4 className="text-base font-semibold mb-6 text-pebble-offWhite">
                 Social
               </h4>
               <div className="flex space-x-4 mb-6">
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-pebble-taupe hover:text-pebble-darkBlue transition-colors duration-300">
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300">
                   <Twitter size={20} />
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-pebble-taupe hover:text-pebble-darkBlue transition-colors duration-300">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300">
                   <Linkedin size={20} />
                 </a>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-pebble-taupe hover:text-pebble-darkBlue transition-colors duration-300">
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300">
                   <Youtube size={20} />
                 </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-pebble-taupe hover:text-pebble-darkBlue transition-colors duration-300">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300">
                   <Instagram size={20} />
                 </a>
               </div>
@@ -69,16 +69,16 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center mt-16 pt-8 border-t border-pebble-taupe border-opacity-20">
+        <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center mt-16 pt-8 border-t border-pebble-offWhite/20">
           <div className="flex items-center mb-6 md:mb-0">
-            <p className="text-sm text-pebble-secondaryText font-fustat">© 2025 Trikonantara. All rights reserved</p>
+            <p className="text-sm text-pebble-offWhite/80 font-fustat">© 2025 Trikonantara. All rights reserved</p>
           </div>
 
-          <div className="flex space-x-6 text-sm text-pebble-secondaryText font-fustat">
-            <Link to="/privacy" className="hover:text-pebble-darkBlue transition-colors duration-300">
+          <div className="flex space-x-6 text-sm text-pebble-offWhite/80 font-fustat">
+            <Link to="/privacy" className="hover:text-pebble-offWhite transition-colors duration-300">
               Privacy Policy
             </Link>
-            <Link to="/terms" className="hover:text-pebble-darkBlue transition-colors duration-300">
+            <Link to="/terms" className="hover:text-pebble-offWhite transition-colors duration-300">
               Terms of Use
             </Link>
           </div>
@@ -100,7 +100,7 @@ const FooterLink: React.FC<FooterLinkProps> = ({ to, children, external }) => {
       <li>
         <a
           href={to}
-          className="text-pebble-secondaryText hover:text-pebble-darkBlue transition-colors duration-300 font-fustat"
+          className="text-pebble-offWhite/80 hover:text-pebble-offWhite transition-colors duration-300 font-fustat"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -114,7 +114,7 @@ const FooterLink: React.FC<FooterLinkProps> = ({ to, children, external }) => {
     <li>
       <Link
         to={to}
-        className="text-pebble-secondaryText hover:text-pebble-darkBlue transition-colors duration-300 font-fustat"
+        className="text-pebble-offWhite/80 hover:text-pebble-offWhite transition-colors duration-300 font-fustat"
       >
         {children}
       </Link>
