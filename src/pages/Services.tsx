@@ -1,5 +1,7 @@
 
 import React from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight, Play } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useRevealAnimation } from "../hooks/useGSAP";
@@ -52,6 +54,45 @@ const Services = () => {
           </div>
         </div>
       </main>
+      
+      {/* CTA Section - New dark-themed CTA section */}
+      <section className="relative overflow-hidden bg-[#0d1626] py-20">
+        <div className="container mx-auto px-4 relative">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div className="max-w-xl">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white">
+                Ready to Transform Your Reality?
+              </h2>
+              <p className="text-gray-300 mb-8 font-fustat">
+                Let's collaborate to bring your vision to life through cutting-edge AR/VR technology
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center bg-lightblue-500 hover:bg-lightblue-600 text-white py-3 px-6 rounded-md transition-colors duration-300"
+                >
+                  Get started <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+                <Link
+                  to="/projects"
+                  className="inline-flex items-center bg-transparent border border-white/20 text-white py-3 px-6 rounded-md hover:bg-white/10 transition-colors duration-300"
+                >
+                  <Play className="mr-2 h-5 w-5" /> Watch how it works
+                </Link>
+              </div>
+            </div>
+            <div>
+              {/* This div is intentionally left empty for future graphic content */}
+            </div>
+          </div>
+        </div>
+        
+        {/* Decorative dots pattern */}
+        <div className="absolute top-0 right-0 w-1/3 h-full opacity-10">
+          <div className="absolute top-1/4 right-1/4 w-40 h-40 rounded-full bg-white opacity-5"></div>
+          <div className="absolute bottom-1/4 right-1/3 w-60 h-60 rounded-full bg-white opacity-5"></div>
+        </div>
+      </section>
       
       <Footer />
     </div>
