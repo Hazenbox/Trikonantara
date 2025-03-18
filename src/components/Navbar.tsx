@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
             className="flex items-center"
           >
             <img 
-              src={scrolled ? "/lovable-uploads/39ddaab2-b4f6-4e38-a45d-d51b9e769ed8.png" : "/lovable-uploads/6ae22019-d3b9-4d9e-a3c4-d8037ded2144.png"} 
+              src={scrolled ? "/lovable-uploads/8d848fe6-58aa-4bb1-9820-91f1d829f3b0.png" : "/lovable-uploads/6ae22019-d3b9-4d9e-a3c4-d8037ded2144.png"} 
               alt="Trikonantara Logo" 
               className="h-8 mr-2" 
             />
@@ -85,7 +85,12 @@ const Navbar: React.FC = () => {
             </NavLink>
             <Dialog>
               <DialogTrigger asChild>
-                <NavButton scrolled={scrolled}>Contact</NavButton>
+                <button
+                  className={`relative ${scrolled ? 'text-pebble-darkBlue hover:text-pebble-blue' : 'text-pebble-offWhite hover:text-white'} transition-colors duration-300 group font-fustat`}
+                >
+                  Contact
+                  <span className={`absolute bottom-0 left-0 w-full h-0.5 ${scrolled ? 'bg-pebble-blue' : 'bg-white'} transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100`}></span>
+                </button>
               </DialogTrigger>
               <DialogContent className="sm:max-w-md">
                 <DialogHeader>

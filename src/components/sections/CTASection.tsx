@@ -1,6 +1,7 @@
+
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Instagram, Facebook, Linkedin, Twitter, Youtube, Mail } from "lucide-react";
+import { ArrowRight, Instagram, Facebook, Linkedin, Twitter, Youtube, Phone, Mail, MapPin } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Button } from "../ui/button";
@@ -111,7 +112,7 @@ const CTASection: React.FC = () => {
         </div>
       </div>
       
-      {/* Footer Content - removed About/Contact/Blog links */}
+      {/* Footer Content */}
       <div className="container mx-auto px-4 footer-content mt-12 text-center">
         <div className="flex flex-col items-center justify-center">
           <div className="mb-6 text-center">
@@ -119,7 +120,7 @@ const CTASection: React.FC = () => {
               <img 
                 src="/lovable-uploads/56b9bfab-5919-424f-b808-0a73bd735e7f.png" 
                 alt="Trikonantara Logo" 
-                className="h-14 mb-1" 
+                className="h-20 mb-1" 
               />
             </div>
             <h3 className="text-2xl font-funnel font-bold mb-4 text-pebble-charcoal">
@@ -145,24 +146,24 @@ const CTASection: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-center mt-8 pt-6 border-t border-pebble-charcoal/10 max-w-2xl mx-auto">
+        <div className="flex flex-col items-center justify-center mt-8 pt-6 border-t border-pebble-charcoal/10 max-w-lg mx-auto">
           <div className="mb-4 text-center">
             <p className="text-xs text-pebble-charcoal font-fustat">© 2025 Trikonantara Innovation Technology Private Limited. All rights reserved</p>
           </div>
-
-          <div className="flex space-x-4 text-xs text-pebble-charcoal font-fustat">
-            <Link to="/privacy" className="hover:text-pebble-darkBlue transition-colors duration-300">
-              Privacy Policy
-            </Link>
-            <Link to="/terms" className="hover:text-pebble-darkBlue transition-colors duration-300">
-              Terms of Use
-            </Link>
-          </div>
           
-          <div className="mt-4 text-xs text-pebble-charcoal font-fustat">
-            <p>Phone: +91 9493803629</p>
-            <p>Email: contactus@trikonantara.com</p>
-            <p>Address: 18-4-174, Near Munurkapu, Sangam, Aliabad, Hyderabad, Charminar, Telangana, India, 500053</p>
+          <div className="mt-4 text-xs text-pebble-charcoal font-fustat space-y-2">
+            <div className="flex items-center justify-center gap-2">
+              <Phone size={14} className="text-pebble-darkBlue" />
+              <p>+91 9493803629</p>
+            </div>
+            <div className="flex items-center justify-center gap-2">
+              <Mail size={14} className="text-pebble-darkBlue" />
+              <p>contactus@trikonantara.com</p>
+            </div>
+            <div className="flex items-center justify-center gap-2">
+              <MapPin size={14} className="text-pebble-darkBlue" />
+              <p>18-4-174, Near Munurkapu, Sangam, Aliabad, Hyderabad, Charminar, Telangana, India, 500053</p>
+            </div>
           </div>
         </div>
       </div>
@@ -208,4 +209,3 @@ const AnimatedFooterLink: React.FC<FooterLinkProps> = ({ to, children }) => {
 };
 
 export default CTASection;
-

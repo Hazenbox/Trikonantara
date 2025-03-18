@@ -129,8 +129,8 @@ const AboutSection: React.FC = () => {
           <div className="mt-10 partners-section">
             <h3 className="text-lg font-medium mb-6 text-[#8A898C] font-fustat">Associated with</h3>
             <div className="flex justify-center space-x-12 mb-8">
-              <img src="/lovable-uploads/bca2854c-7cba-4347-a3bd-bb195eb55a00.png" alt="ACIC-CBIT Partner Logo" className="h-20 partner-logo" />
-              <img src="/lovable-uploads/bcbfb8b2-eaa3-42cd-9c4c-9cda6717ddb1.png" alt="NITI Aayog Partner Logo" className="h-20 partner-logo" />
+              <img src="/lovable-uploads/bca2854c-7cba-4347-a3bd-bb195eb55a00.png" alt="ACIC-CBIT Partner Logo" className="h-24 partner-logo" />
+              <img src="/lovable-uploads/bcbfb8b2-eaa3-42cd-9c4c-9cda6717ddb1.png" alt="NITI Aayog Partner Logo" className="h-24 partner-logo" />
             </div>
           </div>
           
@@ -139,13 +139,13 @@ const AboutSection: React.FC = () => {
               asChild 
               className="bg-[#101E4E] hover:bg-[#101E4E]/90 text-white rounded-none"
             >
-              <Link
-                to="/about"
+              <a
+                href="/about"
                 className="inline-flex items-center"
               >
                 Explore Our Story
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+              </a>
             </Button>
             
             <Button 
@@ -153,13 +153,13 @@ const AboutSection: React.FC = () => {
               variant="outline"
               className="border-[#101E4E] text-[#101E4E] hover:bg-[#101E4E] hover:text-white rounded-none"
             >
-              <Link
-                to="/about#team"
+              <a
+                href="/about#team"
                 className="inline-flex items-center"
               >
                 Our Team
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+              </a>
             </Button>
           </div>
         </div>

@@ -1,6 +1,8 @@
 
 import React, { useEffect } from "react";
-import PixelCard from "../PixelCard";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+import { Button } from "../ui/button";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -119,14 +121,42 @@ const ProductsSection: React.FC = () => {
         </div>
 
         <div className="max-w-6xl mx-auto featured-product">
-          <PixelCard
-            title="Bharat VR - Our Flagship Product"
-            description="An immersive virtual reality platform designed to showcase India's cultural heritage and historical landmarks through interactive 3D environments."
-            imageSrc="/lovable-uploads/48b1e3ce-5061-4ff9-baaf-4ec0ba8a63ec.png"
-            footerText="Experience India like never before"
-            className="bg-gradient-to-br from-pebble-offWhite to-pebble-lightBlue border-pebble-lightBeige shadow-lg"
-            link="/products/bharat-vr"
-          />
+          <div className="bg-gradient-to-br from-pebble-offWhite to-pebble-lightBlue border border-pebble-lightBeige shadow-lg rounded-lg overflow-hidden group">
+            <div className="flex flex-col md:flex-row">
+              {/* Image Section */}
+              <div className="md:w-1/2 overflow-hidden">
+                <img 
+                  src="/lovable-uploads/8d848fe6-58aa-4bb1-9820-91f1d829f3b0.png" 
+                  alt="Bharat VR - Our Flagship Product" 
+                  className="w-full h-full object-cover transition-transform group-hover:scale-105" 
+                />
+              </div>
+              
+              {/* Content Section */}
+              <div className="md:w-1/2 p-8 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-2xl font-extrabold tracking-tighter transition-colors group-hover:text-pebble-blue mb-4">
+                    Bharat VR - Our Flagship Product
+                  </h3>
+                  <p className="font-medium text-pebble-secondaryText mb-6">
+                    An immersive virtual reality platform designed to showcase India's cultural heritage and historical landmarks through interactive 3D environments.
+                  </p>
+                </div>
+                
+                <div className="mt-auto flex flex-col">
+                  <p className="text-sm text-pebble-secondaryText mb-4">Experience India like never before</p>
+                  <Link to="/products/bharat-vr">
+                    <Button className="group/btn flex items-center bg-[#101E4E] hover:bg-[#101E4E]/90">
+                      <span className="mr-1">
+                        Learn More
+                      </span>
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
