@@ -55,19 +55,19 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, path }) =
   return (
     <div 
       ref={cardRef}
-      className="bg-black bg-opacity-20 backdrop-blur-sm border border-gray-800 rounded-xl p-6 hover:border-neon-blue transition-colors duration-300 transform-gpu"
+      className="bg-white bg-opacity-90 backdrop-blur-sm border border-gray-100 rounded-xl p-6 hover:border-lightblue-500 transition-colors duration-300 transform-gpu shadow-md hover:shadow-lg"
     >
-      <div className="mb-4 rounded-full w-12 h-12 flex items-center justify-center bg-neon-blue bg-opacity-10">
-        <Code className="text-neon-blue" size={24} />
+      <div className="mb-4 rounded-full w-12 h-12 flex items-center justify-center bg-lightblue-100">
+        <Code className="text-lightblue-500" size={24} />
       </div>
       
-      <h3 className="text-xl font-bold mb-3">{title}</h3>
+      <h3 className="text-xl font-bold mb-3 text-[#0b2d5f]">{title}</h3>
       
-      <p className="text-gray-400 mb-6">{description}</p>
+      <p className="text-[#403E43] mb-6">{description}</p>
       
       <Link 
         to={path} 
-        className="inline-flex items-center text-neon-blue hover:text-white group transition-colors duration-300"
+        className="inline-flex items-center text-lightblue-500 hover:text-[#0b2d5f] group transition-colors duration-300"
       >
         Read more
         <span className="ml-2 transform transition-transform duration-300 group-hover:translate-x-1">→</span>

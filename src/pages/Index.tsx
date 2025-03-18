@@ -73,7 +73,7 @@ const Index: React.FC = () => {
   };
 
   return (
-    <div className="bg-dark min-h-screen">
+    <div className="bg-white min-h-screen">
       <CustomCursor />
       <Navbar />
 
@@ -83,25 +83,25 @@ const Index: React.FC = () => {
         className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
       >
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-dark opacity-80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-lightblue-100 to-lightblue-200 opacity-80"></div>
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-            <div className="absolute top-1/4 -left-24 w-96 h-96 bg-neon-blue rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-float"></div>
-            <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-neon-red rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-float" style={{ animationDelay: "-2s" }}></div>
+            <div className="absolute top-1/4 -left-24 w-96 h-96 bg-lightblue-400 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-float"></div>
+            <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-lightblue-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-float" style={{ animationDelay: "-2s" }}></div>
           </div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10 text-center py-20">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 hero-title">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 hero-title text-[#0b2d5f]">
             <SplitText text="Redefining Reality through AR/VR Innovation" />
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-10 hero-subtitle">
+          <p className="text-xl md:text-2xl text-[#403E43] max-w-3xl mx-auto mb-10 hero-subtitle">
             At Trikonantara, we bridge the gap between imagination and technology,
             creating immersive experiences that transform industries.
           </p>
           <div className="hero-button">
             <Link
               to="/contact"
-              className="inline-flex items-center bg-neon-blue hover:bg-blue-600 text-white py-3 px-8 rounded-full transition-colors duration-300 shadow-lg shadow-neon-blue/20"
+              className="inline-flex items-center bg-lightblue-500 hover:bg-lightblue-600 text-white py-3 px-8 rounded-full transition-colors duration-300 shadow-lg shadow-lightblue-500/20"
             >
               Start Your Journey
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -114,7 +114,7 @@ const Index: React.FC = () => {
             <div className="marquee-container">
               <div className="marquee-wrapper flex">
                 {Array(10).fill("AR/VR • Immersive Experiences • Innovation • Technology • ").map((text, i) => (
-                  <div key={i} className="marquee-element text-4xl font-bold text-white opacity-10">
+                  <div key={i} className="marquee-element text-4xl font-bold text-[#0b2d5f] opacity-10">
                     {text}
                   </div>
                 ))}
@@ -125,44 +125,44 @@ const Index: React.FC = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-20 relative">
+      <section className="py-20 relative bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 reveal-element">
-              <span className="text-glow">About</span> Us
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 reveal-element text-[#0b2d5f]">
+              <span className="text-lightblue-500">About</span> Us
             </h2>
-            <p className="text-lg text-gray-300 reveal-element">
+            <p className="text-lg text-[#403E43] reveal-element">
               At Trikonantara Innovation Technology Pvt. Ltd., we are driven by a singular passion: to redefine how people experience and interact with the world through the transformative power of Augmented Reality (AR) and Virtual Reality (VR). As pioneers in immersive technology, we craft innovative solutions that elevate industries like gaming, education, healthcare, and entertainment. Our team of visionary engineers, creators, and developers work tirelessly to bridge the gap between imagination and reality, delivering cutting-edge experiences that not only push boundaries but transform industries.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
             <div className="reveal-element">
-              <h3 className="text-2xl font-bold mb-4 relative inline-block">
-                <span className="text-glow-red">Mission</span>
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-neon-red"></span>
+              <h3 className="text-2xl font-bold mb-4 relative inline-block text-[#0b2d5f]">
+                <span className="text-lightblue-500">Mission</span>
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-lightblue-500"></span>
               </h3>
-              <p className="text-gray-300">
+              <p className="text-[#403E43]">
                 Our mission is to leverage the power of AR/VR technologies to create immersive, innovative solutions that empower businesses and individuals. By transforming how we perceive and engage with the world, we strive to drive progress across diverse industries—gaming, education, healthcare, and beyond. Our goal is to make the impossible possible by bridging the gap between imagination and technology, fostering creativity, and unlocking new possibilities for all.
               </p>
             </div>
             
             <div className="reveal-element">
-              <h3 className="text-2xl font-bold mb-4 relative inline-block">
-                <span className="text-glow">Vision</span>
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-neon-blue"></span>
+              <h3 className="text-2xl font-bold mb-4 relative inline-block text-[#0b2d5f]">
+                <span className="text-lightblue-500">Vision</span>
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-lightblue-500"></span>
               </h3>
-              <p className="text-gray-300">
+              <p className="text-[#403E43]">
                 "To become a global leader in AR/VR innovation, shaping a future where immersive technologies enrich lives, redefine industries, and inspire new possibilities. We envision a world where boundaries between the digital and physical realms dissolve, enabling endless creativity, seamless connectivity, and transformative experiences for all."
               </p>
             </div>
           </div>
 
           <div className="max-w-4xl mx-auto text-center reveal-element">
-            <h3 className="text-2xl font-bold mb-6">
+            <h3 className="text-2xl font-bold mb-6 text-[#0b2d5f]">
               Unleashing Innovation in Every Experience
             </h3>
-            <p className="text-gray-300">
+            <p className="text-[#403E43]">
               We are pioneering the future of AR/VR, crafting solutions that break new ground in every interaction. Our commitment to excellence ensures that every experience is not only memorable but impactful.
             </p>
           </div>
@@ -170,18 +170,18 @@ const Index: React.FC = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 relative">
+      <section className="py-20 relative bg-lightblue-100">
         <div className="absolute inset-0 z-0">
-          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-neon-blue rounded-full mix-blend-multiply filter blur-[128px] opacity-10"></div>
-          <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-neon-red rounded-full mix-blend-multiply filter blur-[128px] opacity-10"></div>
+          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-lightblue-400 rounded-full mix-blend-multiply filter blur-[128px] opacity-10"></div>
+          <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-lightblue-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-10"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 reveal-element">
-              Our <span className="text-glow">Services</span>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 reveal-element text-[#0b2d5f]">
+              Our <span className="text-lightblue-500">Services</span>
             </h2>
-            <p className="text-lg text-gray-300 reveal-element">
+            <p className="text-lg text-[#403E43] reveal-element">
               Making Cutting-Edge Technology Accessible to All. At the forefront of innovation, we bring Augmented Reality (AR) and Virtual Reality (VR) to life, offering immersive experiences that redefine how you perceive the world.
             </p>
           </div>
@@ -239,19 +239,19 @@ const Index: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-neon-blue/10 to-neon-red/10"></div>
+      <section className="py-20 relative overflow-hidden bg-white">
+        <div className="absolute inset-0 bg-gradient-to-r from-lightblue-200/20 to-lightblue-300/20"></div>
         <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto text-center reveal-element">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Ready to Transform Your <span className="text-glow">Reality</span>?
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-[#0b2d5f]">
+              Ready to Transform Your <span className="text-lightblue-500">Reality</span>?
             </h2>
-            <p className="text-xl text-gray-300 mb-10">
+            <p className="text-xl text-[#403E43] mb-10">
               Let's collaborate to bring your vision to life through cutting-edge AR/VR technology
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center bg-neon-blue hover:bg-blue-600 text-white py-3 px-8 rounded-full transition-colors duration-300 shadow-lg shadow-neon-blue/20"
+              className="inline-flex items-center bg-lightblue-500 hover:bg-lightblue-600 text-white py-3 px-8 rounded-full transition-colors duration-300 shadow-lg shadow-lightblue-500/20"
             >
               Get in Touch
               <ArrowRight className="ml-2 h-5 w-5" />

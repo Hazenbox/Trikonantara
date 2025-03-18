@@ -23,19 +23,19 @@ const Navbar: React.FC = () => {
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "navbar-blur py-3" : "py-6"
+        scrolled ? "bg-white/80 backdrop-blur-md py-3 shadow-sm" : "py-6"
       }`}
     >
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between">
           <Link
             to="/"
-            className="text-2xl font-bold relative overflow-hidden group"
+            className="text-2xl font-bold relative overflow-hidden group text-[#0b2d5f]"
           >
-            <span className="glitch" data-text="Trikonantara">
+            <span className="inline-block">
               Trikonantara
             </span>
-            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-neon-blue transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-lightblue-500 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
 
           {/* Mobile Navigation Button */}
           <button
-            className="block md:hidden text-white"
+            className="block md:hidden text-[#0b2d5f]"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -59,7 +59,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Navigation Menu */}
       <div
-        className={`fixed inset-0 bg-dark bg-opacity-95 z-50 transform transition-transform duration-300 ease-in-out ${
+        className={`fixed inset-0 bg-white bg-opacity-95 z-50 transform transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } md:hidden`}
       >
@@ -94,10 +94,10 @@ const NavLink: React.FC<NavLinkProps> = ({ to, children }) => {
   return (
     <Link
       to={to}
-      className="relative text-gray-300 hover:text-white transition-colors duration-300 group"
+      className="relative text-[#0b2d5f] hover:text-lightblue-500 transition-colors duration-300 group"
     >
       {children}
-      <span className="absolute bottom-0 left-0 w-full h-0.5 bg-neon-blue transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+      <span className="absolute bottom-0 left-0 w-full h-0.5 bg-lightblue-500 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
     </Link>
   );
 };
@@ -116,7 +116,7 @@ const MobileNavLink: React.FC<MobileNavLinkProps> = ({
   return (
     <Link
       to={to}
-      className="text-2xl text-gray-300 hover:text-white hover:text-glow transition-all duration-300"
+      className="text-2xl text-[#0b2d5f] hover:text-lightblue-500 transition-all duration-300"
       onClick={onClick}
     >
       {children}
