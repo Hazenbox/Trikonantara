@@ -78,10 +78,10 @@ const HeroSection: React.FC = () => {
   return (
     <section
       id={sectionId}
-      className="min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-b from-pebble-olive to-pebble-darkTaupe opacity-0"
+      className="min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-[#101E4E] opacity-0"
     >
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-pebble-olive opacity-95"></div>
+        <div className="absolute inset-0 bg-[#101E4E] opacity-95"></div>
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
           <div className="absolute top-1/4 -left-24 w-96 h-96 bg-pebble-charcoal rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-float"></div>
           <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-pebble-taupe rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-float" style={{ animationDelay: "-2s" }}></div>
