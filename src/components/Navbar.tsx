@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled 
-          ? "bg-white/90 backdrop-blur-md py-3 shadow-md mx-auto mt-2 md:w-[95%] md:left-[2.5%] md:rounded-full" 
+          ? "bg-white/90 backdrop-blur-md py-3 shadow-md mx-auto mt-2 md:w-[95%] max-w-7xl md:left-[50%] md:transform md:-translate-x-1/2 md:rounded-full" 
           : "py-6"
       }`}
     >
@@ -39,7 +39,9 @@ const Navbar: React.FC = () => {
               alt="Trikonantara Logo" 
               className="h-8 mr-2" 
             />
-            <span className="text-2xl font-funnel font-bold relative overflow-hidden group text-[#0b2d5f]">
+            <span className={`text-2xl font-funnel font-bold relative overflow-hidden group ${
+              scrolled ? 'text-[#0b2d5f]' : 'text-white'
+            }`}>
               Trikonantara
             </span>
           </Link>
@@ -55,7 +57,7 @@ const Navbar: React.FC = () => {
 
           {/* Mobile Navigation Button */}
           <button
-            className="block md:hidden text-[#0b2d5f]"
+            className={`block md:hidden ${scrolled ? 'text-[#0b2d5f]' : 'text-white'}`}
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
