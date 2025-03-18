@@ -83,10 +83,10 @@ const HeroSection: React.FC = () => {
         className="min-h-screen flex items-center justify-center overflow-hidden pt-20 opacity-0"
       >
         <div className="container mx-auto px-4 relative z-10 text-center py-20">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 hero-title text-pebble-offWhite">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 hero-title text-white">
             <SplitText text="Adventure inspiring" />
           </h1>
-          <p className="text-xl md:text-2xl text-pebble-offWhite/80 max-w-3xl mx-auto mb-10 hero-subtitle">
+          <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto mb-10 hero-subtitle">
             At Trikonantara, we bridge the gap between imagination and technology,
             creating immersive experiences that transform industries.
           </p>
@@ -106,7 +106,7 @@ const HeroSection: React.FC = () => {
             <div className="marquee-container">
               <div className="marquee-wrapper flex">
                 {Array(10).fill("AR/VR • Immersive Experiences • Innovation • Technology • ").map((text, i) => (
-                  <div key={i} className="marquee-element text-4xl font-bold text-pebble-offWhite opacity-10">
+                  <div key={i} className="marquee-element text-4xl font-bold text-white opacity-10">
                     {text}
                   </div>
                 ))}
