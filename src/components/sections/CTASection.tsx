@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Play, Instagram, Facebook, Linkedin, Twitter, Youtube, Mail } from "lucide-react";
@@ -105,6 +106,13 @@ const CTASection: React.FC = () => {
       <div className="container mx-auto px-4 footer-content mt-20 text-center">
         <div className="flex flex-col items-center justify-center">
           <div className="mb-10 text-center">
+            <div className="flex justify-center mb-4">
+              <img 
+                src="/lovable-uploads/56b9bfab-5919-424f-b808-0a73bd735e7f.png" 
+                alt="Trikonantara Logo" 
+                className="h-12 mb-2" 
+              />
+            </div>
             <h3 className="text-3xl font-funnel font-bold mb-6 text-pebble-offWhite">
               Trikonantara
             </h3>

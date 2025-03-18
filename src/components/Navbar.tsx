@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
             className="flex items-center"
           >
             <img 
-              src="https://raw.githubusercontent.com/Hazenbox/neon-portfolio-cloud/e5e5ddd56922eb766845e1eea4388ba69fd161d0/logo_Trikonantara.png" 
+              src="/lovable-uploads/56b9bfab-5919-424f-b808-0a73bd735e7f.png" 
               alt="Trikonantara Logo" 
               className="h-8 mr-2" 
             />
