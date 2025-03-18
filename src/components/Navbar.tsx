@@ -1,7 +1,15 @@
 
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Mail, Send } from "lucide-react";
+import { 
+  Dialog, 
+  DialogContent, 
+  DialogHeader, 
+  DialogTitle,
+  DialogTrigger 
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,6 +27,14 @@ const Navbar: React.FC = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const scrollToSection = (sectionId: string) => {
+    setIsOpen(false);
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <header
@@ -48,11 +64,35 @@ const Navbar: React.FC = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <NavLink to="/" scrolled={scrolled}>Home</NavLink>
-            <NavLink to="/about" scrolled={scrolled}>About</NavLink>
-            <NavLink to="/services" scrolled={scrolled}>Services</NavLink>
-            <NavLink to="/projects" scrolled={scrolled}>Projects</NavLink>
-            <NavLink to="/contact" scrolled={scrolled}>Contact</NavLink>
+            <NavLink 
+              onClick={() => scrollToSection("about-section")} 
+              scrolled={scrolled}
+            >
+              About
+            </NavLink>
+            <NavLink 
+              onClick={() => scrollToSection("services-section")} 
+              scrolled={scrolled}
+            >
+              Services
+            </NavLink>
+            <NavLink 
+              onClick={() => scrollToSection("products-section")} 
+              scrolled={scrolled}
+            >
+              Product
+            </NavLink>
+            <Dialog>
+              <DialogTrigger asChild>
+                <NavButton scrolled={scrolled}>Contact</NavButton>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-md">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl font-bold">Contact Us</DialogTitle>
+                </DialogHeader>
+                <ContactForm />
+              </DialogContent>
+            </Dialog>
           </nav>
 
           {/* Mobile Navigation Button */}
@@ -72,21 +112,31 @@ const Navbar: React.FC = () => {
         } md:hidden`}
       >
         <div className="flex flex-col items-center justify-center h-full space-y-8">
-          <MobileNavLink to="/" onClick={() => setIsOpen(false)}>
-            Home
-          </MobileNavLink>
-          <MobileNavLink to="/about" onClick={() => setIsOpen(false)}>
+          <MobileNavLink onClick={() => scrollToSection("about-section")}>
             About
           </MobileNavLink>
-          <MobileNavLink to="/services" onClick={() => setIsOpen(false)}>
+          <MobileNavLink onClick={() => scrollToSection("services-section")}>
             Services
           </MobileNavLink>
-          <MobileNavLink to="/projects" onClick={() => setIsOpen(false)}>
-            Projects
+          <MobileNavLink onClick={() => scrollToSection("products-section")}>
+            Product
           </MobileNavLink>
-          <MobileNavLink to="/contact" onClick={() => setIsOpen(false)}>
-            Contact
-          </MobileNavLink>
+          <Dialog>
+            <DialogTrigger asChild>
+              <button
+                className="text-2xl text-[#0b2d5f] hover:text-[#1EAEDB] transition-all duration-300 font-fustat"
+                onClick={() => setIsOpen(false)}
+              >
+                Contact
+              </button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-md">
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold">Contact Us</DialogTitle>
+              </DialogHeader>
+              <ContactForm />
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
     </header>
@@ -94,42 +144,129 @@ const Navbar: React.FC = () => {
 };
 
 interface NavLinkProps {
-  to: string;
   children: React.ReactNode;
   scrolled: boolean;
+  onClick: () => void;
 }
 
-const NavLink: React.FC<NavLinkProps> = ({ to, children, scrolled }) => {
+const NavLink: React.FC<NavLinkProps> = ({ children, scrolled, onClick }) => {
   return (
-    <Link
-      to={to}
+    <button
+      onClick={onClick}
       className={`relative ${scrolled ? 'text-pebble-darkBlue hover:text-pebble-blue' : 'text-pebble-offWhite hover:text-white'} transition-colors duration-300 group font-fustat`}
     >
       {children}
       <span className={`absolute bottom-0 left-0 w-full h-0.5 ${scrolled ? 'bg-pebble-blue' : 'bg-white'} transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100`}></span>
-    </Link>
+    </button>
+  );
+};
+
+interface NavButtonProps {
+  children: React.ReactNode;
+  scrolled: boolean;
+}
+
+const NavButton: React.FC<NavButtonProps> = ({ children, scrolled }) => {
+  return (
+    <button
+      className={`relative ${scrolled ? 'text-pebble-darkBlue hover:text-pebble-blue' : 'text-pebble-offWhite hover:text-white'} transition-colors duration-300 group font-fustat`}
+    >
+      {children}
+      <span className={`absolute bottom-0 left-0 w-full h-0.5 ${scrolled ? 'bg-pebble-blue' : 'bg-white'} transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100`}></span>
+    </button>
   );
 };
 
 interface MobileNavLinkProps {
-  to: string;
   children: React.ReactNode;
   onClick: () => void;
 }
 
 const MobileNavLink: React.FC<MobileNavLinkProps> = ({
-  to,
   children,
   onClick,
 }) => {
   return (
-    <Link
-      to={to}
-      className="text-2xl text-[#0b2d5f] hover:text-lightblue-500 transition-all duration-300 font-fustat"
+    <button
+      className="text-2xl text-[#0b2d5f] hover:text-[#1EAEDB] transition-all duration-300 font-fustat"
       onClick={onClick}
     >
       {children}
-    </Link>
+    </button>
+  );
+};
+
+const ContactForm: React.FC = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+    // Here you would typically send the form data to your backend
+    // Reset form after submission
+    setFormData({ name: '', email: '', message: '' });
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4 mt-4">
+      <div>
+        <label htmlFor="name" className="block text-sm font-medium mb-1">
+          Name
+        </label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+          required
+        />
+      </div>
+      <div>
+        <label htmlFor="email" className="block text-sm font-medium mb-1">
+          Email
+        </label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+          required
+        />
+      </div>
+      <div>
+        <label htmlFor="message" className="block text-sm font-medium mb-1">
+          Message
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          rows={4}
+          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+          required
+        />
+      </div>
+      <div className="flex justify-end">
+        <Button type="submit" className="bg-[#1EAEDB] hover:bg-[#0FA0CE] text-white inline-flex items-center">
+          Send Message
+          <Send className="ml-2 h-4 w-4" />
+        </Button>
+      </div>
+    </form>
   );
 };
 
