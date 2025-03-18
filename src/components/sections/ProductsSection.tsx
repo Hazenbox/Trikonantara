@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -131,7 +132,7 @@ const ProductsSection: React.FC = () => {
               {/* Content Section */}
               <div className="md:w-1/2 p-8 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-2xl font-medium tracking-tighter transition-colors group-hover:text-pebble-blue mb-4 flex items-center">
+                  <h3 className="text-2xl md:text-3xl font-bold tracking-tighter transition-colors group-hover:text-pebble-blue mb-4 flex items-center">
                     Bharat VR <sup className="ml-1 text-xs">™</sup>
                   </h3>
                   <p className="font-medium text-pebble-secondaryText mb-6">

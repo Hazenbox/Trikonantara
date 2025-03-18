@@ -116,11 +116,11 @@ const CTASection: React.FC = () => {
       <div className="container mx-auto px-4 footer-content mt-12 text-center">
         <div className="flex flex-col items-center justify-center">
           <div className="mb-6 text-center">
-            <div className="flex justify-center mb-3">
+            <div className="flex justify-center mb-1">
               <img 
                 src="/lovable-uploads/56b9bfab-5919-424f-b808-0a73bd735e7f.png" 
                 alt="Trikonantara Logo" 
-                className="h-20 mb-1" 
+                className="h-20 mb-0" 
               />
             </div>
             <h3 className="text-2xl font-funnel font-bold mb-4 text-pebble-charcoal">
