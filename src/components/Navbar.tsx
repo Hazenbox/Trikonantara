@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, Mail, Send } from "lucide-react";
@@ -55,7 +56,7 @@ const Navbar: React.FC = () => {
               alt="Trikonantara Logo" 
               className="h-8 mr-2" 
             />
-            <span className={`text-2xl font-funnel font-bold relative overflow-hidden group ${
+            <span className={`text-2xl font-funnel font-bold relative overflow-hidden group uppercase ${
               scrolled ? 'text-[#0b2d5f]' : 'text-white'
             }`}>
               Trikonantara

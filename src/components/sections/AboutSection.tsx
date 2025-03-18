@@ -131,28 +131,42 @@ const AboutSection: React.FC = () => {
           {/* Left Column - Text Content */}
           <div className="about-left-col md:col-span-5">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black font-funnel split-text">
-              About Trikonantara
+              About Trikonantara™
             </h2>
             
             <div className="about-text-wrapper">
               <p className="text-lg text-black font-fustat mb-6 about-text">
-                Trikonantara bridges imagination and technology, crafting immersive experiences that transform industries. We specialize in cutting-edge 3D, AR, and VR solutions, redefining how people explore and interact with the world.
+                Trikonantara™ bridges imagination and technology, crafting immersive experiences that transform industries. We specialize in cutting-edge 3D, AR, and VR solutions, redefining how people explore and interact with the world.
               </p>
               <p className="text-lg text-black font-fustat about-text">
                 Our journey began with a vision to bridge imagination and technology, creating immersive experiences that transform industries. With innovation at our core, we continue to push the boundaries of AR, VR, and 3D technology to redefine digital interaction.
               </p>
             </div>
             
-            <div className="mt-8">
+            <div className="mt-8 flex gap-4">
               <Button 
                 asChild 
-                className="bg-[#1EAEDB] hover:bg-[#0FA0CE] text-white"
+                className="bg-[#1EAEDB] hover:bg-[#0FA0CE] text-white rounded-none"
               >
                 <Link
                   to="/about"
                   className="inline-flex items-center"
                 >
                   Explore Our Story
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              
+              <Button 
+                asChild 
+                variant="outline"
+                className="border-[#1EAEDB] text-[#1EAEDB] hover:bg-[#1EAEDB] hover:text-white rounded-none"
+              >
+                <Link
+                  to="/about#team"
+                  className="inline-flex items-center"
+                >
+                  Our Team
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>

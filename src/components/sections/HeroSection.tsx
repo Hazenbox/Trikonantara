@@ -94,13 +94,13 @@ const HeroSection: React.FC = () => {
           <SplitText text="Immersive Innovation" />
         </h1>
         <p className="text-xl md:text-2xl text-pebble-lightBeige/80 max-w-3xl mx-auto mb-10 hero-subtitle">
-          At Trikonantara, we merge imagination with cutting-edge technology, crafting immersive experiences that redefine industries and inspire new frontiers of exploration.
+          At Trikonantara™, we merge imagination with cutting-edge technology, crafting immersive experiences that redefine industries and inspire new frontiers of exploration.
         </p>
         <div className="hero-button">
           <Dialog>
             <DialogTrigger asChild>
               <button
-                className="inline-flex items-center bg-pebble-lightBeige hover:bg-pebble-offWhite text-pebble-olive py-3 px-8 rounded-full transition-all duration-300 shadow-lg shadow-pebble-charcoal/20 transform hover:scale-105 hover:shadow-xl"
+                className="inline-flex items-center bg-transparent border-2 border-pebble-lightBeige text-pebble-lightBeige py-3 px-8 rounded-none transition-all duration-300 shadow-lg shadow-pebble-charcoal/20 transform hover:bg-pebble-lightBeige hover:text-pebble-olive"
               >
                 Get in Touch
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />

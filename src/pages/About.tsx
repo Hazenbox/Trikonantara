@@ -6,6 +6,7 @@ import { useGSAP, useRevealAnimation, useParallaxEffect, useImageParallax, useSp
 import CustomCursor from "../components/CustomCursor";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Linkedin } from "lucide-react";
 
 const About = () => {
   // Basic reveal animation for elements
@@ -69,6 +70,20 @@ const About = () => {
       },
     });
     
+    // Team member animations
+    gsap.from(".team-member", {
+      y: 50,
+      opacity: 0,
+      stagger: 0.2,
+      duration: 0.8,
+      scrollTrigger: {
+        trigger: ".team-section",
+        start: "top 80%",
+        end: "top 60%",
+        scrub: 1,
+      },
+    });
+    
     // Section divider line animation
     gsap.from(".section-divider", {
       scaleX: 0,
@@ -97,6 +112,27 @@ const About = () => {
     });
   }, []);
 
+  const teamMembers = [
+    {
+      name: "Vishal Gajavelli",
+      position: "Chief Executive Officer",
+      image: "public/lovable-uploads/8b90a88a-fd23-40f1-8cd2-14913e3b46a6.png",
+      linkedin: "https://www.linkedin.com/in/vishalgajavelli/"
+    },
+    {
+      name: "Balraj Kurmi",
+      position: "Chief Technology Officer",
+      image: "public/lovable-uploads/0b33174d-09b4-45f2-ae15-93c39ea68601.png",
+      linkedin: "https://www.linkedin.com/in/balrajkurmi/"
+    },
+    {
+      name: "Naveen Kumar",
+      position: "Chief Operations Officer",
+      image: "public/lovable-uploads/fe111264-f53d-43d1-9b62-e41ef44ca5cf.png",
+      linkedin: "https://www.linkedin.com/in/naveen-kumar-a81a681b6/"
+    }
+  ];
+
   return (
     <div ref={pageRef} className="bg-pebble-cream min-h-screen">
       <CustomCursor />
@@ -109,9 +145,9 @@ const About = () => {
         
         {/* Header Section */}
         <div className="container mx-auto px-4 mb-20">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-5xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-pebble-darkBlue font-funnel header-title split-text">
-              About Trikonantara
+              About Trikonantara™
             </h1>
             <div className="h-1 w-20 bg-pebble-taupe mx-auto mb-12 section-divider"></div>
           </div>
@@ -119,7 +155,7 @@ const About = () => {
         
         {/* Main Content Section */}
         <div className="container mx-auto px-4 content-section">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-16 items-start mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-16 items-start mb-20 max-w-5xl mx-auto">
             {/* Left Column - About Content */}
             <div className="about-content content-left md:col-span-5">
               <h2 className="text-2xl md:text-3xl font-bold mb-8 text-pebble-darkBlue font-funnel reveal-element split-text">
@@ -136,14 +172,14 @@ const About = () => {
                 </p>
                 
                 <p className="text-lg text-pebble-secondaryText font-fustat about-paragraph">
-                  Trikonantara bridges imagination and technology, crafting immersive experiences that transform industries. We specialize in cutting-edge 3D, AR, and VR solutions, redefining how people explore and interact with the world.
+                  Trikonantara™ bridges imagination and technology, crafting immersive experiences that transform industries. We specialize in cutting-edge 3D, AR, and VR solutions, redefining how people explore and interact with the world.
                 </p>
               </div>
               
               <div className="mt-10">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center bg-pebble-darkTaupe hover:bg-pebble-charcoal text-pebble-cream py-3 px-8 rounded-full transition-colors duration-300 shadow-lg shadow-pebble-charcoal/20 reveal-element"
+                  className="inline-flex items-center bg-pebble-darkTaupe hover:bg-pebble-charcoal text-pebble-cream py-3 px-8 rounded-none transition-all duration-300 shadow-lg shadow-pebble-charcoal/20 reveal-element"
                 >
                   Get in Touch
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -166,7 +202,7 @@ const About = () => {
           </div>
           
           {/* Mission & Vision Section */}
-          <div className="max-w-5xl mx-auto mission-vision-section">
+          <div className="max-w-5xl mx-auto mission-vision-section mb-20">
             <h2 className="text-2xl md:text-3xl font-bold mb-12 text-pebble-darkBlue font-funnel text-center reveal-element split-text">
               Mission & Vision
             </h2>
@@ -189,6 +225,43 @@ const About = () => {
                   To lead global AR/VR innovation, shaping a future where immersive technologies dissolve boundaries between digital and physical realms, enabling endless creativity and transformative experiences.
                 </p>
               </div>
+            </div>
+          </div>
+          
+          {/* Team Section */}
+          <div id="team" className="max-w-5xl mx-auto team-section">
+            <h2 className="text-2xl md:text-3xl font-bold mb-12 text-pebble-darkBlue font-funnel text-center reveal-element split-text">
+              Our Team
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+              {teamMembers.map((member, index) => (
+                <div key={index} className="team-member flex flex-col items-center text-center">
+                  <div className="mb-4 relative">
+                    <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-pebble-lightBeige shadow-lg">
+                      <img 
+                        src={member.image} 
+                        alt={member.name} 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <a 
+                      href={member.linkedin} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="absolute bottom-2 right-2 bg-pebble-darkBlue p-2 rounded-full text-white shadow-md hover:bg-[#0077B5] transition-colors duration-300"
+                    >
+                      <Linkedin size={20} />
+                    </a>
+                  </div>
+                  <h3 className="text-xl font-bold text-pebble-darkBlue font-funnel mb-1">
+                    {member.name}
+                  </h3>
+                  <p className="text-pebble-secondaryText font-fustat">
+                    {member.position}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

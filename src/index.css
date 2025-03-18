@@ -80,7 +80,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-funnel font-bold text-pebble-darkBlue;
+    @apply font-funnel font-bold text-pebble-darkBlue tracking-wide;
   }
 
   p {
@@ -269,6 +269,16 @@
 .reveal-element {
   opacity: 0;
   transform: translateY(50px);
+}
+
+h1, h2, h3 {
+  letter-spacing: 0.025em;
+  word-spacing: 0.05em;
+}
+
+.mission-vision-card,
+button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes shine {
