@@ -1,6 +1,7 @@
+
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Play, Instagram, Facebook, Linkedin, Twitter, Youtube } from "lucide-react";
+import { ArrowRight, Play, Instagram, Facebook, Linkedin, Twitter, Youtube, Mail } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -103,59 +104,63 @@ const CTASection: React.FC = () => {
       
       {/* Footer Content */}
       <div className="container mx-auto px-4 footer-content mt-20">
-        <div className="text-center mb-10">
-          <h3 className="text-3xl font-funnel font-bold mb-6 text-pebble-offWhite">
-            Trikonantara
-          </h3>
-          <div className="flex justify-center space-x-6 mb-6">
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300">
-              <Twitter size={20} />
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300">
-              <Linkedin size={20} />
-            </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300">
-              <Youtube size={20} />
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300">
-              <Instagram size={20} />
-            </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300">
-              <Facebook size={20} />
-            </a>
+        <div className="flex flex-col lg:flex-row justify-between">
+          <div className="mb-10 lg:mb-0 lg:w-1/4">
+            <h3 className="text-3xl font-funnel font-bold mb-6 text-pebble-offWhite">
+              Trikonantara
+            </h3>
+            <div className="flex space-x-4 mb-6">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300">
+                <Twitter size={20} />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300">
+                <Linkedin size={20} />
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300">
+                <Youtube size={20} />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300">
+                <Instagram size={20} />
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300">
+                <Facebook size={20} />
+              </a>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:w-3/4 lg:pl-12">
+            <div>
+              <h4 className="text-base font-semibold mb-6 text-pebble-offWhite">
+                Company
+              </h4>
+              <ul className="space-y-4">
+                <FooterLink to="/about">About</FooterLink>
+                <FooterLink to="/services">Features</FooterLink>
+                <FooterLink to="/pricing">Pricing</FooterLink>
+                <FooterLink to="/contact">Contact</FooterLink>
+                <FooterLink to="/blog">Blog</FooterLink>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-base font-semibold mb-6 text-pebble-offWhite">
+                Resources
+              </h4>
+              <ul className="space-y-4">
+                <FooterLink to="/documentation">Documentation</FooterLink>
+                <FooterLink to="/faq">FAQ</FooterLink>
+                <FooterLink to="/support">Support</FooterLink>
+              </ul>
+            </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto text-center">
-          <div>
-            <h4 className="text-base font-semibold mb-6 text-pebble-offWhite">
-              Company
-            </h4>
-            <ul className="space-y-4">
-              <FooterLink to="/about">About</FooterLink>
-              <FooterLink to="/services">Features</FooterLink>
-              <FooterLink to="/pricing">Pricing</FooterLink>
-              <FooterLink to="/contact">Contact</FooterLink>
-              <FooterLink to="/blog">Blog</FooterLink>
-            </ul>
+        <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center mt-16 pt-8 border-t border-pebble-offWhite/20">
+          <div className="flex items-center mb-6 md:mb-0">
+            <p className="text-sm text-pebble-offWhite/70 font-fustat">© 2025 Trikonantara. All rights reserved</p>
           </div>
 
-          <div>
-            <h4 className="text-base font-semibold mb-6 text-pebble-offWhite">
-              Resources
-            </h4>
-            <ul className="space-y-4">
-              <FooterLink to="/documentation">Documentation</FooterLink>
-              <FooterLink to="/faq">FAQ</FooterLink>
-              <FooterLink to="/support">Support</FooterLink>
-            </ul>
-          </div>
-        </div>
-
-        <div className="text-center mt-16 pt-8 border-t border-pebble-offWhite/20">
-          <p className="text-sm text-pebble-offWhite/70 font-fustat">© 2025 Trikonantara. All rights reserved</p>
-          
-          <div className="flex justify-center space-x-6 mt-4 text-sm text-pebble-offWhite/70 font-fustat">
+          <div className="flex space-x-6 text-sm text-pebble-offWhite/70 font-fustat">
             <Link to="/privacy" className="hover:text-pebble-offWhite transition-colors duration-300">
               Privacy Policy
             </Link>
