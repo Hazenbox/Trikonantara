@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Instagram, Facebook, Linkedin, Twitter, Youtube, Mail } from "lucide-react";
@@ -62,6 +61,26 @@ const CTASection: React.FC = () => {
     };
   }, []);
 
+  // Contact dialog component to reuse
+  const ContactDialog = () => (
+    <Dialog>
+      <DialogTrigger asChild>
+        <button
+          className="inline-flex items-center bg-transparent border border-pebble-lightBeige text-pebble-lightBeige py-3 px-8 rounded-none transition-all duration-300 shadow-lg shadow-pebble-charcoal/20 transform hover:bg-pebble-lightBeige hover:text-pebble-olive"
+        >
+          Get in Touch
+          <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+        </button>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-md">
+        <DialogHeader>
+          <DialogTitle className="text-2xl font-bold">Contact Us</DialogTitle>
+        </DialogHeader>
+        <ContactForm />
+      </DialogContent>
+    </Dialog>
+  );
+
   return (
     <section 
       id={sectionId}
@@ -69,34 +88,18 @@ const CTASection: React.FC = () => {
     >
       <div className="container mx-auto px-4 relative mb-16">
         <div className="max-w-4xl mx-auto bg-[#101E4E] rounded-xl shadow-lg shadow-[#101E4E]/20 p-16 relative overflow-hidden cta-content">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="w-full md:w-1/2 mb-10 md:mb-0">
-              <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold mb-6 text-pebble-offWhite">
-                Join Hands with Us
-              </h2>
-            </div>
-            <div className="w-full md:w-1/2 md:pl-12">
-              <p className="text-pebble-offWhite/80 mb-8 font-fustat">
-                We welcome collaborations with businesses, investors, research institutions, and technology partners. Let's create the future together.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <button
-                      className="inline-flex items-center bg-transparent border border-pebble-lightBeige text-pebble-lightBeige py-3 px-8 rounded-none transition-all duration-300 shadow-lg shadow-pebble-charcoal/20 transform hover:bg-pebble-lightBeige hover:text-pebble-olive"
-                    >
-                      Get in Touch
-                      <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                    </button>
-                  </DialogTrigger>
-                  <DialogContent className="sm:max-w-md">
-                    <DialogHeader>
-                      <DialogTitle className="text-2xl font-bold">Contact Us</DialogTitle>
-                    </DialogHeader>
-                    <ContactForm />
-                  </DialogContent>
-                </Dialog>
-              </div>
+          {/* Centered content instead of flex-row */}
+          <div className="flex flex-col items-center text-center">
+            <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold mb-6 text-pebble-offWhite max-w-2xl">
+              Join Hands with Us
+            </h2>
+            
+            <p className="text-pebble-offWhite/80 mb-8 font-fustat max-w-2xl">
+              We welcome collaborations with businesses, investors, research institutions, and technology partners. Let's create the future together.
+            </p>
+            
+            <div className="flex flex-wrap justify-center gap-4">
+              <ContactDialog />
             </div>
           </div>
           
@@ -120,7 +123,7 @@ const CTASection: React.FC = () => {
               />
             </div>
             <h3 className="text-2xl font-funnel font-bold mb-4 text-pebble-charcoal">
-              Trikonantara
+              TRIKONANTARA™
             </h3>
             <div className="flex justify-center space-x-3 mb-4">
               <a href="https://x.com/trikonantara" target="_blank" rel="noopener noreferrer" className="text-pebble-charcoal hover:text-pebble-darkBlue transition-colors duration-300">
@@ -144,7 +147,19 @@ const CTASection: React.FC = () => {
           <div className="mb-6">
             <ul className="flex justify-center gap-6">
               <AnimatedFooterLink to="/about">About</AnimatedFooterLink>
-              <AnimatedFooterLink to="/contact">Contact</AnimatedFooterLink>
+              <AnimatedFooterLink to="#">
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <span className="cursor-pointer">Contact</span>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-md">
+                    <DialogHeader>
+                      <DialogTitle className="text-2xl font-bold">Contact Us</DialogTitle>
+                    </DialogHeader>
+                    <ContactForm />
+                  </DialogContent>
+                </Dialog>
+              </AnimatedFooterLink>
               <AnimatedFooterLink to="/blog">Blog</AnimatedFooterLink>
             </ul>
           </div>
@@ -175,43 +190,30 @@ const CTASection: React.FC = () => {
   );
 };
 
+// Regular FooterLink component (keep it for existing references)
 interface FooterLinkProps {
   to: string;
   children: React.ReactNode;
   external?: boolean;
 }
 
-// Regular FooterLink component (keep it for existing references)
-const FooterLink: React.FC<FooterLinkProps> = ({ to, children, external }) => {
-  if (external) {
+// ... keep existing code (FooterLink component)
+
+// Updated animated link component with darker text
+const AnimatedFooterLink: React.FC<FooterLinkProps> = ({ to, children }) => {
+  if (to === "#") {
     return (
       <li>
-        <a
-          href={to}
-          className="text-pebble-charcoal hover:text-pebble-darkBlue transition-colors duration-300 font-fustat"
-          target="_blank"
-          rel="noopener noreferrer"
+        <span
+          className="text-pebble-charcoal relative font-fustat group cursor-pointer"
         >
           {children}
-        </a>
+          <span className="absolute left-0 bottom-0 w-full h-0.5 bg-pebble-charcoal scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+        </span>
       </li>
     );
   }
   
-  return (
-    <li>
-      <Link
-        to={to}
-        className="text-pebble-charcoal hover:text-pebble-darkBlue transition-colors duration-300 font-fustat"
-      >
-        {children}
-      </Link>
-    </li>
-  );
-};
-
-// Updated animated link component with darker text
-const AnimatedFooterLink: React.FC<FooterLinkProps> = ({ to, children }) => {
   return (
     <li>
       <Link

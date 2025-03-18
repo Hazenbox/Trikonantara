@@ -2,13 +2,16 @@
 import React, { useState } from "react";
 import { Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/components/ui/use-toast";
 
 const ContactForm: React.FC = () => {
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
   });
+  const [submitting, setSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -17,10 +20,23 @@ const ContactForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Here you would typically send the form data to your backend
-    // Reset form after submission
-    setFormData({ name: '', email: '', message: '' });
+    setSubmitting(true);
+    
+    // Log the submission with destination email
+    console.log('Form submitted to contactus@trikonantara.com:', formData);
+    
+    // Simulate form submission
+    setTimeout(() => {
+      // Reset form after submission
+      setFormData({ name: '', email: '', message: '' });
+      setSubmitting(false);
+      
+      // Show success toast
+      toast({
+        title: "Message sent!",
+        description: "Your message has been sent to contactus@trikonantara.com",
+      });
+    }, 1000);
   };
 
   return (
@@ -37,6 +53,7 @@ const ContactForm: React.FC = () => {
           onChange={handleChange}
           className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
           required
+          disabled={submitting}
         />
       </div>
       <div>
@@ -51,6 +68,7 @@ const ContactForm: React.FC = () => {
           onChange={handleChange}
           className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
           required
+          disabled={submitting}
         />
       </div>
       <div>
@@ -65,11 +83,16 @@ const ContactForm: React.FC = () => {
           rows={4}
           className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
           required
+          disabled={submitting}
         />
       </div>
       <div className="flex justify-end">
-        <Button type="submit" className="bg-[#1EAEDB] hover:bg-[#0FA0CE] text-white inline-flex items-center">
-          Send Message
+        <Button 
+          type="submit" 
+          className="bg-[#1EAEDB] hover:bg-[#0FA0CE] text-white inline-flex items-center"
+          disabled={submitting}
+        >
+          {submitting ? 'Sending...' : 'Send Message'}
           <Send className="ml-2 h-4 w-4" />
         </Button>
       </div>
