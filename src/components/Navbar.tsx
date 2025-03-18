@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled 
-          ? "bg-white/90 backdrop-blur-md py-3 shadow-md mx-auto mt-2 md:w-[95%] md:left-[2.5%] md:rounded-full" 
+          ? "bg-pebble-beige/90 backdrop-blur-md py-3 shadow-md mx-auto mt-2 md:w-[95%] md:left-[2.5%] md:rounded-full" 
           : "py-6"
       }`}
     >
@@ -32,12 +32,12 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between">
           <Link
             to="/"
-            className="text-2xl font-bold relative overflow-hidden group text-[#0b2d5f]"
+            className="text-2xl font-bold relative overflow-hidden group text-pebble-darkBlue"
           >
             <span className="inline-block">
               Trikonantara
             </span>
-            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-lightblue-500 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-pebble-taupe transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -51,7 +51,7 @@ const Navbar: React.FC = () => {
 
           {/* Mobile Navigation Button */}
           <button
-            className="block md:hidden text-[#0b2d5f]"
+            className="block md:hidden text-pebble-darkBlue"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -61,7 +61,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Navigation Menu */}
       <div
-        className={`fixed inset-0 bg-white bg-opacity-95 z-50 transform transition-transform duration-300 ease-in-out ${
+        className={`fixed inset-0 bg-pebble-cream bg-opacity-95 z-50 transform transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } md:hidden`}
       >
@@ -96,10 +96,10 @@ const NavLink: React.FC<NavLinkProps> = ({ to, children }) => {
   return (
     <Link
       to={to}
-      className="relative text-[#0b2d5f] hover:text-lightblue-500 transition-colors duration-300 group font-fustat"
+      className="relative text-pebble-darkBlue hover:text-pebble-taupe transition-colors duration-300 group font-fustat"
     >
       {children}
-      <span className="absolute bottom-0 left-0 w-full h-0.5 bg-lightblue-500 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+      <span className="absolute bottom-0 left-0 w-full h-0.5 bg-pebble-taupe transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
     </Link>
   );
 };
@@ -118,7 +118,7 @@ const MobileNavLink: React.FC<MobileNavLinkProps> = ({
   return (
     <Link
       to={to}
-      className="text-2xl text-[#0b2d5f] hover:text-lightblue-500 transition-all duration-300 font-fustat"
+      className="text-2xl text-pebble-darkBlue hover:text-pebble-taupe transition-all duration-300 font-fustat"
       onClick={onClick}
     >
       {children}
