@@ -1,6 +1,6 @@
 
 import React, { useRef, useEffect } from "react";
-import { Cube, Building2, ShoppingBag } from "lucide-react";
+import { Box, Building2, ShoppingBag } from "lucide-react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 
@@ -56,13 +56,13 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, path, typ
   const renderIcon = () => {
     switch (type) {
       case "arvr":
-        return <Cube className="text-pebble-darkBlue" size={24} />;
+        return <Box className="text-pebble-darkBlue" size={24} />;
       case "archviz":
         return <Building2 className="text-pebble-darkBlue" size={24} />;
       case "ecommerce":
         return <ShoppingBag className="text-pebble-darkBlue" size={24} />;
       default:
-        return <Cube className="text-pebble-darkBlue" size={24} />;
+        return <Box className="text-pebble-darkBlue" size={24} />;
     }
   };
 
