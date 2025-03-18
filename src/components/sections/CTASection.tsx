@@ -5,6 +5,8 @@ import { ArrowRight, Instagram, Facebook, Linkedin, Twitter, Youtube, Mail } fro
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Button } from "../ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import ContactForm from "../ContactForm";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -70,24 +72,30 @@ const CTASection: React.FC = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="w-full md:w-1/2 mb-10 md:mb-0">
               <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold mb-6 text-pebble-offWhite">
-                The range of functionalities offered on the platforms includes the ability to connect
+                Join Hands with Trikonantara™ Innovation Technology: We are committed to innovation in AR, VR, and immersive technologies.
               </h2>
             </div>
             <div className="w-full md:w-1/2 md:pl-12">
               <p className="text-pebble-offWhite/80 mb-8 font-fustat">
-                With existing algorithmic strategies that reduce
-                risk and automatically execute buy and sell orders.
+                We welcome collaborations with businesses, investors, research institutions, and technology partners. Let's create the future together.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button 
-                  asChild 
-                  variant="default" 
-                  className="bg-white text-[#101E4E] hover:bg-gray-100"
-                >
-                  <Link to="/contact" className="inline-flex items-center">
-                    Get started <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <button
+                      className="inline-flex items-center bg-transparent border border-pebble-lightBeige text-pebble-lightBeige py-3 px-8 rounded-none transition-all duration-300 shadow-lg shadow-pebble-charcoal/20 transform hover:bg-pebble-lightBeige hover:text-pebble-olive"
+                    >
+                      Get in Touch
+                      <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    </button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-md">
+                    <DialogHeader>
+                      <DialogTitle className="text-2xl font-bold">Contact Us</DialogTitle>
+                    </DialogHeader>
+                    <ContactForm />
+                  </DialogContent>
+                </Dialog>
               </div>
             </div>
           </div>
