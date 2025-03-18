@@ -34,10 +34,7 @@ const Navbar: React.FC = () => {
             to="/"
             className="text-2xl font-bold relative overflow-hidden group text-[#0b2d5f]"
           >
-            <span className="inline-block">
-              Trikonantara
-            </span>
-            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-lightblue-500 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+            <img src="/logo_Trikonantara.png" alt="Trikonantara" className="h-9" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -96,10 +93,10 @@ const NavLink: React.FC<NavLinkProps> = ({ to, children }) => {
   return (
     <Link
       to={to}
-      className="relative text-[#0b2d5f] hover:text-lightblue-500 transition-colors duration-300 group font-fustat"
+      className="relative text-pebble-lightBeige hover:text-white transition-colors duration-300 group font-fustat"
     >
       {children}
-      <span className="absolute bottom-0 left-0 w-full h-0.5 bg-lightblue-500 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+      <span className="absolute bottom-0 left-0 w-full h-0.5 bg-white transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
     </Link>
   );
 };

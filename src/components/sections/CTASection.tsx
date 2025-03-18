@@ -1,7 +1,7 @@
 
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Play, Instagram, Facebook, Linkedin, Twitter, Youtube, Mail } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -38,6 +38,19 @@ const CTASection: React.FC = () => {
           scrub: 1,
         },
       });
+      
+      // Footer animations
+      gsap.from(".footer-content", {
+        y: 30,
+        opacity: 0,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: ".footer-content",
+          start: "top 85%",
+          end: "top 65%",
+          scrub: 1,
+        },
+      });
     });
     
     return () => {
@@ -49,9 +62,9 @@ const CTASection: React.FC = () => {
   return (
     <section 
       id={sectionId}
-      className="min-h-screen relative overflow-hidden py-32 flex items-center bg-gradient-to-b from-pebble-lightBeige to-pebble-taupe opacity-0"
+      className="relative overflow-hidden py-32 flex flex-col bg-gradient-to-b from-pebble-lightBeige to-pebble-taupe opacity-0"
     >
-      <div className="container mx-auto px-4 relative">
+      <div className="container mx-auto px-4 relative mb-20">
         <div className="max-w-4xl mx-auto bg-pebble-beige rounded-xl shadow-lg shadow-pebble-taupe/20 p-16 relative overflow-hidden cta-content">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="w-full md:w-1/2 mb-10 md:mb-0">
@@ -88,7 +101,121 @@ const CTASection: React.FC = () => {
           </div>
         </div>
       </div>
+      
+      {/* Footer Content */}
+      <div className="container mx-auto px-4 footer-content mt-20">
+        <div className="flex flex-col lg:flex-row">
+          <div className="mb-10 lg:mb-0 lg:w-1/4">
+            <h3 className="text-3xl font-bold mb-6 text-pebble-offWhite">
+              Trikonantara
+            </h3>
+            <p className="text-pebble-offWhite/80 mb-4 font-fustat">
+              There is no risk-free trading
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:w-3/4">
+            <div>
+              <h4 className="text-base font-semibold mb-6 text-pebble-offWhite">
+                Company
+              </h4>
+              <ul className="space-y-4">
+                <FooterLink to="/about">About</FooterLink>
+                <FooterLink to="/services">Features</FooterLink>
+                <FooterLink to="/pricing">Pricing</FooterLink>
+                <FooterLink to="/contact">Contact</FooterLink>
+                <FooterLink to="/blog">Blog</FooterLink>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-base font-semibold mb-6 text-pebble-offWhite">
+                Resources
+              </h4>
+              <ul className="space-y-4">
+                <FooterLink to="/documentation">Documentation</FooterLink>
+                <FooterLink to="/faq">FAQ</FooterLink>
+                <FooterLink to="/support">Support</FooterLink>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-base font-semibold mb-6 text-pebble-offWhite">
+                Social
+              </h4>
+              <div className="flex space-x-4 mb-6">
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300">
+                  <Twitter size={20} />
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300">
+                  <Linkedin size={20} />
+                </a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300">
+                  <Youtube size={20} />
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300">
+                  <Instagram size={20} />
+                </a>
+              </div>
+              <ul className="space-y-4">
+                <FooterLink to="https://twitter.com" external>X (Twitter)</FooterLink>
+                <FooterLink to="https://linkedin.com" external>LinkedIn</FooterLink>
+                <FooterLink to="https://youtube.com" external>YouTube</FooterLink>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center mt-16 pt-8 border-t border-pebble-offWhite/20">
+          <div className="flex items-center mb-6 md:mb-0">
+            <p className="text-sm text-pebble-offWhite/70 font-fustat">© 2025 Trikonantara. All rights reserved</p>
+          </div>
+
+          <div className="flex space-x-6 text-sm text-pebble-offWhite/70 font-fustat">
+            <Link to="/privacy" className="hover:text-pebble-offWhite transition-colors duration-300">
+              Privacy Policy
+            </Link>
+            <Link to="/terms" className="hover:text-pebble-offWhite transition-colors duration-300">
+              Terms of Use
+            </Link>
+          </div>
+        </div>
+      </div>
     </section>
+  );
+};
+
+interface FooterLinkProps {
+  to: string;
+  children: React.ReactNode;
+  external?: boolean;
+}
+
+const FooterLink: React.FC<FooterLinkProps> = ({ to, children, external }) => {
+  if (external) {
+    return (
+      <li>
+        <a
+          href={to}
+          className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300 font-fustat"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {children}
+        </a>
+      </li>
+    );
+  }
+  
+  return (
+    <li>
+      <Link
+        to={to}
+        className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300 font-fustat"
+      >
+        {children}
+      </Link>
+    </li>
   );
 };
 

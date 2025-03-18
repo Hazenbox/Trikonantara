@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import CustomCursor from "../components/CustomCursor";
 import HeroSection from "../components/sections/HeroSection";
 import AboutSection from "../components/sections/AboutSection";
@@ -36,7 +35,6 @@ const Index: React.FC = () => {
         <ServicesSection />
         <CTASection />
       </main>
-      <Footer />
     </div>
   );
 };

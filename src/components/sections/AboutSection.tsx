@@ -123,11 +123,11 @@ const AboutSection: React.FC = () => {
       <div className="absolute top-1/4 -left-24 w-96 h-96 bg-pebble-taupe rounded-full mix-blend-multiply filter blur-[128px] opacity-10 animate-float"></div>
       <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-pebble-darkTaupe rounded-full mix-blend-multiply filter blur-[128px] opacity-10 animate-float" style={{ animationDelay: "-2s" }}></div>
       
-      <div className="container mx-auto px-4 about-container">
+      <div className="container mx-auto px-4 max-w-5xl about-container">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-center">
           {/* Left Column - Text Content */}
           <div className="about-left-col md:col-span-5">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-pebble-darkBlue font-funnel split-text">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-pebble-darkBlue font-funnel split-text">
               About Trikonantara
             </h2>
             
