@@ -5,7 +5,7 @@ import { Instagram, Facebook, Linkedin, Twitter, Youtube, Mail } from "lucide-re
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-white py-16">
+    <footer className="bg-gradient-to-b from-pebble-cream to-pebble-lightBeige py-16">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row">
           <div className="mb-10 lg:mb-0 lg:w-1/4">
@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center mt-16 pt-8 border-t border-gray-200">
+        <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center mt-16 pt-8 border-t border-pebble-taupe border-opacity-20">
           <div className="flex items-center mb-6 md:mb-0">
             <p className="text-sm text-pebble-secondaryText font-fustat">© 2025 Trikonantara. All rights reserved</p>
           </div>
