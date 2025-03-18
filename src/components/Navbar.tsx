@@ -1,16 +1,9 @@
 
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, Mail, Send } from "lucide-react";
-import { 
-  Dialog, 
-  DialogContent, 
-  DialogHeader, 
-  DialogTitle,
-  DialogTrigger 
-} from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import ContactForm from "./ContactForm";
+import { Menu, X } from "lucide-react";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
+import AboutModal from "./AboutModal";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -65,12 +58,17 @@ const Navbar: React.FC = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <NavLink 
-              onClick={() => scrollToSection("about-section")} 
-              scrolled={scrolled}
-            >
-              About
-            </NavLink>
+            <Dialog>
+              <DialogTrigger asChild>
+                <button
+                  className={`relative ${scrolled ? 'text-pebble-darkBlue hover:text-pebble-blue' : 'text-pebble-offWhite hover:text-white'} transition-colors duration-300 group font-fustat`}
+                >
+                  About
+                  <span className={`absolute bottom-0 left-0 w-full h-0.5 ${scrolled ? 'bg-pebble-blue' : 'bg-white'} transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100`}></span>
+                </button>
+              </DialogTrigger>
+              <AboutModal />
+            </Dialog>
             <NavLink 
               onClick={() => scrollToSection("services-section")} 
               scrolled={scrolled}
@@ -83,22 +81,6 @@ const Navbar: React.FC = () => {
             >
               Product
             </NavLink>
-            <Dialog>
-              <DialogTrigger asChild>
-                <button
-                  className={`relative ${scrolled ? 'text-pebble-darkBlue hover:text-pebble-blue' : 'text-pebble-offWhite hover:text-white'} transition-colors duration-300 group font-fustat`}
-                >
-                  Contact
-                  <span className={`absolute bottom-0 left-0 w-full h-0.5 ${scrolled ? 'bg-pebble-blue' : 'bg-white'} transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100`}></span>
-                </button>
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-md">
-                <DialogHeader>
-                  <DialogTitle className="text-2xl font-bold">Contact Us</DialogTitle>
-                </DialogHeader>
-                <ContactForm />
-              </DialogContent>
-            </Dialog>
           </nav>
 
           {/* Mobile Navigation Button */}
@@ -118,31 +100,23 @@ const Navbar: React.FC = () => {
         } md:hidden`}
       >
         <div className="flex flex-col items-center justify-center h-full space-y-8">
-          <MobileNavLink onClick={() => scrollToSection("about-section")}>
-            About
-          </MobileNavLink>
-          <MobileNavLink onClick={() => scrollToSection("services-section")}>
-            Services
-          </MobileNavLink>
-          <MobileNavLink onClick={() => scrollToSection("products-section")}>
-            Product
-          </MobileNavLink>
           <Dialog>
             <DialogTrigger asChild>
               <button
                 className="text-2xl text-[#0b2d5f] hover:text-[#1EAEDB] transition-all duration-300 font-fustat"
                 onClick={() => setIsOpen(false)}
               >
-                Contact
+                About
               </button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-md">
-              <DialogHeader>
-                <DialogTitle className="text-2xl font-bold">Contact Us</DialogTitle>
-              </DialogHeader>
-              <ContactForm />
-            </DialogContent>
+            <AboutModal />
           </Dialog>
+          <MobileNavLink onClick={() => scrollToSection("services-section")}>
+            Services
+          </MobileNavLink>
+          <MobileNavLink onClick={() => scrollToSection("products-section")}>
+            Product
+          </MobileNavLink>
         </div>
       </div>
     </header>
@@ -159,22 +133,6 @@ const NavLink: React.FC<NavLinkProps> = ({ children, scrolled, onClick }) => {
   return (
     <button
       onClick={onClick}
-      className={`relative ${scrolled ? 'text-pebble-darkBlue hover:text-pebble-blue' : 'text-pebble-offWhite hover:text-white'} transition-colors duration-300 group font-fustat`}
-    >
-      {children}
-      <span className={`absolute bottom-0 left-0 w-full h-0.5 ${scrolled ? 'bg-pebble-blue' : 'bg-white'} transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100`}></span>
-    </button>
-  );
-};
-
-interface NavButtonProps {
-  children: React.ReactNode;
-  scrolled: boolean;
-}
-
-const NavButton: React.FC<NavButtonProps> = ({ children, scrolled }) => {
-  return (
-    <button
       className={`relative ${scrolled ? 'text-pebble-darkBlue hover:text-pebble-blue' : 'text-pebble-offWhite hover:text-white'} transition-colors duration-300 group font-fustat`}
     >
       {children}

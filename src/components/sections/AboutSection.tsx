@@ -1,10 +1,11 @@
 
 import React, { useEffect } from "react";
 import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Button } from "../ui/button";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
+import AboutModal from "../AboutModal";
 
 // Register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
@@ -135,32 +136,34 @@ const AboutSection: React.FC = () => {
           </div>
           
           <div className="mt-8 flex flex-wrap gap-4 justify-center relative z-10">
-            <Button 
-              asChild 
-              className="bg-[#101E4E] hover:bg-[#101E4E]/90 text-white rounded-none relative z-10"
-            >
-              <Link
-                to="/about"
-                className="inline-flex items-center"
-              >
-                Explore Our Story
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button 
+                  className="bg-[#101E4E] hover:bg-[#101E4E]/90 text-white rounded-none relative z-10"
+                >
+                  <span className="inline-flex items-center">
+                    Explore Our Story
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </span>
+                </Button>
+              </DialogTrigger>
+              <AboutModal />
+            </Dialog>
             
-            <Button 
-              asChild 
-              variant="outline"
-              className="border-[#101E4E] text-[#101E4E] hover:bg-[#101E4E] hover:text-white rounded-none relative z-10"
-            >
-              <Link
-                to="/about#team"
-                className="inline-flex items-center"
-              >
-                Our Team
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button 
+                  variant="outline"
+                  className="border-[#101E4E] text-[#101E4E] hover:bg-[#101E4E] hover:text-white rounded-none relative z-10"
+                >
+                  <span className="inline-flex items-center">
+                    Our Team
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </span>
+                </Button>
+              </DialogTrigger>
+              <AboutModal />
+            </Dialog>
           </div>
         </div>
       </div>

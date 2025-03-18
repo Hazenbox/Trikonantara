@@ -8,11 +8,12 @@ import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Index from "./pages/Index";
-import About from "./pages/About";
 import Services from "./pages/Services";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
+import AboutModal from "./components/AboutModal";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -52,6 +53,36 @@ const App = () => {
     };
   }, []);
 
+  // About page now just shows the modal and redirects to home
+  const AboutRedirect = () => {
+    useEffect(() => {
+      const dialog = document.createElement('div');
+      document.body.appendChild(dialog);
+      
+      // Create a trigger for the dialog and click it
+      const dialogTrigger = document.createElement('button');
+      dialogTrigger.setAttribute('id', 'about-modal-trigger');
+      dialogTrigger.style.display = 'none';
+      dialog.appendChild(dialogTrigger);
+      
+      setTimeout(() => {
+        dialogTrigger.click();
+        window.location.href = '/';
+      }, 100);
+      
+      return () => {
+        document.body.removeChild(dialog);
+      };
+    }, []);
+    
+    return (
+      <Dialog>
+        <DialogTrigger id="about-modal-trigger" />
+        <AboutModal />
+      </Dialog>
+    );
+  };
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
@@ -60,7 +91,7 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/about" element={<AboutRedirect />} />
             <Route path="/services" element={<Services />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
