@@ -1,7 +1,6 @@
-
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Play, Instagram, Facebook, Linkedin, Twitter, Youtube, Mail } from "lucide-react";
+import { ArrowRight, Instagram, Facebook, Linkedin, Twitter, Youtube, Mail } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -62,10 +61,10 @@ const CTASection: React.FC = () => {
   return (
     <section 
       id={sectionId}
-      className="relative overflow-hidden py-32 flex flex-col bg-gradient-to-b from-pebble-lightBeige to-pebble-taupe opacity-0"
+      className="relative overflow-hidden py-32 flex flex-col bg-gradient-to-b from-[#e3edf0] to-[#d1dfe4] opacity-0"
     >
       <div className="container mx-auto px-4 relative mb-20">
-        <div className="max-w-4xl mx-auto bg-pebble-beige rounded-xl shadow-lg shadow-pebble-taupe/20 p-16 relative overflow-hidden cta-content">
+        <div className="max-w-4xl mx-auto bg-[#101E4E] rounded-xl shadow-lg shadow-[#101E4E]/20 p-16 relative overflow-hidden cta-content">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="w-full md:w-1/2 mb-10 md:mb-0">
               <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold mb-6 text-pebble-offWhite">
@@ -83,12 +82,6 @@ const CTASection: React.FC = () => {
                   className="inline-flex items-center bg-pebble-taupe text-pebble-offWhite py-3 px-6 rounded-md transition-colors duration-300 hover:bg-pebble-taupe/90"
                 >
                   Get started <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-                <Link
-                  to="/projects"
-                  className="inline-flex items-center bg-transparent text-pebble-offWhite py-3 px-6 rounded-md hover:bg-pebble-offWhite/10 transition-colors duration-300"
-                >
-                  <Play className="mr-2 h-5 w-5" /> Watch how it works
                 </Link>
               </div>
             </div>
