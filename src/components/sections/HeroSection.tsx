@@ -99,10 +99,10 @@ const HeroSection: React.FC = () => {
         <div className="hero-button">
           <Link
             to="/contact"
-            className="inline-flex items-center bg-pebble-lightBeige hover:bg-pebble-offWhite text-pebble-olive py-3 px-8 rounded-full transition-colors duration-300 shadow-lg shadow-pebble-charcoal/20"
+            className="inline-flex items-center bg-pebble-lightBeige hover:bg-pebble-offWhite text-pebble-olive py-3 px-8 rounded-full transition-all duration-300 shadow-lg shadow-pebble-charcoal/20 hover:shadow-xl hover:scale-105 hover:translate-y-[-2px] group"
           >
             Start Your Journey
-            <ArrowRight className="ml-2 h-5 w-5" />
+            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
           </Link>
         </div>
       </div>

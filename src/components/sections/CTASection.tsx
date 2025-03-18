@@ -62,10 +62,10 @@ const CTASection: React.FC = () => {
   return (
     <section 
       id={sectionId}
-      className="relative overflow-hidden py-32 flex flex-col bg-gradient-to-b from-pebble-lightBeige to-pebble-taupe opacity-0"
+      className="relative overflow-hidden py-32 flex flex-col bg-gradient-to-b from-[#243366] to-[#101E4E] opacity-0"
     >
       <div className="container mx-auto px-4 relative mb-20">
-        <div className="max-w-4xl mx-auto bg-pebble-beige rounded-xl shadow-lg shadow-pebble-taupe/20 p-16 relative overflow-hidden cta-content">
+        <div className="max-w-4xl mx-auto bg-[#2D3C74] rounded-xl shadow-lg shadow-black/30 p-16 relative overflow-hidden cta-content">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="w-full md:w-1/2 mb-10 md:mb-0">
               <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold mb-6 text-pebble-offWhite">
@@ -80,9 +80,9 @@ const CTASection: React.FC = () => {
               <div className="flex flex-wrap gap-4">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center bg-pebble-taupe text-pebble-offWhite py-3 px-6 rounded-md transition-colors duration-300 hover:bg-pebble-taupe/90"
+                  className="inline-flex items-center bg-pebble-lightBeige text-[#101E4E] py-3 px-6 rounded-md transition-all duration-300 hover:bg-pebble-offWhite hover:shadow-xl hover:scale-105 group"
                 >
-                  Get started <ArrowRight className="ml-2 h-5 w-5" />
+                  Get started <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </Link>
                 <Link
                   to="/projects"

@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
               alt="Trikonantara Logo" 
               className="h-8 mr-2" 
             />
-            <span className="text-2xl font-funnel font-bold relative overflow-hidden group text-[#0b2d5f]">
+            <span className={`text-2xl font-funnel font-bold relative overflow-hidden group ${scrolled ? 'text-[#0b2d5f]' : 'text-pebble-offWhite'}`}>
               Trikonantara
             </span>
           </Link>
@@ -55,7 +55,7 @@ const Navbar: React.FC = () => {
 
           {/* Mobile Navigation Button */}
           <button
-            className="block md:hidden text-[#0b2d5f]"
+            className={`block md:hidden ${scrolled ? 'text-[#0b2d5f]' : 'text-pebble-offWhite'}`}
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
