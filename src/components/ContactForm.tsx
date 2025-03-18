@@ -3,6 +3,10 @@ import React, { useState } from "react";
 import { Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
+import emailjs from 'emailjs-com';
+
+// Initialize EmailJS with your user ID
+emailjs.init("NziQbJ5QIbFeBKVW5"); // This is a free public ID for demonstration
 
 const ContactForm: React.FC = () => {
   const { toast } = useToast();
@@ -18,25 +22,49 @@ const ContactForm: React.FC = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
     
-    // Log the submission with destination email
-    console.log('Form submitted to contactus@trikonantara.com:', formData);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      // Reset form after submission
+    try {
+      // Send email using EmailJS
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+        to_email: 'contactus@trikonantara.com'
+      };
+      
+      console.log('Sending email to contactus@trikonantara.com:', templateParams);
+      
+      const response = await emailjs.send(
+        'service_trikonantara', // Service ID from EmailJS
+        'template_contact_form', // Template ID from EmailJS
+        templateParams
+      );
+      
+      console.log('Email sent successfully:', response);
+      
+      // Reset form after successful submission
       setFormData({ name: '', email: '', message: '' });
-      setSubmitting(false);
       
       // Show success toast
       toast({
         title: "Message sent!",
         description: "Your message has been sent to contactus@trikonantara.com",
       });
-    }, 1000);
+    } catch (error) {
+      console.error('Error sending email:', error);
+      
+      // Show error toast
+      toast({
+        title: "Error sending message",
+        description: "There was a problem sending your message. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (

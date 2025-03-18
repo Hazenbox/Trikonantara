@@ -1,8 +1,6 @@
 
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import { Button } from "../ui/button";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -144,15 +142,7 @@ const ProductsSection: React.FC = () => {
                 </div>
                 
                 <div className="mt-auto flex flex-col">
-                  <p className="text-xs text-pebble-secondaryText mb-4">Experience India like never before</p>
-                  <Link to="/products/bharat-vr">
-                    <Button className="group/btn flex items-center bg-[#101E4E] hover:bg-[#101E4E]/90">
-                      <span className="mr-1">
-                        Learn More
-                      </span>
-                      <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
-                    </Button>
-                  </Link>
+                  <p className="text-xs text-pebble-secondaryText">Experience India like never before</p>
                 </div>
               </div>
             </div>
