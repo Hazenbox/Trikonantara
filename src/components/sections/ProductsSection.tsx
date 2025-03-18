@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import PixelCard from "../PixelCard";
 import gsap from "gsap";
@@ -116,7 +115,7 @@ const ProductsSection: React.FC = () => {
   return (
     <section 
       id={sectionId}
-      className="min-h-screen py-20 relative bg-gradient-to-b from-[#1A2A5E] to-[#243366] flex items-center opacity-0"
+      className="min-h-screen py-20 relative bg-gradient-to-b from-pebble-lightBeige to-pebble-cream flex items-center opacity-0"
     >
       <div className="absolute inset-0 z-0">
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-pebble-blue rounded-full mix-blend-multiply filter blur-[128px] opacity-10"></div>
@@ -125,10 +124,10 @@ const ProductsSection: React.FC = () => {
       
       <div className="container mx-auto px-4 relative z-10 products-container">
         <div className="text-center mb-16 products-heading">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-pebble-lightBeige products-title">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-pebble-darkTaupe products-title">
             Our Flagship Product
           </h2>
-          <p className="text-lg text-pebble-lightBeige/80 max-w-2xl mx-auto products-intro">
+          <p className="text-lg text-pebble-secondaryText max-w-2xl mx-auto products-intro">
             Discover our innovative technology solutions designed to transform industries through immersive experiences.
           </p>
         </div>
@@ -139,7 +138,7 @@ const ProductsSection: React.FC = () => {
             description="An immersive virtual reality platform designed to showcase India's cultural heritage and historical landmarks through interactive 3D environments."
             imageSrc="/lovable-uploads/789b56f2-093e-4961-a436-b091c1f2a2ca.png"
             footerText="Experience India like never before"
-            className="bg-gradient-to-br from-[#2D3C74] to-[#384991] border-[#4D5CAE] shadow-lg"
+            className="bg-gradient-to-br from-pebble-offWhite to-pebble-lightBlue border-pebble-lightBeige shadow-lg"
             link="/products/bharat-vr"
           />
         </div>
