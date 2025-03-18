@@ -2,7 +2,7 @@
 import React, { useRef } from "react";
 import { useGSAP, useRevealAnimation, useParallaxEffect, useImageParallax, useSplitTextAnimation } from "../hooks/useGSAP";
 import { ArrowRight, X, Linkedin } from "lucide-react";
-import { DialogContent, DialogClose } from "@/components/ui/dialog";
+import { DialogContent } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 const AboutModal = () => {
@@ -132,19 +132,14 @@ const AboutModal = () => {
 
   return (
     <DialogContent ref={pageRef} className="max-w-6xl h-[80vh] overflow-hidden bg-white p-0">
-      <DialogClose className="absolute right-4 top-4 z-50">
-        <X className="h-6 w-6" />
-      </DialogClose>
-      
       <ScrollArea className="h-full w-full">
         <main className="p-6">
           {/* Header Section */}
           <div className="container mx-auto px-4 mb-10">
             <div className="max-w-5xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-pebble-darkBlue font-funnel header-title split-text tracking-wide">
+              <h1 className="text-3xl md:text-4xl font-bold mb-6 text-pebble-darkBlue font-funnel header-title split-text tracking-wide">
                 Our Story
               </h1>
-              <div className="h-1 w-20 bg-pebble-taupe mx-auto mb-8 section-divider"></div>
             </div>
           </div>
           
