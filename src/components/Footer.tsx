@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { Instagram, Facebook, Linkedin, Twitter, Youtube, Mail } from "lucide-react";
@@ -57,14 +56,10 @@ const Footer: React.FC = () => {
 
         <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center mt-16 pt-8 border-t border-gray-200">
           <div className="flex items-center mb-6 md:mb-0">
-            <div className="flex items-center">
-              <div className="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
-              <p className="text-sm text-[#403E43] font-fustat">All systems operational</p>
-            </div>
+            <p className="text-sm text-[#403E43] font-fustat">© 2025 Trikonantara. All rights reserved</p>
           </div>
 
           <div className="flex space-x-6 text-sm text-[#403E43] font-fustat">
-            <p>© {new Date().getFullYear()} Trikonantara. All rights reserved</p>
             <Link to="/privacy" className="hover:text-[#0b2d5f] transition-colors duration-300">
               Privacy Policy
             </Link>

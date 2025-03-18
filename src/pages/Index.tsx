@@ -177,35 +177,35 @@ const Index: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div className="reveal-element">
               <ServiceCard
-                title="Product AR/VR"
-                description="We create interactive AR/VR experiences, allowing customers to explore products in immersive, realistic virtual environments."
-                path="/services/product"
+                title="AR/VR Interactive Services"
+                description="Immersive augmented and virtual reality experiences that blend the digital and physical worlds, creating engaging and interactive solutions for training, entertainment, and product visualization."
+                path="/services/arvr"
               />
             </div>
             
             <div className="reveal-element">
               <ServiceCard
-                title="Entertainment AR/VR"
-                description="Our AR/VR entertainment services provide users with immersive, engaging experiences in virtual worlds, games, and events."
-                path="/services/entertainment"
+                title="Arch Viz"
+                description="High-quality 3D renderings and animations that bring architectural designs to life, allowing clients and stakeholders to visualize spaces before they are built."
+                path="/services/archviz"
               />
             </div>
             
             <div className="reveal-element">
               <ServiceCard
-                title="Tourism AR/VR"
-                description="We offer AR/VR services for virtual travel, letting users explore destinations and landmarks before visiting."
-                path="/services/tourism"
+                title="3D for E-commerce"
+                description="Photorealistic 3D models of products for online stores, enhancing the customer experience and increasing sales through interactive product views and augmented reality previews."
+                path="/services/ecommerce"
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section - Updated to match the design */}
+      {/* CTA Section */}
       <section className="relative overflow-hidden py-32">
         <div className="container mx-auto px-4 relative">
-          <div className="max-w-5xl mx-auto bg-[#0d1626] rounded-xl shadow-lg shadow-[#0d1626]/10 p-12 relative overflow-hidden">
+          <div className="max-w-4xl mx-auto bg-[#0d1626] rounded-xl shadow-lg shadow-[#0d1626]/10 p-16 relative overflow-hidden">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="w-full md:w-1/2 mb-10 md:mb-0">
                 <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold mb-6 text-white">
@@ -234,7 +234,6 @@ const Index: React.FC = () => {
               </div>
             </div>
             
-            {/* Decorative elements */}
             <div className="absolute top-0 right-0 w-full h-full pointer-events-none">
               <div className="absolute top-1/4 right-1/4 w-40 h-40 rounded-full bg-white opacity-5"></div>
               <div className="absolute bottom-1/4 right-1/3 w-60 h-60 rounded-full bg-white opacity-5"></div>

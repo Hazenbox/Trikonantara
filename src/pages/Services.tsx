@@ -30,25 +30,25 @@ const Services = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div className="reveal-element">
               <ServiceCard
-                title="Product AR/VR"
-                description="We create interactive AR/VR experiences, allowing customers to explore products in immersive, realistic virtual environments."
-                path="/services/product"
+                title="AR/VR Interactive Services"
+                description="Immersive augmented and virtual reality experiences that blend the digital and physical worlds, creating engaging and interactive solutions for training, entertainment, and product visualization."
+                path="/services/arvr"
               />
             </div>
             
             <div className="reveal-element">
               <ServiceCard
-                title="Entertainment AR/VR"
-                description="Our AR/VR entertainment services provide users with immersive, engaging experiences in virtual worlds, games, and events."
-                path="/services/entertainment"
+                title="Arch Viz"
+                description="High-quality 3D renderings and animations that bring architectural designs to life, allowing clients and stakeholders to visualize spaces before they are built."
+                path="/services/archviz"
               />
             </div>
             
             <div className="reveal-element">
               <ServiceCard
-                title="Tourism AR/VR"
-                description="We offer AR/VR services for virtual travel, letting users explore destinations and landmarks before visiting."
-                path="/services/tourism"
+                title="3D for E-commerce"
+                description="Photorealistic 3D models of products for online stores, enhancing the customer experience and increasing sales through interactive product views and augmented reality previews."
+                path="/services/ecommerce"
               />
             </div>
           </div>
