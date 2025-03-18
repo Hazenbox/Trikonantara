@@ -94,7 +94,7 @@ const NavLink: React.FC<NavLinkProps> = ({ to, children }) => {
   return (
     <Link
       to={to}
-      className="relative text-[#0b2d5f] hover:text-lightblue-500 transition-colors duration-300 group"
+      className="relative text-[#0b2d5f] hover:text-lightblue-500 transition-colors duration-300 group font-fustat"
     >
       {children}
       <span className="absolute bottom-0 left-0 w-full h-0.5 bg-lightblue-500 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
@@ -116,7 +116,7 @@ const MobileNavLink: React.FC<MobileNavLinkProps> = ({
   return (
     <Link
       to={to}
-      className="text-2xl text-[#0b2d5f] hover:text-lightblue-500 transition-all duration-300"
+      className="text-2xl text-[#0b2d5f] hover:text-lightblue-500 transition-all duration-300 font-fustat"
       onClick={onClick}
     >
       {children}

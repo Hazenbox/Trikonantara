@@ -63,11 +63,11 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, path }) =
       
       <h3 className="text-xl font-bold mb-3 text-[#0b2d5f]">{title}</h3>
       
-      <p className="text-[#403E43] mb-6">{description}</p>
+      <p className="text-[#403E43] mb-6 font-fustat">{description}</p>
       
       <Link 
         to={path} 
-        className="inline-flex items-center text-lightblue-500 hover:text-[#0b2d5f] group transition-colors duration-300"
+        className="inline-flex items-center text-lightblue-500 hover:text-[#0b2d5f] group transition-colors duration-300 font-fustat"
       >
         Read more
         <span className="ml-2 transform transition-transform duration-300 group-hover:translate-x-1">→</span>

@@ -134,7 +134,8 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
-        funnel: ['Funnel Display', 'sans-serif']
+        funnel: ['Funnel Display', 'sans-serif'],
+        fustat: ['Fustat', 'sans-serif']
       }
     }
   },

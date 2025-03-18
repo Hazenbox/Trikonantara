@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Funnel+Display:opsz,wght@15..40,400;15..40,500;15..40,600;15..40,700;15..40,800;15..40,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Funnel+Display:opsz,wght@15..40,400;15..40,500;15..40,600;15..40,700;15..40,800;15..40,900&family=Fustat:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -72,7 +72,7 @@
   }
 
   body {
-    @apply bg-gradient-to-b from-lightblue-100 to-lightblue-200 text-[#0b2d5f] font-sans min-h-screen;
+    @apply bg-gradient-to-b from-lightblue-100 to-lightblue-200 text-[#0b2d5f] font-fustat min-h-screen;
   }
 
   html {
@@ -81,6 +81,10 @@
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-funnel font-bold text-[#0b2d5f];
+  }
+
+  p {
+    @apply font-fustat;
   }
 }
 
