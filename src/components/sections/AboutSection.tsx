@@ -1,5 +1,5 @@
 
-import React, { useRef } from "react";
+import React from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useGSAP, useImageParallax, useSplitTextAnimation } from "../../hooks/useGSAP";
@@ -51,12 +51,24 @@ const AboutSection: React.FC = () => {
         scrub: 1,
       },
     });
+
+    // Section entry/exit animations
+    gsap.to(".about-section", {
+      opacity: 1,
+      duration: 1.2,
+      scrollTrigger: {
+        trigger: ".about-section",
+        start: "top bottom",
+        end: "bottom top",
+        toggleActions: "play none none reverse",
+      },
+    });
   }, []);
 
   return (
     <section 
       ref={aboutRef}
-      className="py-20 relative bg-pebble-cream overflow-hidden"
+      className="about-section min-h-screen py-20 relative bg-pebble-cream flex items-center opacity-0"
     >
       <div className="absolute top-1/4 -left-24 w-96 h-96 bg-pebble-taupe rounded-full mix-blend-multiply filter blur-[128px] opacity-10 animate-float"></div>
       <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-pebble-darkTaupe rounded-full mix-blend-multiply filter blur-[128px] opacity-10 animate-float" style={{ animationDelay: "-2s" }}></div>

@@ -16,7 +16,7 @@ const ServicesSection: React.FC = () => {
       duration: 1,
       scrollTrigger: {
         trigger: ".services-container",
-        start: "top 80%",
+        start: "top 85%",
         end: "top 40%",
         scrub: 1,
       },
@@ -29,23 +29,35 @@ const ServicesSection: React.FC = () => {
       duration: 1,
       scrollTrigger: {
         trigger: ".services-container",
-        start: "top 80%",
+        start: "top 85%",
         end: "top 40%",
         scrub: 1,
       },
     });
     
-    // Cards staggered animation
+    // Cards staggered animation with better fade effect
     gsap.from(".service-card-wrapper", {
-      y: 40,
+      y: 60,
       opacity: 0,
-      stagger: 0.2,
-      duration: 0.8,
+      stagger: 0.3,
+      duration: 1,
       scrollTrigger: {
         trigger: ".services-cards",
         start: "top 80%",
-        end: "top 40%",
+        end: "top 30%",
         scrub: 1,
+      },
+    });
+
+    // Section entry/exit animations
+    gsap.to(".services-section", {
+      opacity: 1,
+      duration: 1.2,
+      scrollTrigger: {
+        trigger: ".services-section",
+        start: "top bottom",
+        end: "bottom top",
+        toggleActions: "play none none reverse",
       },
     });
   }, []);
@@ -53,16 +65,16 @@ const ServicesSection: React.FC = () => {
   return (
     <section 
       ref={servicesRef}
-      className="py-20 relative bg-pebble-gray overflow-hidden"
+      className="services-section min-h-screen py-20 relative bg-gradient-to-b from-pebble-cream to-pebble-lightBeige flex items-center opacity-0"
     >
       <div className="absolute inset-0 z-0">
-        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-pebble-blue rounded-full mix-blend-multiply filter blur-[128px] opacity-10"></div>
-        <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-pebble-darkBlue rounded-full mix-blend-multiply filter blur-[128px] opacity-10"></div>
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-pebble-taupe rounded-full mix-blend-multiply filter blur-[128px] opacity-10"></div>
+        <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-pebble-olive rounded-full mix-blend-multiply filter blur-[128px] opacity-10"></div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10 services-container">
         <div className="text-center mb-16 services-heading">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-pebble-darkBlue services-title">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-pebble-darkTaupe services-title">
             Our Services
           </h2>
           <p className="text-lg text-pebble-secondaryText max-w-2xl mx-auto services-intro">

@@ -1,5 +1,5 @@
 
-import React, { useRef } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { useGSAP } from "../../hooks/useGSAP";
@@ -39,6 +39,13 @@ const HeroSection: React.FC = () => {
       duration: 30,
       repeat: -1,
     });
+    
+    // Section entry/exit animations
+    gsap.to(".hero-section", {
+      opacity: 1,
+      duration: 1.2,
+      delay: 0.2,
+    });
   }, []);
 
   // Split text animation helper
@@ -62,7 +69,7 @@ const HeroSection: React.FC = () => {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-pebble-darkTaupe"
+      className="hero-section min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-b from-pebble-olive to-pebble-darkTaupe opacity-0"
     >
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-pebble-olive opacity-95"></div>
