@@ -7,8 +7,8 @@ const CustomCursor: React.FC = () => {
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
-    // Add class to body to hide default cursor
-    document.body.classList.add('custom-cursor-active');
+    // Add styles to hide default cursor
+    document.documentElement.style.cursor = 'none';
     
     // Set up cursor movement
     const onMouseMove = (e: MouseEvent) => {
@@ -33,7 +33,7 @@ const CustomCursor: React.FC = () => {
     
     // Cleanup
     return () => {
-      document.body.classList.remove('custom-cursor-active');
+      document.documentElement.style.cursor = '';
       document.removeEventListener("mousemove", onMouseMove);
       document.removeEventListener("mousedown", onMouseDown);
       document.removeEventListener("mouseup", onMouseUp);
@@ -43,7 +43,9 @@ const CustomCursor: React.FC = () => {
   return (
     <div 
       ref={cursorRef}
-      className={`custom-cursor ${isActive ? "custom-cursor-active" : ""}`}
+      className={`fixed w-6 h-6 rounded-full bg-pebble-taupe bg-opacity-50 pointer-events-none z-[9999] transform -translate-x-1/2 -translate-y-1/2 ${
+        isActive ? "scale-75" : "scale-100"
+      } transition-transform duration-200`}
     />
   );
 };
