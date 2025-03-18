@@ -37,20 +37,22 @@ export function AuroraBackground({
         {children}
       </div>
 
-      <style jsx>{`
-        .aurora-dots {
-          position: absolute;
-          inset: 0;
-          background-image: radial-gradient(rgba(128, 0, 255, 0.1) 1px, transparent 1px);
-          background-size: 16px 16px;
-        }
+      <style>
+        {`
+          .aurora-dots {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(128, 0, 255, 0.1) 1px, transparent 1px);
+            background-size: 16px 16px;
+          }
 
-        .aurora-mask {
-          position: absolute;
-          inset: 0;
-          background: radial-gradient(circle at center, transparent 0%, #050505 70%);
-        }
-      `}</style>
+          .aurora-mask {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, transparent 0%, #050505 70%);
+          }
+        `}
+      </style>
     </div>
   );
 }
