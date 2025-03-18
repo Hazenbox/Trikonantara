@@ -1,7 +1,6 @@
-
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Instagram, Facebook, Linkedin, Twitter, Youtube, Phone, Mail, MapPin } from "lucide-react";
+import { ArrowRight, Instagram, Facebook, Linkedin, Twitter, Youtube } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Button } from "../ui/button";
@@ -152,18 +151,9 @@ const CTASection: React.FC = () => {
           </div>
           
           <div className="mt-4 text-xs text-pebble-charcoal font-fustat space-y-2">
-            <div className="flex items-center justify-center gap-2">
-              <Phone size={14} className="text-pebble-darkBlue" />
-              <p>+91 9493803629</p>
-            </div>
-            <div className="flex items-center justify-center gap-2">
-              <Mail size={14} className="text-pebble-darkBlue" />
-              <p>contactus@trikonantara.com</p>
-            </div>
-            <div className="flex items-center justify-center gap-2">
-              <MapPin size={14} className="text-pebble-darkBlue" />
-              <p>18-4-174, Near Munurkapu, Sangam, Aliabad, Hyderabad, Charminar, Telangana, India, 500053</p>
-            </div>
+            <p>+91 9493803629</p>
+            <p>contactus@trikonantara.com</p>
+            <p>18-4-174, Near Munurkapu, Sangam, Aliabad, Hyderabad, Charminar, Telangana, India, 500053</p>
           </div>
         </div>
       </div>

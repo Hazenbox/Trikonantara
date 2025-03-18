@@ -1,7 +1,6 @@
 
 import React, { useRef, useEffect } from "react";
 import { Box, Building2, ShoppingBag } from "lucide-react";
-import { Link } from "react-router-dom";
 import gsap from "gsap";
 
 interface ServiceCardProps {
@@ -77,15 +76,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, path, typ
       
       <h3 className="text-xl font-bold mb-3 text-pebble-darkBlue">{title}</h3>
       
-      <p className="text-pebble-secondaryText mb-6 font-fustat">{description}</p>
-      
-      <Link 
-        to={path} 
-        className="inline-flex items-center text-pebble-darkBlue hover:text-pebble-olive group transition-colors duration-300 font-fustat"
-      >
-        Read more
-        <span className="ml-2 transform transition-transform duration-300 group-hover:translate-x-1">→</span>
-      </Link>
+      <p className="text-pebble-secondaryText font-fustat">{description}</p>
     </div>
   );
 };

@@ -113,14 +113,14 @@ const ProductsSection: React.FC = () => {
       <div className="container mx-auto px-4 relative z-10 products-container">
         <div className="text-center mb-16 products-heading">
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-black products-title tracking-wide">
-            Our Flagship Product
+            Bharat VR
           </h2>
           <p className="text-lg text-black max-w-2xl mx-auto products-intro">
             Discover our innovative technology solutions designed to transform industries through immersive experiences.
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto featured-product">
+        <div className="max-w-4xl mx-auto featured-product">
           <div className="bg-gradient-to-br from-pebble-offWhite to-pebble-lightBlue border border-pebble-lightBeige shadow-lg rounded-lg overflow-hidden group">
             <div className="flex flex-col md:flex-row">
               {/* Image Section */}

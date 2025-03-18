@@ -127,10 +127,10 @@ const AboutSection: React.FC = () => {
           
           {/* Associated with section - made images bigger */}
           <div className="mt-10 partners-section">
-            <h3 className="text-lg font-medium mb-6 text-[#8A898C] font-fustat">Associated with</h3>
+            <h3 className="text-sm font-medium mb-6 text-[#8A898C] font-fustat">Associated with</h3>
             <div className="flex justify-center space-x-12 mb-8">
-              <img src="/lovable-uploads/bca2854c-7cba-4347-a3bd-bb195eb55a00.png" alt="ACIC-CBIT Partner Logo" className="h-24 partner-logo" />
-              <img src="/lovable-uploads/bcbfb8b2-eaa3-42cd-9c4c-9cda6717ddb1.png" alt="NITI Aayog Partner Logo" className="h-24 partner-logo" />
+              <img src="/lovable-uploads/bca2854c-7cba-4347-a3bd-bb195eb55a00.png" alt="ACIC-CBIT Partner Logo" className="h-28 partner-logo" />
+              <img src="/lovable-uploads/bcbfb8b2-eaa3-42cd-9c4c-9cda6717ddb1.png" alt="NITI Aayog Partner Logo" className="h-28 partner-logo" />
             </div>
           </div>
           
@@ -139,13 +139,13 @@ const AboutSection: React.FC = () => {
               asChild 
               className="bg-[#101E4E] hover:bg-[#101E4E]/90 text-white rounded-none"
             >
-              <a
-                href="/about"
+              <Link
+                to="/about"
                 className="inline-flex items-center"
               >
                 Explore Our Story
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
+              </Link>
             </Button>
             
             <Button 
@@ -153,13 +153,13 @@ const AboutSection: React.FC = () => {
               variant="outline"
               className="border-[#101E4E] text-[#101E4E] hover:bg-[#101E4E] hover:text-white rounded-none"
             >
-              <a
-                href="/about#team"
+              <Link
+                to="/about#team"
                 className="inline-flex items-center"
               >
                 Our Team
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
+              </Link>
             </Button>
           </div>
         </div>
