@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -119,10 +118,12 @@ const AboutSection: React.FC = () => {
   return (
     <section 
       id={sectionId}
-      className="min-h-screen py-20 relative bg-gradient-to-b from-white to-[#D3E4FD] flex items-center opacity-0"
+      className="min-h-screen py-20 relative bg-white flex items-center opacity-0"
     >
-      <div className="absolute top-1/4 -left-24 w-96 h-96 bg-pebble-taupe rounded-full mix-blend-multiply filter blur-[128px] opacity-5 animate-float"></div>
-      <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-pebble-darkTaupe rounded-full mix-blend-multiply filter blur-[128px] opacity-5 animate-float" style={{ animationDelay: "-2s" }}></div>
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-1/4 -left-24 w-96 h-96 bg-pebble-taupe rounded-full mix-blend-multiply filter blur-[128px] opacity-5 animate-float"></div>
+        <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-pebble-darkTaupe rounded-full mix-blend-multiply filter blur-[128px] opacity-5 animate-float" style={{ animationDelay: "-2s" }}></div>
+      </div>
       
       <div className="container mx-auto px-4 max-w-5xl about-container">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-center">
