@@ -1,4 +1,3 @@
-
 import React, { useRef } from "react";
 import { useGSAP, useRevealAnimation, useParallaxEffect, useImageParallax, useSplitTextAnimation } from "../hooks/useGSAP";
 import { ArrowRight, X, Linkedin } from "lucide-react";
@@ -167,6 +166,15 @@ const AboutModal = () => {
                 <p className="text-lg text-pebble-secondaryText font-fustat about-paragraph">
                   Trikonantara™ bridges imagination and technology, crafting immersive experiences that transform industries. We specialize in cutting-edge 3D, AR, and VR solutions, redefining how people explore and interact with the world.
                 </p>
+              </div>
+              
+              {/* Associated Partners - Added to the modal */}
+              <div className="mt-8">
+                <h3 className="text-lg font-medium mb-4 text-pebble-darkBlue font-fustat">Associated with</h3>
+                <div className="flex flex-col space-y-4">
+                  <img src="/lovable-uploads/4eeead38-8221-4629-867d-ac3cf7391273.png" alt="NITI Aayog & AIM Partner Logo" className="h-20 partner-logo" />
+                  <img src="/lovable-uploads/ece65d10-2de9-4521-bebb-18990da2a976.png" alt="ACIC-CBIT Partner Logo" className="h-20 partner-logo" />
+                </div>
               </div>
             </div>
             
