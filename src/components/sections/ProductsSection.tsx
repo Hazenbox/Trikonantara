@@ -126,8 +126,8 @@ const ProductsSection: React.FC = () => {
               {/* Image Section */}
               <div className="md:w-1/2 overflow-hidden">
                 <img 
-                  src="/lovable-uploads/8d848fe6-58aa-4bb1-9820-91f1d829f3b0.png" 
-                  alt="Bharat VR - Our Flagship Product" 
+                  src="/lovable-uploads/f208b926-b130-4b04-aa8c-5ebd9ef7f2ba.png" 
+                  alt="Bharat VR - Virtual Reality Experience" 
                   className="w-full h-full object-cover transition-transform group-hover:scale-105" 
                 />
               </div>
@@ -135,8 +135,8 @@ const ProductsSection: React.FC = () => {
               {/* Content Section */}
               <div className="md:w-1/2 p-8 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-2xl font-extrabold tracking-tighter transition-colors group-hover:text-pebble-blue mb-4">
-                    Bharat VR - Our Flagship Product
+                  <h3 className="text-2xl font-medium tracking-tighter transition-colors group-hover:text-pebble-blue mb-4">
+                    Bharat VR
                   </h3>
                   <p className="font-medium text-pebble-secondaryText mb-6">
                     An immersive virtual reality platform designed to showcase India's cultural heritage and historical landmarks through interactive 3D environments.
@@ -144,7 +144,7 @@ const ProductsSection: React.FC = () => {
                 </div>
                 
                 <div className="mt-auto flex flex-col">
-                  <p className="text-sm text-pebble-secondaryText mb-4">Experience India like never before</p>
+                  <p className="text-xs text-pebble-secondaryText mb-4">Experience India like never before</p>
                   <Link to="/products/bharat-vr">
                     <Button className="group/btn flex items-center bg-[#101E4E] hover:bg-[#101E4E]/90">
                       <span className="mr-1">
