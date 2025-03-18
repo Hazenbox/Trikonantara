@@ -1,6 +1,6 @@
 
 import React, { useRef, useEffect } from "react";
-import { Code } from "lucide-react";
+import { Cube, Building2, ShoppingBag } from "lucide-react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 
@@ -8,9 +8,10 @@ interface ServiceCardProps {
   title: string;
   description: string;
   path: string;
+  type?: "arvr" | "archviz" | "ecommerce";
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, path }) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, path, type = "arvr" }) => {
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -52,13 +53,26 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, path }) =
     };
   }, []);
 
+  const renderIcon = () => {
+    switch (type) {
+      case "arvr":
+        return <Cube className="text-pebble-darkBlue" size={24} />;
+      case "archviz":
+        return <Building2 className="text-pebble-darkBlue" size={24} />;
+      case "ecommerce":
+        return <ShoppingBag className="text-pebble-darkBlue" size={24} />;
+      default:
+        return <Cube className="text-pebble-darkBlue" size={24} />;
+    }
+  };
+
   return (
     <div 
       ref={cardRef}
-      className="bg-white bg-opacity-90 backdrop-blur-sm border border-gray-100 rounded-xl p-6 hover:border-pebble-blue transition-colors duration-300 transform-gpu shadow-md hover:shadow-lg"
+      className="bg-pebble-cream bg-opacity-90 backdrop-blur-sm border border-pebble-lightBeige rounded-xl p-6 hover:border-pebble-taupe transition-colors duration-300 transform-gpu shadow-md hover:shadow-lg"
     >
-      <div className="mb-4 rounded-full w-12 h-12 flex items-center justify-center bg-pebble-lightBlue">
-        <Code className="text-pebble-blue" size={24} />
+      <div className="mb-4 rounded-full w-12 h-12 flex items-center justify-center bg-pebble-lightBeige">
+        {renderIcon()}
       </div>
       
       <h3 className="text-xl font-bold mb-3 text-pebble-darkBlue">{title}</h3>
@@ -67,7 +81,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, path }) =
       
       <Link 
         to={path} 
-        className="inline-flex items-center text-pebble-blue hover:text-pebble-darkBlue group transition-colors duration-300 font-fustat"
+        className="inline-flex items-center text-pebble-darkBlue hover:text-pebble-olive group transition-colors duration-300 font-fustat"
       >
         Read more
         <span className="ml-2 transform transition-transform duration-300 group-hover:translate-x-1">→</span>

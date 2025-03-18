@@ -3,7 +3,6 @@ import React, { useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useGSAP, useImageParallax, useSplitTextAnimation } from "../../hooks/useGSAP";
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 const AboutSection: React.FC = () => {
   // Apply split text animation for headings
@@ -90,7 +89,7 @@ const AboutSection: React.FC = () => {
             </div>
           </div>
           
-          {/* Right Column - Image and Cards */}
+          {/* Right Column - Image */}
           <div className="about-right-col md:col-span-7">
             <div className="rounded-xl overflow-hidden shadow-lg mb-8">
               <div className="overflow-hidden">
@@ -99,26 +98,6 @@ const AboutSection: React.FC = () => {
                   alt="AR/VR Experience" 
                   className="w-full h-auto about-image object-cover transition-transform duration-700 hover:scale-105"
                 />
-              </div>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-pebble-offWhite p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
-                <h3 className="text-xl font-bold mb-4 text-pebble-darkBlue font-funnel">
-                  Mission
-                </h3>
-                <p className="text-pebble-secondaryText font-fustat">
-                  To leverage AR/VR technologies to create immersive solutions that empower businesses and transform industries.
-                </p>
-              </div>
-              
-              <div className="bg-pebble-offWhite p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
-                <h3 className="text-xl font-bold mb-4 text-pebble-darkBlue font-funnel">
-                  Vision
-                </h3>
-                <p className="text-pebble-secondaryText font-fustat">
-                  To lead AR/VR innovation, shaping a future where immersive technologies dissolve boundaries between digital and physical realms.
-                </p>
               </div>
             </div>
           </div>
