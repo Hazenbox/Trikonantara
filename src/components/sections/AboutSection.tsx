@@ -114,12 +114,12 @@ const AboutSection: React.FC = () => {
       <div className="container mx-auto px-4 max-w-5xl about-container">
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black font-funnel split-text tracking-wide">
-            About Trikonantara™
+            About Trikonantara
           </h2>
           
           <div className="about-text-wrapper">
             <p className="text-lg text-black font-fustat mb-6 about-text">
-              Trikonantara™ bridges imagination and technology, crafting immersive experiences that transform industries. We specialize in cutting-edge 3D, AR, and VR solutions, redefining how people explore and interact with the world.
+              Trikonantara bridges imagination and technology, crafting immersive experiences that transform industries. We specialize in cutting-edge 3D, AR, and VR solutions, redefining how people explore and interact with the world.
             </p>
             <p className="text-lg text-black font-fustat about-text">
               Our journey began with a vision to bridge imagination and technology, creating immersive experiences that transform industries. With innovation at our core, we continue to push the boundaries of AR, VR, and 3D technology to redefine digital interaction.

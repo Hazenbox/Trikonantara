@@ -1,3 +1,4 @@
+
 import React, { useRef } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -146,7 +147,7 @@ const About = () => {
         <div className="container mx-auto px-4 mb-20">
           <div className="max-w-5xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-pebble-darkBlue font-funnel header-title split-text tracking-wide">
-              About Trikonantara™
+              About Trikonantara
             </h1>
             <div className="h-1 w-20 bg-pebble-taupe mx-auto mb-12 section-divider"></div>
           </div>
@@ -171,7 +172,7 @@ const About = () => {
                 </p>
                 
                 <p className="text-lg text-pebble-secondaryText font-fustat about-paragraph">
-                  Trikonantara™ bridges imagination and technology, crafting immersive experiences that transform industries. We specialize in cutting-edge 3D, AR, and VR solutions, redefining how people explore and interact with the world.
+                  Trikonantara bridges imagination and technology, crafting immersive experiences that transform industries. We specialize in cutting-edge 3D, AR, and VR solutions, redefining how people explore and interact with the world.
                 </p>
               </div>
               

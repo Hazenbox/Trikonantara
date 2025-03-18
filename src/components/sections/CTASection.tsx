@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Instagram, Facebook, Linkedin, Twitter, Youtube } from "lucide-react";
@@ -123,7 +124,7 @@ const CTASection: React.FC = () => {
               />
             </div>
             <h3 className="text-2xl font-funnel font-bold mb-4 text-pebble-charcoal">
-              TRIKONANTARA™
+              TRIKONANTARA
             </h3>
             <div className="flex justify-center space-x-4 mb-4">
               <a href="https://x.com/trikonantara" target="_blank" rel="noopener noreferrer" className="text-pebble-charcoal hover:text-[#1DA1F2] transition-colors duration-300">
