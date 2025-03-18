@@ -56,7 +56,7 @@ const CTASection: React.FC = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="w-full md:w-1/2 mb-10 md:mb-0">
               <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold mb-6 text-pebble-offWhite">
-                The range of functionalities offered on the platforms includes the ability to connect
+                Connect with our platform
               </h2>
             </div>
             <div className="w-full md:w-1/2 md:pl-12">
