@@ -104,17 +104,31 @@ const CTASection: React.FC = () => {
       
       {/* Footer Content */}
       <div className="container mx-auto px-4 footer-content mt-20">
-        <div className="flex flex-col lg:flex-row">
+        <div className="flex flex-col lg:flex-row justify-between">
           <div className="mb-10 lg:mb-0 lg:w-1/4">
-            <h3 className="text-3xl font-bold mb-6 text-pebble-offWhite">
+            <h3 className="text-3xl font-funnel font-bold mb-6 text-pebble-offWhite">
               Trikonantara
             </h3>
-            <p className="text-pebble-offWhite/80 mb-4 font-fustat">
-              There is no risk-free trading
-            </p>
+            <div className="flex space-x-4 mb-6">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300">
+                <Twitter size={20} />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300">
+                <Linkedin size={20} />
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300">
+                <Youtube size={20} />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300">
+                <Instagram size={20} />
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300">
+                <Facebook size={20} />
+              </a>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:w-3/4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:w-3/4 lg:pl-12">
             <div>
               <h4 className="text-base font-semibold mb-6 text-pebble-offWhite">
                 Company
@@ -136,31 +150,6 @@ const CTASection: React.FC = () => {
                 <FooterLink to="/documentation">Documentation</FooterLink>
                 <FooterLink to="/faq">FAQ</FooterLink>
                 <FooterLink to="/support">Support</FooterLink>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-base font-semibold mb-6 text-pebble-offWhite">
-                Social
-              </h4>
-              <div className="flex space-x-4 mb-6">
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300">
-                  <Twitter size={20} />
-                </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300">
-                  <Linkedin size={20} />
-                </a>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300">
-                  <Youtube size={20} />
-                </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-pebble-offWhite/70 hover:text-pebble-offWhite transition-colors duration-300">
-                  <Instagram size={20} />
-                </a>
-              </div>
-              <ul className="space-y-4">
-                <FooterLink to="https://twitter.com" external>X (Twitter)</FooterLink>
-                <FooterLink to="https://linkedin.com" external>LinkedIn</FooterLink>
-                <FooterLink to="https://youtube.com" external>YouTube</FooterLink>
               </ul>
             </div>
           </div>

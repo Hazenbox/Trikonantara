@@ -32,18 +32,18 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between">
           <Link
             to="/"
-            className="text-2xl font-bold relative overflow-hidden group text-[#0b2d5f]"
+            className="text-2xl font-funnel font-bold relative overflow-hidden group text-[#0b2d5f]"
           >
-            <img src="/logo_Trikonantara.png" alt="Trikonantara" className="h-9" />
+            Trikonantara
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/about">About</NavLink>
-            <NavLink to="/services">Services</NavLink>
-            <NavLink to="/projects">Projects</NavLink>
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink to="/" scrolled={scrolled}>Home</NavLink>
+            <NavLink to="/about" scrolled={scrolled}>About</NavLink>
+            <NavLink to="/services" scrolled={scrolled}>Services</NavLink>
+            <NavLink to="/projects" scrolled={scrolled}>Projects</NavLink>
+            <NavLink to="/contact" scrolled={scrolled}>Contact</NavLink>
           </nav>
 
           {/* Mobile Navigation Button */}
@@ -87,16 +87,17 @@ const Navbar: React.FC = () => {
 interface NavLinkProps {
   to: string;
   children: React.ReactNode;
+  scrolled: boolean;
 }
 
-const NavLink: React.FC<NavLinkProps> = ({ to, children }) => {
+const NavLink: React.FC<NavLinkProps> = ({ to, children, scrolled }) => {
   return (
     <Link
       to={to}
-      className="relative text-pebble-lightBeige hover:text-white transition-colors duration-300 group font-fustat"
+      className={`relative ${scrolled ? 'text-pebble-darkBlue hover:text-pebble-blue' : 'text-pebble-offWhite hover:text-white'} transition-colors duration-300 group font-fustat`}
     >
       {children}
-      <span className="absolute bottom-0 left-0 w-full h-0.5 bg-white transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+      <span className={`absolute bottom-0 left-0 w-full h-0.5 ${scrolled ? 'bg-pebble-blue' : 'bg-white'} transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100`}></span>
     </Link>
   );
 };
