@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import CustomCursor from "../components/CustomCursor";
 import HeroSection from "../components/sections/HeroSection";
 import AboutSection from "../components/sections/AboutSection";
 import ServicesSection from "../components/sections/ServicesSection";
@@ -27,6 +28,7 @@ const Index: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen">
+      <CustomCursor />
       <Navbar />
       <main>
         <HeroSection />

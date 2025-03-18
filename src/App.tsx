@@ -13,7 +13,6 @@ import Services from "./pages/Services";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
-import CustomCursor from "./components/CustomCursor";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -59,7 +58,6 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <CustomCursor />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
