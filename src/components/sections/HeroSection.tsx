@@ -1,8 +1,9 @@
 
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
 import gsap from "gsap";
+import { ArrowRight } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import ContactForm from "../ContactForm";
 
 const HeroSection: React.FC = () => {
   const sectionId = "hero-section";
@@ -97,13 +98,22 @@ const HeroSection: React.FC = () => {
           creating immersive experiences that transform industries.
         </p>
         <div className="hero-button">
-          <Link
-            to="/contact"
-            className="inline-flex items-center bg-pebble-lightBeige hover:bg-pebble-offWhite text-pebble-olive py-3 px-8 rounded-full transition-all duration-300 shadow-lg shadow-pebble-charcoal/20 transform hover:scale-105 hover:shadow-xl"
-          >
-            Start Your Journey
-            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-          </Link>
+          <Dialog>
+            <DialogTrigger asChild>
+              <button
+                className="inline-flex items-center bg-pebble-lightBeige hover:bg-pebble-offWhite text-pebble-olive py-3 px-8 rounded-full transition-all duration-300 shadow-lg shadow-pebble-charcoal/20 transform hover:scale-105 hover:shadow-xl"
+              >
+                Get in Touch
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-md">
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold">Contact Us</DialogTitle>
+              </DialogHeader>
+              <ContactForm />
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
 
