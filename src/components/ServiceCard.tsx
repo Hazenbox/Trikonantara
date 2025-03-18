@@ -55,19 +55,19 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, path }) =
   return (
     <div 
       ref={cardRef}
-      className="bg-white bg-opacity-90 backdrop-blur-sm border border-gray-100 rounded-xl p-6 hover:border-lightblue-500 transition-colors duration-300 transform-gpu shadow-md hover:shadow-lg"
+      className="bg-white bg-opacity-90 backdrop-blur-sm border border-gray-100 rounded-xl p-6 hover:border-pebble-blue transition-colors duration-300 transform-gpu shadow-md hover:shadow-lg"
     >
-      <div className="mb-4 rounded-full w-12 h-12 flex items-center justify-center bg-lightblue-100">
-        <Code className="text-lightblue-500" size={24} />
+      <div className="mb-4 rounded-full w-12 h-12 flex items-center justify-center bg-pebble-lightBlue">
+        <Code className="text-pebble-blue" size={24} />
       </div>
       
-      <h3 className="text-xl font-bold mb-3 text-[#0b2d5f]">{title}</h3>
+      <h3 className="text-xl font-bold mb-3 text-pebble-darkBlue">{title}</h3>
       
-      <p className="text-[#403E43] mb-6 font-fustat">{description}</p>
+      <p className="text-pebble-secondaryText mb-6 font-fustat">{description}</p>
       
       <Link 
         to={path} 
-        className="inline-flex items-center text-lightblue-500 hover:text-[#0b2d5f] group transition-colors duration-300 font-fustat"
+        className="inline-flex items-center text-pebble-blue hover:text-pebble-darkBlue group transition-colors duration-300 font-fustat"
       >
         Read more
         <span className="ml-2 transform transition-transform duration-300 group-hover:translate-x-1">→</span>

@@ -4,18 +4,18 @@ import ServiceCard from "../ServiceCard";
 
 const ServicesSection: React.FC = () => {
   return (
-    <section className="py-20 relative bg-lightblue-100">
+    <section className="py-20 relative bg-pebble-gray">
       <div className="absolute inset-0 z-0">
-        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-lightblue-400 rounded-full mix-blend-multiply filter blur-[128px] opacity-10"></div>
-        <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-lightblue-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-10"></div>
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-pebble-blue rounded-full mix-blend-multiply filter blur-[128px] opacity-10"></div>
+        <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-pebble-darkBlue rounded-full mix-blend-multiply filter blur-[128px] opacity-10"></div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 reveal-element text-[#0b2d5f]">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 reveal-element text-pebble-darkBlue">
             Our Services
           </h2>
-          <p className="text-lg text-[#403E43] reveal-element">
+          <p className="text-lg text-pebble-secondaryText reveal-element">
             Making Cutting-Edge Technology Accessible to All. At the forefront of innovation, we bring Augmented Reality (AR) and Virtual Reality (VR) to life, offering immersive experiences that redefine how you perceive the world.
           </p>
         </div>

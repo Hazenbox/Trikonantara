@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 import { Instagram, Facebook, Linkedin, Twitter, Youtube, Mail } from "lucide-react";
@@ -8,17 +9,17 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row">
           <div className="mb-10 lg:mb-0 lg:w-1/4">
-            <h3 className="text-3xl font-bold mb-6 text-[#0b2d5f]">
+            <h3 className="text-3xl font-bold mb-6 text-pebble-darkBlue">
               Trikonantara
             </h3>
-            <p className="text-[#403E43] mb-4 font-fustat">
+            <p className="text-pebble-secondaryText mb-4 font-fustat">
               There is no risk-free trading
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:w-3/4">
             <div>
-              <h4 className="text-base font-semibold mb-6 text-[#0b2d5f]">
+              <h4 className="text-base font-semibold mb-6 text-pebble-darkBlue">
                 Company
               </h4>
               <ul className="space-y-4">
@@ -31,7 +32,7 @@ const Footer: React.FC = () => {
             </div>
 
             <div>
-              <h4 className="text-base font-semibold mb-6 text-[#0b2d5f]">
+              <h4 className="text-base font-semibold mb-6 text-pebble-darkBlue">
                 Resources
               </h4>
               <ul className="space-y-4">
@@ -42,7 +43,7 @@ const Footer: React.FC = () => {
             </div>
 
             <div>
-              <h4 className="text-base font-semibold mb-6 text-[#0b2d5f]">
+              <h4 className="text-base font-semibold mb-6 text-pebble-darkBlue">
                 Social
               </h4>
               <ul className="space-y-4">
@@ -56,14 +57,14 @@ const Footer: React.FC = () => {
 
         <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center mt-16 pt-8 border-t border-gray-200">
           <div className="flex items-center mb-6 md:mb-0">
-            <p className="text-sm text-[#403E43] font-fustat">© 2025 Trikonantara. All rights reserved</p>
+            <p className="text-sm text-pebble-secondaryText font-fustat">© 2025 Trikonantara. All rights reserved</p>
           </div>
 
-          <div className="flex space-x-6 text-sm text-[#403E43] font-fustat">
-            <Link to="/privacy" className="hover:text-[#0b2d5f] transition-colors duration-300">
+          <div className="flex space-x-6 text-sm text-pebble-secondaryText font-fustat">
+            <Link to="/privacy" className="hover:text-pebble-darkBlue transition-colors duration-300">
               Privacy Policy
             </Link>
-            <Link to="/terms" className="hover:text-[#0b2d5f] transition-colors duration-300">
+            <Link to="/terms" className="hover:text-pebble-darkBlue transition-colors duration-300">
               Terms of Use
             </Link>
           </div>
@@ -85,7 +86,7 @@ const FooterLink: React.FC<FooterLinkProps> = ({ to, children, external }) => {
       <li>
         <a
           href={to}
-          className="text-[#403E43] hover:text-[#0b2d5f] transition-colors duration-300 font-fustat"
+          className="text-pebble-secondaryText hover:text-pebble-darkBlue transition-colors duration-300 font-fustat"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -99,7 +100,7 @@ const FooterLink: React.FC<FooterLinkProps> = ({ to, children, external }) => {
     <li>
       <Link
         to={to}
-        className="text-[#403E43] hover:text-[#0b2d5f] transition-colors duration-300 font-fustat"
+        className="text-pebble-secondaryText hover:text-pebble-darkBlue transition-colors duration-300 font-fustat"
       >
         {children}
       </Link>

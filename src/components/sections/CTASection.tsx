@@ -7,7 +7,7 @@ const CTASection: React.FC = () => {
   return (
     <section className="relative overflow-hidden py-32">
       <div className="container mx-auto px-4 relative">
-        <div className="max-w-4xl mx-auto bg-[#0d1626] rounded-xl shadow-lg shadow-[#0d1626]/10 p-16 relative overflow-hidden">
+        <div className="max-w-4xl mx-auto bg-pebble-darkBlue rounded-xl shadow-lg shadow-pebble-darkBlue/10 p-16 relative overflow-hidden">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="w-full md:w-1/2 mb-10 md:mb-0">
               <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold mb-6 text-white">
@@ -22,7 +22,7 @@ const CTASection: React.FC = () => {
               <div className="flex flex-wrap gap-4">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center bg-white text-[#0d1626] py-3 px-6 rounded-md transition-colors duration-300"
+                  className="inline-flex items-center bg-white text-pebble-darkBlue py-3 px-6 rounded-md transition-colors duration-300"
                 >
                   Get started <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>

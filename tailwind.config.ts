@@ -59,13 +59,14 @@ export default {
           purple: "#9d00ff"
         },
         dark: "#121212",
-        lightblue: {
-          100: "#D3E4FD",
-          200: "#A7C8FB",
-          300: "#7BACF9",
-          400: "#4F90F7",
-          500: "#1EAEDB",
-          600: "#33C3F0",
+        pebble: {
+          blue: "#2D46B9",
+          darkBlue: "#1E2D78",
+          lightBlue: "#E5EFFF",
+          gray: "#F5F7FA",
+          text: "#333333",
+          accent: "#4FC4CF",
+          secondaryText: "#666666"
         },
         sidebar: {
           DEFAULT: 'hsl(var(--sidebar-background))',

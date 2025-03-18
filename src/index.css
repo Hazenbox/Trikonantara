@@ -72,7 +72,7 @@
   }
 
   body {
-    @apply bg-gradient-to-b from-lightblue-100 to-lightblue-200 text-[#0b2d5f] font-fustat min-h-screen;
+    @apply bg-white text-pebble-text font-fustat min-h-screen;
   }
 
   html {
@@ -80,11 +80,11 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-funnel font-bold text-[#0b2d5f];
+    @apply font-funnel font-bold text-pebble-darkBlue;
   }
 
   p {
-    @apply font-fustat;
+    @apply font-fustat text-pebble-secondaryText;
   }
 }
 
