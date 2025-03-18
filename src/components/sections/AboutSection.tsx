@@ -69,6 +69,18 @@ const AboutSection: React.FC = () => {
         },
       });
 
+      // Logo animations
+      gsap.from(".partner-logo", {
+        y: 20,
+        opacity: 0,
+        stagger: 0.15,
+        duration: 0.6,
+        scrollTrigger: {
+          trigger: ".partners-section",
+          start: "top 85%",
+        },
+      });
+
       // Section entry/exit animations
       gsap.to(`#${sectionId}`, {
         opacity: 1,
@@ -111,6 +123,16 @@ const AboutSection: React.FC = () => {
             <p className="text-lg text-black font-fustat about-text">
               Our journey began with a vision to bridge imagination and technology, creating immersive experiences that transform industries. With innovation at our core, we continue to push the boundaries of AR, VR, and 3D technology to redefine digital interaction.
             </p>
+          </div>
+          
+          {/* Associated with section */}
+          <div className="mt-10 partners-section">
+            <h3 className="text-lg font-medium mb-6 text-[#8A898C] font-fustat">Associated with</h3>
+            <div className="flex justify-center space-x-10 mb-8">
+              <img src="/lovable-uploads/92d0a951-cc14-48c7-8df2-ac34ad8df4f9.png" alt="Partner Logo" className="h-12 partner-logo" />
+              <img src="/lovable-uploads/48b1e3ce-5061-4ff9-baaf-4ec0ba8a63ec.png" alt="Partner Logo" className="h-12 partner-logo" />
+              <img src="/lovable-uploads/2f679cde-6ad1-4d93-8c27-d7e90ae3b829.png" alt="Partner Logo" className="h-12 partner-logo" />
+            </div>
           </div>
           
           <div className="mt-8 flex flex-wrap gap-4 justify-center">

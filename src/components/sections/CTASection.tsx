@@ -72,7 +72,7 @@ const CTASection: React.FC = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="w-full md:w-1/2 mb-10 md:mb-0">
               <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold mb-6 text-pebble-offWhite">
-                Join Hands with Trikonantara™ Innovation Technology: We are committed to innovation in AR, VR, and immersive technologies.
+                Join Hands with Us
               </h2>
             </div>
             <div className="w-full md:w-1/2 md:pl-12">
