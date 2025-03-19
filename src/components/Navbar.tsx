@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import AboutModal from "./AboutModal";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,7 +37,7 @@ const Navbar: React.FC = () => {
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled 
           ? "bg-white/90 backdrop-blur-md py-3 shadow-md mx-auto mt-2 md:w-[95%] max-w-7xl md:left-[50%] md:transform md:-translate-x-1/2 md:rounded-full" 
-          : "py-6"
+          : `py-${isMobile ? '4' : '6'}`
       }`}
     >
       <div className="container mx-auto px-4 md:px-8">
@@ -100,10 +102,17 @@ const Navbar: React.FC = () => {
         } md:hidden`}
       >
         <div className="flex flex-col items-center justify-center h-full space-y-8">
+          <button
+            className="absolute right-4 top-4 text-[#0b2d5f]"
+            onClick={() => setIsOpen(false)}
+          >
+            <X size={24} />
+          </button>
+          
           <Dialog>
             <DialogTrigger asChild>
               <button
-                className="text-2xl text-[#0b2d5f] hover:text-[#1EAEDB] transition-all duration-300 font-fustat"
+                className="text-xl text-[#0b2d5f] hover:text-[#1EAEDB] transition-all duration-300 font-fustat"
                 onClick={() => setIsOpen(false)}
               >
                 About
@@ -152,7 +161,7 @@ const MobileNavLink: React.FC<MobileNavLinkProps> = ({
 }) => {
   return (
     <button
-      className="text-2xl text-[#0b2d5f] hover:text-[#1EAEDB] transition-all duration-300 font-fustat"
+      className="text-xl text-[#0b2d5f] hover:text-[#1EAEDB] transition-all duration-300 font-fustat"
       onClick={onClick}
     >
       {children}
