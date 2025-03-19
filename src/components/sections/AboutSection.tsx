@@ -106,7 +106,7 @@ const AboutSection: React.FC = () => {
   return (
     <section 
       id={sectionId}
-      className="min-h-screen py-20 relative bg-white flex items-center opacity-0"
+      className="min-h-screen py-20 relative bg-white flex items-center opacity-0 overflow-hidden"
     >
       <div className="absolute inset-0 z-0">
         <div className="absolute top-1/4 -left-24 w-96 h-96 bg-pebble-taupe rounded-full mix-blend-multiply filter blur-[128px] opacity-5 animate-float"></div>
@@ -128,19 +128,19 @@ const AboutSection: React.FC = () => {
             </p>
           </div>
           
-          {/* Associated with section - updated with new images and responsive sizing */}
-          <div className="mt-10 partners-section">
+          {/* Associated with section - responsive sizing */}
+          <div className="mt-10 partners-section w-full">
             <h3 className="text-sm font-medium mb-6 text-[#8A898C] font-fustat">Associated with</h3>
             <div className="flex flex-col md:flex-row justify-center items-center md:space-x-12 space-y-6 md:space-y-0 mb-8">
               <img 
                 src="/lovable-uploads/4eeead38-8221-4629-867d-ac3cf7391273.png" 
                 alt="NITI Aayog & AIM Partner Logo" 
-                className={`${isMobile ? 'w-[80%] max-w-[220px]' : 'h-28'} partner-logo object-contain`} 
+                className={`${isMobile ? 'w-[70%] max-w-[180px]' : 'h-28'} partner-logo object-contain`} 
               />
               <img 
                 src="/lovable-uploads/ece65d10-2de9-4521-bebb-18990da2a976.png" 
                 alt="ACIC-CBIT Partner Logo" 
-                className={`${isMobile ? 'w-[80%] max-w-[220px]' : 'h-28'} partner-logo object-contain`}
+                className={`${isMobile ? 'w-[70%] max-w-[180px]' : 'h-28'} partner-logo object-contain`}
               />
             </div>
           </div>

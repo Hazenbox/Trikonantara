@@ -136,7 +136,7 @@ const AboutModal = () => {
   return (
     <DialogContent ref={pageRef} className="max-w-6xl h-[80vh] overflow-hidden bg-white p-0">
       <ScrollArea className="h-full w-full">
-        <main className="p-6">
+        <main className="p-6 overflow-x-hidden">
           {/* Header Section */}
           <div className="container mx-auto px-4 mb-10">
             <div className="max-w-5xl mx-auto text-center">
@@ -165,19 +165,19 @@ const AboutModal = () => {
                   </p>
                 </div>
                 
-                {/* Associated Partners - Added to the modal with responsive sizing */}
-                <div className="mt-8">
+                {/* Associated Partners - responsive sizing */}
+                <div className="mt-8 w-full">
                   <h3 className="text-lg font-medium mb-4 text-pebble-darkBlue font-fustat">Associated with</h3>
                   <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6">
                     <img 
                       src="/lovable-uploads/4eeead38-8221-4629-867d-ac3cf7391273.png" 
                       alt="NITI Aayog & AIM Partner Logo" 
-                      className={`${isMobile ? 'w-[180px]' : 'h-20'} partner-logo object-contain`} 
+                      className={`${isMobile ? 'w-[150px]' : 'h-20'} partner-logo object-contain`} 
                     />
                     <img 
                       src="/lovable-uploads/ece65d10-2de9-4521-bebb-18990da2a976.png" 
                       alt="ACIC-CBIT Partner Logo" 
-                      className={`${isMobile ? 'w-[180px]' : 'h-20'} partner-logo object-contain`}
+                      className={`${isMobile ? 'w-[150px]' : 'h-20'} partner-logo object-contain`}
                     />
                   </div>
                 </div>
