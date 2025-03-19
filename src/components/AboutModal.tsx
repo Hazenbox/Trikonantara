@@ -4,8 +4,11 @@ import { useGSAP, useRevealAnimation, useParallaxEffect, useImageParallax, useSp
 import { ArrowRight, X, Linkedin } from "lucide-react";
 import { DialogContent } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const AboutModal = () => {
+  const isMobile = useIsMobile();
+  
   // Basic reveal animation for elements
   useRevealAnimation(".reveal-element");
   
@@ -162,12 +165,20 @@ const AboutModal = () => {
                   </p>
                 </div>
                 
-                {/* Associated Partners - Added to the modal */}
+                {/* Associated Partners - Added to the modal with responsive sizing */}
                 <div className="mt-8">
                   <h3 className="text-lg font-medium mb-4 text-pebble-darkBlue font-fustat">Associated with</h3>
-                  <div className="flex justify-center space-x-6">
-                    <img src="/lovable-uploads/4eeead38-8221-4629-867d-ac3cf7391273.png" alt="NITI Aayog & AIM Partner Logo" className="h-20 partner-logo" />
-                    <img src="/lovable-uploads/ece65d10-2de9-4521-bebb-18990da2a976.png" alt="ACIC-CBIT Partner Logo" className="h-20 partner-logo" />
+                  <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6">
+                    <img 
+                      src="/lovable-uploads/4eeead38-8221-4629-867d-ac3cf7391273.png" 
+                      alt="NITI Aayog & AIM Partner Logo" 
+                      className={`${isMobile ? 'w-[180px]' : 'h-20'} partner-logo object-contain`} 
+                    />
+                    <img 
+                      src="/lovable-uploads/ece65d10-2de9-4521-bebb-18990da2a976.png" 
+                      alt="ACIC-CBIT Partner Logo" 
+                      className={`${isMobile ? 'w-[180px]' : 'h-20'} partner-logo object-contain`}
+                    />
                   </div>
                 </div>
               </div>

@@ -6,12 +6,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Button } from "../ui/button";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import AboutModal from "../AboutModal";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 // Register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutSection: React.FC = () => {
   const sectionId = "about-section";
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     // Wait for the DOM to be ready
@@ -126,12 +128,20 @@ const AboutSection: React.FC = () => {
             </p>
           </div>
           
-          {/* Associated with section - updated with new images */}
+          {/* Associated with section - updated with new images and responsive sizing */}
           <div className="mt-10 partners-section">
             <h3 className="text-sm font-medium mb-6 text-[#8A898C] font-fustat">Associated with</h3>
-            <div className="flex justify-center space-x-12 mb-8">
-              <img src="/lovable-uploads/4eeead38-8221-4629-867d-ac3cf7391273.png" alt="NITI Aayog & AIM Partner Logo" className="h-28 partner-logo" />
-              <img src="/lovable-uploads/ece65d10-2de9-4521-bebb-18990da2a976.png" alt="ACIC-CBIT Partner Logo" className="h-28 partner-logo" />
+            <div className="flex flex-col md:flex-row justify-center items-center md:space-x-12 space-y-6 md:space-y-0 mb-8">
+              <img 
+                src="/lovable-uploads/4eeead38-8221-4629-867d-ac3cf7391273.png" 
+                alt="NITI Aayog & AIM Partner Logo" 
+                className={`${isMobile ? 'w-[80%] max-w-[220px]' : 'h-28'} partner-logo object-contain`} 
+              />
+              <img 
+                src="/lovable-uploads/ece65d10-2de9-4521-bebb-18990da2a976.png" 
+                alt="ACIC-CBIT Partner Logo" 
+                className={`${isMobile ? 'w-[80%] max-w-[220px]' : 'h-28'} partner-logo object-contain`}
+              />
             </div>
           </div>
           
